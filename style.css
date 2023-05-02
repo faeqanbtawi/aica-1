@@ -1,0 +1,418 @@
+
+@font-face {
+    font-family: 'Amiri';
+    src: url('./font/Amiri-Regular.eot');
+    src: url('./font/Amiri-Regular.eot?#iefix') format('embedded-opentype'),
+         url('./font/Amiri-Regular.woff2') format('woff2'),
+         url('./font/Amiri-Regular.woff') format('woff'),
+         url('./font/Amiri-Regular.ttf') format('truetype'),
+         url('./font/Amiri-Regular.svg#Amiri-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Amiri';
+    src: url('./font/Amiri-Bold.eot');
+    src: url('./font/Amiri-Bold.eot?#iefix') format('embedded-opentype'),
+         url('./font/Amiri-Bold.woff2') format('woff2'),
+         url('./font/Amiri-Bold.woff') format('woff'),
+         url('./font/Amiri-Bold.ttf') format('truetype'),
+         url('./font/Amiri-Bold.svg#Amiri-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+@font-face { 
+	font-family: 'UrduNasq';
+    src: url('./font/UrduNasq.eot?#iefix') format('embedded-opentype'),
+         url('./font/UrduNasq.woff') format('woff'),
+         url('./font/UrduNasq.ttf') format('truetype'),
+         url('./font/UrduNasq.svg#UrduNasq') format('svg');
+}
+
+
+
+@font-face {
+    font-family: 'FreeSans';
+    src: url('./font/FreeSans.eot');
+    src: url('./font/FreeSans.eot?#iefix') format('embedded-opentype'),
+        	url('./font/FreeSans.woff2') format('woff2'),
+        	url('./font/FreeSans.woff') format('woff'),
+        	url('./font/FreeSans.ttf') format('truetype'),
+        	url('./font/FreeSans.svg#FreeSans') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+
+
+html, body{ 
+height			: 100%;
+margin			: 0px; 
+overflow		: hidden;
+font-family		: 'FreeSans';
+font-size		: 9pt; 
+color			: #ACA091;
+background-color: #151515;
+} 
+
+
+/*  div { border:1px solid red;}   */
+
+
+
+:root {
+
+  --Color_CLOCK: 		'white';
+  --Color_SEKSALATS: 	'white';
+  --Color_LOWFOCUS: 	'white';
+  --Color_BGTUBE: 		'white';
+  
+  --ColorXWCSV: 		'white';
+  
+  
+	--XX_LANG_DIR: 'rtl';
+	
+	--XDynoDIGITS: 'FreeSans';
+	
+	--XWCSVfontSIZE: '2.3vw';
+	
+	--XX_NOW_ARABIC: 'Amiri';
+
+  --bgSemiLITE: rgba(255,255, 255, 0.15);
+  
+  --OPAK: '1';
+  
+  --topAR: 	28%;
+  --topEN: 	33%;
+  --topQM: 	 4%;
+  
+}
+
+hr {border: 1px solid #333333;}
+
+/*  LANDSCAPE  */
+@media only screen and (orientation:landscape)
+{
+.cVERTICAL 		{ display: none;}
+.cHORIZONTAL 	{ display: block;}
+
+
+.CSS_FON_SECS {position:absolute;	line-height:1em; font-size:4.7vw; right:6.5%;   top:8%;   z-index:926; width:13%; color:var(--Color_CLOCK);}
+.CSS_FON_HOUR {position:absolute;	line-height:1em; font-size:13vw; letter-spacing:0.08em;  left:0;  top:3%; text-align:center;	z-index:925;  width:100%;  color:var(--Color_CLOCK); }
+.CSS_FON_AMPM {position:absolute;	line-height:1em; font-size:3.3vw; right:7%;   top:51%; 	z-index:927; width:13%; color:var(--Color_CLOCK);}
+
+.CSS_MINI_CLK		{visibility:visible; position:absolute; left:0%; top:-7%; width:100%; height:100%; }
+
+.CSS_CLOKO 			{position:absolute;	line-height:1em; font-size:13vw; left:0%; top:0%; z-index:929; width:100%; height:50%;  color:var(--Color_CLOCK); }
+
+.CSS_AYATS_ALONGO	{position:absolute; left:-5%; top:0%; width:110%; height:100%; visibility:visible; font-size:3.1vw; line-height:1.8em; color:var(--Color_SEKSALATS);}
+
+.wwwNAMEar {position:absolute; font-family:var(--XX_NOW_ARABIC);	line-height:1em; font-size:3.1vw; top:var(--topAR); width:100%; text-align:center;  color:var(--Color_SEKSALATS);}
+.wwwNAMEen {position:absolute; font-family:'Amiri'; 				line-height:1em; font-size:2.8vw; top:var(--topEN); width:100%; text-align:left; padding-left:12%; color:var(--Color_SEKSALATS);}
+
+.wwwHOUR   {position:absolute; font-family:'FreeSans'; 	line-height:1em; font-size:4.7vw; bottom:3%;	width:100%; text-align:center; color:var(--Color_CLOCK);}
+
+.wwwIQAMA 	{position:absolute;  left:12%;  top:var(--topQM); line-height:1em;  font-size:var(--XWCSVfontSIZE); color:var(--ColorXWCSV);  }
+.wwwDemain  {position:absolute; right:10%; top:5%; line-height:1em;  font-size:1.5vw; color:var(--Color_LOWFOCUS);  }
+
+
+.CSS_Marquee   {position:absolute; left:0%; bottom:0%; font-size:2.2vw; line-height:1em; padding:1% 0; height:auto; width:100%; color:var(--Color_CLOCK); visibility:hidden;}
+
+.cssGeneralMsqNAME				{padding:0.2em;  line-height:1.7em; font-size:2.3vw; color:var(--Color_SEKSALATS); }
+.cssGeneralDate					{padding:0.2em;  line-height:1.7em; font-size:2.3vw; color:var(--Color_SEKSALATS); }
+.cssGeneralDate:lang(ar)		{font-size:2.3vw;line-height:1.7em; direction :rtl; }
+
+
+.cssHRDateYOUM		{padding:0.4em; line-height:1em; font-size:2.7vw; color:var(--Color_SEKSALATS); }
+.cssHRDateHIJRI 	{padding:0.4em; line-height:1em; font-size:2.7vw; color:var(--Color_SEKSALATS); }
+.cssHRDateMILADI 	{padding:0.4em; line-height:1em; font-size:2.7vw; color:var(--Color_SEKSALATS); }
+
+.cssBtmLOCATION {position:absolute; right:2%; bottom:1.3%; width:40%; line-height:1em; font-size:1.3vw; color:var(--Color_LOWFOCUS); }
+.cssBtmVERSION  {position:absolute; left:2%; z-index:1300; bottom:1.3%; width:30%; line-height:1em; font-size:1.3vw; color:var(--Color_LOWFOCUS); opacity:0.45;}
+
+.HRimgLOGO_ALONGO {position:absolute; left:4.9%; top:2%; width:13%; height:49%; opacity:0.31;}
+
+
+select {width:100%; padding:1%; text-align:right; font-size:102%;}
+select optgroup{padding:1.5%;  color:#913E23;}
+select option{padding:1.5%; text-align:right; color:#252525;}
+
+button {margin-top:5%; width:60%; font-size:2vw; padding:2%;}
+
+
+.cssHelpSCREEN 	{position:absolute; height:100%; width:40%; left:0px; top:0%; visibility:hidden; font-size:1.6vw; z-index:99998; background:#151515;}
+.cssSET 		{position:absolute; display:table; left:0%; top:0%; width:100%; height:8%; background-color:#282828;}
+.cssMenuBTN 	{width:90%; padding:3.1%; cursor:pointer;}
+.cssMenuGRP 	{position:absolute; line-height:1em; left:0%; top:10%; width:100%; height:90%;  overflow-y:auto; }
+
+
+
+.cssModelSettingsWINDOW	{font-family:'Amiri'; position:absolute; width:60%; height:100%; left:20%; top:0%; visibility:hidden; font-size:2.1vw; z-index:99993; background:#151515;}
+.cssTitlesHOLDER		{position:absolute; display:table; left:0%; top:0%; width:100%; height:10%;}
+.cssSettingsDATA		{position:absolute; left:0%; top:10%; width:94%; height:84%; padding:3%;  overflow-y:auto;}
+
+
+
+.cssNoMOBILE {position:absolute; left:40%; top:50%; width:20%; height:auto; visibility:hidden;}
+.cssCheckBOX {height:3.5vw; width:2.5vw;}
+.cccADJUSTER	{font-size:2vw; height:3vw; width:3.5vw;}
+
+
+.wwwALONGO	{position:absolute; left:1%; bottom:-3%; padding:3px 0;  height:38%; width:98%; z-index:888; }
+
+
+.cssMenuICO	{position:absolute; z-index:9999333; left:1%; top:-2%; font-size:2.5vw; padding:3px;}
+
+
+.cssHR_DECOMTO_ALONGO 	{position:absolute; z-index:337; left:76.7%; bottom:41%; width:24%; height:61%;  visibility:hidden;}
+
+.cssHR_NEXTPRAY_DATA_ALONGO	{position:absolute; z-index:337; left:79.7%; bottom:47%; width:18%; height:52%; visibility:visible; color:var(--Color_SEKSALATS);}
+
+.cssAZANO_ALONGO { border-radius:50%; position:absolute; z-index:400; 
+	visibility:hidden; left:78.6%; bottom:42.3%;  
+	line-height:1.8em; width:19.3vw; height:19.3vw; 
+	border:0.5vw solid var(--Color_SEKSALATS); 
+	background:var(--Color_BGTUBE); 
+	color:var(--Color_SEKSALATS); 
+	font-size:3.0vw; 
+	z-index:99991;
+	text-shadow: 4px 4px 10px rgba(0,0,0, 0.5); }
+
+
+
+.CSS_AR33 {font-family:'Amiri';    font-size:1.9vw; cursor:pointer;}
+.CSS_AR44 {font-family:'Amiri';    font-size:1.4vw; cursor:pointer;}
+.CSS_EN33 {font-family:'FreeSans'; font-size:1.3vw; cursor:pointer;}
+
+input[type='radio'] { vertical-align:middle; width:2.1vw; height:2.1vw;}
+}
+
+
+
+
+
+
+
+
+
+
+
+/*  VERTICAL  */
+
+@media only screen and (orientation:portrait)
+{
+.cVERTICAL 		{ display: block;}
+.cHORIZONTAL 	{ display: none;}
+
+.cssMosqueNAME {position:absolute; left:0%; top:0%; height:100%; width:100%; line-height:1.8em; font-size:4.3vw; color:var(--Color_LOWFOCUS);  text-shadow: 3px 3px 10px rgba(0,0,0, 0.3);}
+
+
+.CSS_FON_SECS {position:absolute; line-height:1em; font-size:9.8vw;  z-index:926; left:75%;  bottom:43%; width:12%;   color:var(--Color_CLOCK); text-shadow: 4px 4px 10px rgba(0,0,0, 0.5); }
+.CSS_FON_HOUR {position:absolute; line-height:1em; font-size:22.3vw; z-index:925; left:17%;  bottom:-15%; width:52%;  color:var(--Color_CLOCK); text-shadow: 4px 4px 10px rgba(0,0,0, 0.5); }
+.CSS_FON_AMPM {position:absolute; line-height:1em; font-size:7.1vw;  z-index:927; left:75%;  bottom:3%; width:12%;    color:var(--Color_CLOCK); text-shadow: 4px 4px 10px rgba(0,0,0, 0.5); }
+
+.CSS_CLOKO {position:absolute;	line-height:1em; font-size:18.5vw;  left:0%; bottom:0%;	z-index:929; width:100%;  color:var(--Color_CLOCK);  text-shadow: 4px 4px 10px rgba(0,0,0, 0.5);}
+
+.eeeNAMEar {font-family:var(--XX_NOW_ARABIC); position:absolute; font-size:6.5vw; width:37%; right:3.5%; bottom:16%; line-height:1em; color:var(--Color_SEKSALATS); text-shadow: 4px 4px 10px rgba(0,0,0, 0.5);}
+.eeeNAMEen {font-family:'Amiri'; position:absolute; width:37%; left:0%; bottom:21%; line-height:1em; font-size:5.7vw; color:var(--Color_SEKSALATS); text-shadow: 4px 4px 10px rgba(0,0,0, 0.5);}
+
+.eeeHOURar   {font-family:'FreeSans'; position:absolute; width:41%; left:28%; bottom:7%; font-size:7.6vw;   line-height:1em; letter-spacing: 0.065em;  color:var(--Color_CLOCK); text-shadow: 4px 4px 10px rgba(0,0,0, 0.5); }
+.eeeHOURen   {font-family:'FreeSans'; position:absolute; width:33%; left:39%; text-align:right;  bottom:12%; font-size:7.0vw;  line-height:1em;  letter-spacing: 0.065em;  color:var(--Color_CLOCK); text-shadow: 2px 2px 5px rgba(0,0,0, 0.5); }
+
+
+.CSS_AYATS {font-size:4.7vw; color:var(--Color_SEKSALATS); text-shadow: 4px 4px 10px rgba(0,0,0, 0.5);}
+
+
+.eeeIQAMAar {position:absolute; left:3%;  bottom:12%; text-align:right; width:27%; line-height:1em; font-size:6.0vw;  color:var(--Color_LOWFOCUS); }
+.eeeIQAMAen {position:absolute; left:70%; bottom:12%; text-align:right; width:27%; line-height:1em; font-size:6.0vw;  color:var(--Color_LOWFOCUS); }
+
+
+.eDemain {position:absolute; line-height:1em; right:4%; top:-28%; font-size:3.3vw;  color:var(--Color_LOWFOCUS); }
+
+
+.CSS_BottomMSG {position:relative; font-size:5.3vw; line-height:0.7em; margin-top:5%; height:4%; width:100%; color:var(--Color_SEKSALATS); text-shadow: 3px 3px 10px rgba(0,0,0, 0.3);}
+
+.CSS_Marquee {position:absolute; left:0%; bottom:3%; width:100%; font-size:4.7vw; line-height:1.2em; color:var(--Color_CLOCK);}
+
+
+.imgLOGO {position:absolute; left:7%; bottom:12%; width:24%; height:16%; opacity:0.5; }
+
+.cssVReYOUM   {position:absolute; left:18%; top:34%;     width:64%; line-height:1.5em; font-size:6.7vw;  color:var(--Color_SEKSALATS); text-shadow: 3px 3px 10px rgba(0,0,0, 0.5);}
+.cssVReHIJRI  {position:absolute; left:18%; top:58%;     width:64%; line-height:1.5em; font-size:5.3vw;  color:var(--Color_SEKSALATS); text-shadow: 3px 3px 10px rgba(0,0,0, 0.5);}
+.cssVReMILADI {position:absolute; left:18%; bottom:5%;   width:64%; line-height:1.5em; font-size:5.3vw;  color:var(--Color_SEKSALATS); text-shadow: 3px 3px 10px rgba(0,0,0, 0.5);}
+
+
+
+.cssLocationVERSION	{position:absolute; z-index:99; left:0%; bottom:0%; width:100%; font-size:2.9vw; padding:0.5%; color:var(--Color_LOWFOCUS); }
+
+
+
+select {width:100%; padding:1%; text-align:right; font-size:102%;}
+select optgroup{padding:1.5%;  color:#913E23;}
+select option{padding:1.5%; text-align:right; color:#252525;}
+
+
+button {margin-top:5%; width:60%; font-size:3.5vw; padding:2%;}
+
+
+.cssHelpSCREEN 	{position:absolute; height:100%; width:70%; left:0px; top:0%; visibility:hidden; font-size:3.0vw; z-index:99998; background:#151515;}
+.cssSET 		{position:absolute; display:table; left:0%; top:0%; width:100%; height:5%; background-color:#282828;}
+.cssMenuBTN 	{width:90%; padding:3.4%; cursor:pointer;}
+.cssMenuGRP 	{position:absolute; line-height:1em; left:0%; top:6%; width:100%; height:94%;  overflow-y:auto; }
+
+
+.cssModelSettingsWINDOW	{font-family:'Amiri'; position:absolute; width:100%; height:100%; left:0%; top:0%; visibility:hidden; font-size:3.6vw; z-index:99993; background:#151515;}
+.cssTitlesHOLDER		{position:absolute; display:table; left:0%; top:0%; width:100%; height:6%;}
+.cssSettingsDATA		{position:absolute; left:0%; top:6%; width:94%; height:88%; padding:3%;  overflow-y:auto;}
+
+
+.cssNoMOBILE {position:absolute; left:30%; top:40%; width:40%; height:auto; visibility:hidden;}
+.cssCheckBOX {height:4vw; width:5vw;}
+.cccADJUSTER	{font-size:3vw; height:5vw; width:6vw;}
+
+.cssAZANO	{border-radius:50%; position:absolute; z-index:400; visibility:hidden; left:3%; top:46.8%;  line-height:1.8em; width:31vw; height:31vw; border:1vw solid var(--Color_SEKSALATS); background:var(--Color_BGTUBE); color:var(--Color_SEKSALATS); font-size:5.1vw; text-shadow: 4px 4px 10px rgba(0,0,0, 0.5); }
+
+
+.cccROUND			{font-family:'FreeSans'; border-radius:75px; position:relative; left:36%; top:0px; height:6.4%; width:62%; margin-bottom:1%; background:var(--bgSemiLITE); opacity:0.5; }
+.cccROUND_ACTIVE	{font-family:'FreeSans'; border-radius:75px; position:relative; left:36%; top:0px; height:6.4%; width:62%; margin-bottom:1%; background:var(--bgSemiLITE); opacity:1; }
+
+
+.cssMenuICO	{position:absolute; z-index:9999333; left:1%; top:-2%; font-size:5vw; padding:3px;}
+
+
+.CSS_AR33 {font-family:'Amiri';    font-size:3.9vw; cursor:pointer;}
+.CSS_AR44 {font-family:'Amiri';    font-size:2.9vw; cursor:pointer;}
+.CSS_EN33 {font-family:'FreeSans'; font-size:2.5vw; cursor:pointer;}
+
+input[type='radio'] { vertical-align:middle; width:3.5vw; height:3.5vw;}
+}
+
+
+
+
+
+.otoHIDN {opacity:var(--OPAK);}
+
+.CSS_X_LANG_DIRECTION {direction:var(--XX_LANG_DIR);}
+
+
+
+
+.CSS_BlackSCREEN {position:absolute; z-index:996; left:0px; top:0px; height:100%; width:0%; transition: width 4s ease-out; background: black url() no-repeat center center;}
+
+.CSS_FullCONTO   {position:absolute; z-index:999; left:0px; top:0px; height:0%; width:100%; transition: height 4s ease-out;}
+
+.CSS_FullCONTO  #ELAYATS {position:absolute; left:5%; top:8%; font-family:'Amiri'; 
+							width:90%; height:15%; 
+							text-align:center; 
+							direction:rtl;
+							font-size:3.5vw; 
+							line-height:1.8em;
+							text-shadow: 4px 4px 10px rgba(0,0,0, 0.5);
+							color:var(--Color_SEKSALATS);}
+							
+.CSS_FullCONTO  #ELKLOKO {position:absolute; right:3%; top:9px; font-family:'FreeSans'; width:20%; text-align:right; font-size:3.4vw;color:var(--Color_CLOCK);}
+
+.CSS_FullCONTO  #ELBLACK {position:absolute; left:0; top:0; 
+				height:100%; width:100%; background-color:black; opacity:1;}
+
+.CSS_FullCONTO  #ELHOLDO {visibility:hidden; position:absolute; left:0; top:0; 
+				height:100%; width:100%;
+				display: table-cell;
+				text-align:center;
+				vertical-align: middle;}
+				
+.CSS_FullCONTO  #ELCONTO { 
+				font-size: 30vw;
+				margin-top:-4%; 
+				color:var(--Color_SEKSALATS);
+				text-shadow: 3px 3px 7px rgba(0,0,0, 0.5);}
+
+
+
+.CSS_PANO3_VISIBLE	{opacity:0.95; transition: all 3s ease-out;}
+.CSS_PANO3_HIDDEN	{opacity:0;    transition: all 3s ease-out;}
+ 
+.CSS_SLIDERS_BG		{
+					background: black;
+					font-size:9vw; 
+					position:absolute; 
+					z-index:999; 
+					left:-100%; 
+					top:0%; 
+					height:100%; 
+					width:100%;
+					color:#F4E2CE;
+					opacity:0.95;
+					}
+
+
+
+.cNowDIGITS	{font-family :var(--XDynoDIGITS);}
+.cWCSVIQAMA	{font-size :var(--XWCSVfontSIZE);}
+
+
+.CSS_CORAN	{font-family :'Amiri';}
+
+.CSS_HAFS	{font-family :var(--XX_NOW_ARABIC);}
+
+.CSS_LATINO {font-family :'FreeSans';}
+
+.cssColorLITE 	{color:#ACA091;}
+.eLiter 		{color:#D2C7AA;}
+.eSmall80		{font-size:80%;}
+a 				{color:#D2C7AA; text-decoration:none;}
+
+
+.CSS_SHADOW		{ text-shadow: 1px 1px 5px rgba(0,0,0, 0.5); }
+
+
+.centro1 {display:table;}
+.centro2 {display:table-cell; text-align:center; vertical-align:middle;}
+
+.cssDISABLED {pointer-events: none; opacity: 0.4;}
+
+.opac1 {position:relative; opacity:1;}
+
+.CSS_VR_THEMER	{width:100%; height:30vw; font-size:3vw; text-align:right; background: url() no-repeat center top; background-size:cover;}
+.CSS_HR_THEMER	{width:100%; height:7vw;  font-size:2vw; text-align:right; background: url() no-repeat center top; background-size:cover;}
+
+.cPERSO_VR	{width:100%; height:15vw;  font-size:2vw; text-align:right; background: url('./themes/W-PERSO-VR.jpg') no-repeat center top; background-size:cover;}
+.cPERSO_HR	{width:100%; height:7vw;   font-size:1vw; text-align:right; background: url('./themes/W-PERSO-HR.jpg') no-repeat center top; background-size:cover;}
+
+.cccTBL1	{padding-bottom:2%; border-bottom:2px solid gray;}
+
+.btmline	{border-bottom:1px solid;}
+
+.codePERSO	{color:#D5CCB9; padding:2%; width:93%; overflow-wrap: break-word;}
+
+.w50 {width:50%}
+.w40 {width:40%}
+.w45 {width:45%}
+
+input[type='checkbox'] { vertical-align:middle;}
+label { vertical-align:middle;}
+
+.otoDIS {opacity:var(--OPAK);}
+
+.cssWindowCLOSE	{text-align:right; display:table-cell; vertical-align:middle; background-color:#282828; padding-right:3%;}
+
+.cssWindowTITLE	{width:60%; text-align:left; display:table-cell; vertical-align:middle; color:white; background-color:#282828;}
+
+.cssLocationDATA {width:85%; padding:2% 0 2% 0%; color:white;}
+
+.hnd{cursor:pointer;}
+
+
+
+

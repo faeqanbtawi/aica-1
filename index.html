@@ -1,0 +1,4524 @@
+<!--  بسم الله الرحمن الرحيم -->
+<!--  الحمد لله رب العالمين   -->
+<!--  والصلاة والسلام على سيدنا محمد   -->
+<!--  وعلى آله وصحبه ومن تبعهم بإحسان إلى يوم الدين  -->
+
+<!--  TAWKIT APPLICATION (HORIZONTAL AND VERTICAL DISPLAY)   -->
+<!--  FREE TO USE, MODIFY AND DESTRIBUTE, BUT NOT TO SELL  -->
+
+<!--  WWW.TAWKIT.NET -->
+<!--  AUTHOR : 	ISMAIL CHAGDALI info@tawkit.net -->
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+<head>
+<title>---</title>
+<meta http-equiv='content-type' content='text/html; charset=UTF-8' />
+<meta http-equiv='cache-control' content='public'>
+<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' />
+<link rel='icon' href='./favicon.ico'>
+<script type='text/javascript' src='./ayats.js?c=333'></script>
+<script type='text/javascript' src='./countries.js'></script>
+
+<script type="text/javascript" language="javascript">  
+var JS_VERSIO = new Date().getTime(); 
+document.write("<link rel='stylesheet' href='./style.css?s="+JS_VERSIO+"'>");
+var JS_LANG_NOW = "AR";
+var eetempo = localStorage.getItem('STORAGE_LANG_NOW');
+if(eetempo) JS_LANG_NOW = eetempo;
+document.write("<script src='./languages/lang-"+JS_LANG_NOW+".js?s="+JS_VERSIO+"'><\/script>");
+document.write("<script src='./settings.js?s="+JS_VERSIO+"'><\/script>");
+</script>
+
+
+<script type="text/javascript" language="javascript">  
+
+var JS_APP_VERSION 			= '9.46';
+var JS_APP_NAME_VERSION 	= 'TAWKIT ' + JS_APP_VERSION;
+var JS_NET_ADRESS_VERSION 	= 'TAWKIT.NET ' + JS_APP_VERSION;
+var JS_LOGS_ENABLED			= false;
+
+let JS_ROOT = document.documentElement;
+
+var JS_TIMES		= '';
+var JS_WCSV_DATA	= '';
+
+var JS_bgSemiLITE 	= 'var(--bgSemiLITE)';
+var JS_BgSEKSALATS 	= 'var(--Color_SEKSALATS)';
+var JS_BgTUBE	  	= 'var(--Color_BGTUBE)';
+
+
+// --------------- VERTICALS THEMES COLORS --------------------------
+var JS_THEMES_VERTICALS_MAIN_COLORIO	= [
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#2F261D|#684B43|#A3A099|#F8F5F0', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',					
+											
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#572D17|#684B43|#A3A099|#F8F5F0',
+											
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#8E141C|#050505|#A3A099|#F8F5F0', 
+											'#114793|#050505|#A3A099|#F8F5F0',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											];
+
+
+
+// --------------- HORIZONTALS THEMES COLORS --------------------------
+var JS_THEMES_HORIZONTALS_MAIN_COLORIO	= [
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											
+											'#FFFFFF|#E0CFB1|#A3A099|#050505', 
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',	
+											
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',
+											'#FFFFFF|#E0CFB1|#A3A099|#050505',			
+											];
+
+
+var JS_ACTIVE_COLORYO = '';
+
+
+
+// MINUTES OF PRAYINGS ADJUSTMENTS
+var JS_ATHAN_MINUTES_OF_FAJR		= 0;
+var JS_ATHAN_MINUTES_OF_SHOROQ		= 0;
+var JS_ATHAN_MINUTES_OF_DOHR		= 0;
+var JS_ATHAN_MINUTES_OF_ASR			= 0;
+var JS_ATHAN_MINUTES_OF_MAGHRIB		= 0;
+var JS_ATHAN_MINUTES_OF_ISHA		= 0;
+
+var JS_DOA_AFTER_AZAN		= "";
+var JS_DOA_SYAM_MONDAY		= "";
+var JS_DOA_SYAM_THURSDAY	= "";
+
+
+// ----- Duration Of Praying Of Every Salat, (Dim-Screen-Time)
+var JS_PRAY_DURATION_OF_FAJR		= 10;
+var JS_PRAY_DURATION_OF_SHOROQ		=  5; // no need adjustement, fixed 2-rakats(5min max)   [after shoroq+15min], 
+var JS_PRAY_DURATION_OF_DOHR		=  9;
+var JS_PRAY_DURATION_OF_ASR			=  9;
+var JS_PRAY_DURATION_OF_MAGHRIB		=  7;
+var JS_PRAY_DURATION_OF_ISHA		= 10;
+
+
+var JS_THIS_IS_RAMADAN 				= false;
+var JS_JOMOA_DIM_MINIUTES_BEFORE	=  0;
+var JS_JOMOA_DIM_MINIUTES_AFTER		= 25;
+var JS_DISPLAY_IS_HORIZONTAL 		= true;
+
+
+var tempo = 0;
+
+
+var JS_FULLSCREEN_COUNTER = false;
+var eetempo = localStorage.getItem('STORAGE_FULLSCREEN_COUNTER');
+if(eetempo == '1') JS_FULLSCREEN_COUNTER = true;
+
+tempo = localStorage.getItem('STORAGE_JOMOA_DIM_BEFORE');	if(tempo) {JS_JOMOA_DIM_MINIUTES_BEFORE = parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_JOMOA_DIM_AFTER');	if(tempo) {JS_JOMOA_DIM_MINIUTES_AFTER 	= parseInt(tempo);}
+
+
+var JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE = false;
+var eetempo = localStorage.getItem('STORAGE_AUDIO_BY_VOICE');
+if(eetempo == '1') JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE	= true;
+
+
+var JS_SHORT_AZAN_ACTIVE = false;
+var eetempo = localStorage.getItem('STORAGE_JS_SHORT_AZAN_ACTIVE');
+if(eetempo == '1') JS_SHORT_AZAN_ACTIVE	= true;
+
+var JS_SHORT_IQAMA_ACTIVE = false;
+var eetempo = localStorage.getItem('STORAGE_JS_SHORT_IQAMA_ACTIVE');
+if(eetempo == '1') JS_SHORT_IQAMA_ACTIVE	= true;
+
+
+
+var JS_RAMADAN_30MIN_ACTIVE = false;
+var eetempo = localStorage.getItem('STORAGE_RAMADAN_30MIN_ACTIVE');
+if(eetempo == '1') JS_RAMADAN_30MIN_ACTIVE	= true;
+
+var JS_SUMMER_ADD1HOUR = false;
+var eetempo = localStorage.getItem('STORAGE_SUMMER_ADD1HOUR');
+if(eetempo == '1') JS_SUMMER_ADD1HOUR	= true;
+
+var JS_1HOURMORE = false;
+var eetempo = localStorage.getItem('STORAGE_JS_1HOURMORE');
+if(eetempo == '1') JS_1HOURMORE	= true;
+
+var JS_1LESSMORE = false;
+var eetempo = localStorage.getItem('STORAGE_JS_1LESSMORE');
+if(eetempo == '1') JS_1LESSMORE	= true;
+
+var JS_24H_ACTIVE = false;
+var eetempo = localStorage.getItem('STORAGE_24H_ACTIVE');
+if(eetempo == '1') JS_24H_ACTIVE = true;
+
+
+var JS_FULL_CLOCK_ACTIVE = false;
+var eetempo = localStorage.getItem('STORAGE_FULL_CLOCK_ACTIVE');
+if(eetempo == '1') JS_FULL_CLOCK_ACTIVE = true;
+
+var JS_DIMM_WHILE_PRAYIN_ACTIVE = true;
+var eetempo = localStorage.getItem('STORAGE_DIMM_SCREEN');
+if(eetempo == '0') JS_DIMM_WHILE_PRAYIN_ACTIVE	= false;
+
+var JS_PAST_DIMER_ACTIVE = true;
+var eetempo = localStorage.getItem('STORAGE_PAST_DIMER_ACTIVE');
+if(eetempo == '0') JS_PAST_DIMER_ACTIVE	= false;
+
+var JS_IQAMA_FULL_TIMES = false;
+var eetempo = localStorage.getItem('STORAGE_IQAMA_FULL_TIMES');
+if(eetempo == '1') JS_IQAMA_FULL_TIMES	= true;
+
+var JS_IQAMA_UNDER_NAMES = false;
+var eetempo = localStorage.getItem('STORAGE_IQAMA_UNDER_NAMES');
+if(eetempo == '1') JS_IQAMA_UNDER_NAMES	= true;
+
+tempo = localStorage.getItem('STORAGE_AZAN_FAJR');		if(tempo) {JS_ATHAN_MINUTES_OF_FAJR 	= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_AZAN_SHOROQ');	if(tempo) {JS_ATHAN_MINUTES_OF_SHOROQ 	= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_AZAN_DOHR');		if(tempo) {JS_ATHAN_MINUTES_OF_DOHR 	= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_AZAN_ASR');		if(tempo) {JS_ATHAN_MINUTES_OF_ASR 		= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_AZAN_MAGHRIB');	if(tempo) {JS_ATHAN_MINUTES_OF_MAGHRIB 	= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_AZAN_ISHA');		if(tempo) {JS_ATHAN_MINUTES_OF_ISHA 	= parseInt(tempo);}
+
+tempo = localStorage.getItem('STORAGE_DURATION_FAJR');		if(tempo) {JS_PRAY_DURATION_OF_FAJR 	= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_DURATION_DOHR');		if(tempo) {JS_PRAY_DURATION_OF_DOHR 	= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_DURATION_ASR');		if(tempo) {JS_PRAY_DURATION_OF_ASR 		= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_DURATION_MAGHRIB');	if(tempo) {JS_PRAY_DURATION_OF_MAGHRIB 	= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_DURATION_ISHA');		if(tempo) {JS_PRAY_DURATION_OF_ISHA 	= parseInt(tempo);}
+
+
+// ----- DEFAULT IQAMA TIMES IN MINUTES ------------------
+var JS_IQAMA_TIME_OF_FAJR		= 10;
+var JS_IQAMA_TIME_OF_SHOROQ		= 15;
+var JS_IQAMA_TIME_OF_DOHR		= 10;
+var JS_IQAMA_TIME_OF_ASR		= 10;
+var JS_IQAMA_TIME_OF_MAGHRIB	= 10;
+var JS_IQAMA_TIME_OF_ISHA		= 10;
+
+tempo = localStorage.getItem('STORAGE_IQAMA_FAJR');		if(tempo) {JS_IQAMA_TIME_OF_FAJR 		= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_IQAMA_SHOROQ');	if(tempo) {JS_IQAMA_TIME_OF_SHOROQ 		= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_IQAMA_DOHR');		if(tempo) {JS_IQAMA_TIME_OF_DOHR 		= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_IQAMA_ASR');		if(tempo) {JS_IQAMA_TIME_OF_ASR 		= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_IQAMA_MAGHRIB');	if(tempo) {JS_IQAMA_TIME_OF_MAGHRIB 	= parseInt(tempo);}
+tempo = localStorage.getItem('STORAGE_IQAMA_ISHA');		if(tempo) {JS_IQAMA_TIME_OF_ISHA 		= parseInt(tempo);}
+
+
+
+var JS_MOSQUE_NAME = JS_eLang.HereMosqueName;
+var STRtempo = localStorage.getItem('STORAGE_MOSQUE_NAME'); if(STRtempo) {JS_MOSQUE_NAME = STRtempo;}
+
+var JS_CITY_CODE = "SA.MAKKAH";
+var STRtempo = localStorage.getItem('STORAGE_CITY_CODE'); if(STRtempo) {JS_CITY_CODE = STRtempo;}
+
+var JS_PERSO_FIXED_JOMOA = "";
+var STRtempo = localStorage.getItem('STORAGE_PERSO_FIXED_JOMOA'); if(STRtempo) {JS_PERSO_FIXED_JOMOA = STRtempo;}
+
+var JS_FIXED_IQAMATDOHR = "";
+var STRtempo = localStorage.getItem('STORAGE_FIXED_IQAMATDOHR'); if(STRtempo) {JS_FIXED_IQAMATDOHR = STRtempo;}
+
+
+var JS_WCSV_ACTIVE = false;
+var eetempo = localStorage.getItem('STORAGE_WCSV_ACTIVE');
+if(eetempo == '1') JS_WCSV_ACTIVE = true;
+
+
+if(JS_WCSV_ACTIVE)
+{
+var JS_wcsvFile	= './wcsv.js?e='+ JS_VERSIO;
+document.write("<script src='"+JS_wcsvFile+"'><\/script>");
+JS_IQAMA_FULL_TIMES	= true; // FORCE SHOW FULL IQAMA TIMES
+}
+else
+{
+var tmp   = JS_CITY_CODE.split(".");
+var yFile = './data/'+tmp[0]+'/wtimes-'+JS_CITY_CODE+'.js?e='+ JS_VERSIO;
+document.write("<script src='"+yFile+"'><\/script>");
+}
+
+
+
+</script>
+
+</head>
+
+
+<!-- BODY  +++++++++++++++++++++++++++++++++++++   -->
+<body onload='_cadro();' onresize='_cadro();'>
+
+<div style='position:absolute;  left:33%; top:2%; z-index:203;' >
+	<audio id='eVoiceAzan' 		src='./audio/audio_azan.mp3'></audio>
+	<audio id='eVoiceFajr' 		src='./audio/audio_fajr.mp3'></audio>	
+	<audio id='shortAzan' 		src='./audio/short_azan.mp3'></audio>
+	<audio id='shortIqama' 		src='./audio/short_iqama.mp3'></audio>		
+	<audio id='eBeeep' 			src='./audio/audio_wbeeep.wav'></audio>
+	<audio id='eTit' 			src='./audio/audio_wtit.wav'></audio>
+
+</div>
+
+
+
+<!--  =======eMainVERTICAL====================================  -->
+<div id='eMainVERTICAL' class='cVERTICAL' style='width:100%; height:100%; background:url(); background-repeat:no-repeat; background-size:100% 100%;' >
+
+
+	<div id='_eVertical_TOP' class='CSS_HAFS' style='position:relative; left:0%; top:0%; height:3%; width:100%;' >
+		<div id='eHamburgerMENU'  class='cssMenuICO' onclick='ShowGlobalHELP();' > &#9776; &nbsp;</div>	
+	</div>
+
+	
+	<div id='_eVertical_CENTRAL' class='CSS_HAFS' style='position:relative; left:0%; top:0%; height:97%; width:100%;' >
+	
+
+			<div style='position:relative; left:0px; top:0px; height:26%; width:100%;' >
+				<div id='_VR_TopDATES' lang='ar' align='center' onclick='HijriClick();' >
+					<div id='_eYOUM' 	class='cssVReYOUM' ></div>
+					<div id='_eHIJRI' 	class='cssVReHIJRI' ></div>
+					<div id='_eMILADI' 	class='cssVReMILADI' ></div>
+				</div>
+			</div>
+
+
+
+			<!-- CLOCK --->
+			<div class='cNowDIGITS' style='position:relative; left:0px; top:0px; height:11%; width:100%; z-index:997; ' >
+				
+				<div id='CLOKO_MINI_VR' style='visibility:visible; position:absolute; left:0%; top:0%; width:100%; height:100%;' >
+					<div class='CSS_FON_SECS' align='right' id='_eSECS'  >--</div>
+					<div class='CSS_FON_HOUR' align='right' id='_eFullHOUR' >--:--</div>
+					<div class='CSS_FON_AMPM' align='right' id='_eAMPM' >--</div>
+				</div>			
+				
+				<div id='CLOKO_FULL_VR' align='center' style='visibility:hidden; position:absolute; left:0%; top:0%; width:100%; height:100%;' >
+					<div class='CSS_CLOKO cNowDIGITS' >
+					<span id='_VR_eFullCLOKO' >--:--</span><span id='_VR_sssCLOKO' >:--</span>
+					</div>
+				</div>		
+
+			</div>
+	
+
+
+			<!--  theSVG  -->
+			<svg id='theSVG' viewBox='0 0 36 36' style='position:absolute; z-index:333; left:2%; top:46%; width:34%; height:21%; visibility:hidden;'>
+			  <path id='baseCIRCLE' style="opacity:1; stroke:transparent; fill:var(--Color_BGTUBE); stroke-width:3;" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+			  <path id='dynoCIRCLE' style="visibility:hidden; stroke:var(--Color_SEKSALATS); fill:none;  stroke-width:3;" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+			</svg>
+
+			<div id='_eTheDecompteBOX' align='center' class='centro1' style='position:absolute; z-index:337; left:2%; top:46%; width:34%; height:21%; visibility:hidden;' >
+				<div class='centro2' >
+				<div id='_eDECOMPTO' class='CSS_SHADOW  cNowDIGITS' dir='rtl' style='font-size:10vw; color:var(--Color_SEKSALATS);' >--:--</div>
+				</div>
+			</div>	
+				
+					
+			<!--  VR NEXT_PRAY -->
+			<svg id='TheNextPRAY' viewBox='0 0 36 36' style='position:absolute; z-index:333; left:2.3%; top:46%; width:34%; height:21%; visibility:visible;'>
+			  <path id='_eNextoCIRCLE' style="opacity:0.15; stroke:silver; fill:none; stroke-width:1;" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+			</svg>
+
+			<div id='TheNextBOX' align='center' class='centro1' style='position:absolute; color:var(--Color_SEKSALATS); z-index:337; left:2.3%; top:46%; width:34%; height:21%; visibility:visible;' >
+				<div class='centro2' >
+				<div id='_eNextoTIME' class='CSS_SHADOW  cNowDIGITS' dir='rtl' style='font-size:10vw;' >---</div>
+				</div>
+			</div>	
+
+
+
+			<!-- VRAzanCOMES -->
+			<div id='VRAzanCOMES' align='center' class='cssAZANO'>
+				<div style='margin-top:17%;' >
+				<div id='eeeTextAZAN' ></div>
+				<div id='eeeNowNAMEazan' style='font-size:160%;' >-</div>
+				</div>
+			</div>
+
+
+			<!-- LEVEL_4 --->
+			<div id='_eMIDDLE' style='position:relative; left:0px; top:0px; height:10%; width:100%;' >
+			<table align='center' cellpadding='0' cellspacing='0' border='0' width='100%' style='' >
+			<tr>
+			<td id='_eDynTEXT' height='30' width='100%' align='center' class='CSS_AYATS CSS_CORAN' dir='rtl' style='visibility:visible;' onclick='_GoMessages();'>
+			---
+			</td>
+			</tr>
+			</table>
+			</div>
+
+
+
+			<!-- LEVEL_C_1 --->
+			<div class='cccROUND' id='tube0'>
+				<div align='right' id='t0' class='eeeNAMEar' onclick='demoThemesNEXT();' >-</div>
+				<div align='right' id='s0' class='eeeHOURar cNowDIGITS' onclick='demoThemesBACK();' ></div>
+				<span id='qm1' class='eeeIQAMAar cNowDIGITS' >-</span>
+				<span id='_demain' class='eDemain cNowDIGITS' ></span>
+			</div>
+			<!-- LEVEL_C_2 --->
+			<div class='cccROUND' id='tube1' >
+				<div align='right' id='t1' class='eeeNAMEar' onclick='TestCounter();' >-</div>
+				<div align='right' id='s1' class='eeeHOURar cNowDIGITS' ></div>
+				<span id='qm2' class='eeeIQAMAar cNowDIGITS' >-</span>
+			</div>
+			<!-- LEVEL_C_3 --->
+			<div class='cccROUND' id='tube2' >
+				<div align='right' id='t2' class='eeeNAMEar' >-</div>
+				<div align='right' id='s2' class='eeeHOURar cNowDIGITS' ></div>
+				<span id='qm3' class='eeeIQAMAar cNowDIGITS' >-</span>
+			</div>
+			<!-- LEVEL_C_4 --->
+			<div class='cccROUND' id='tube3' >
+				<div align='right' id='t3' class='eeeNAMEar' >-</div>
+				<div align='right' id='s3' class='eeeHOURar cNowDIGITS' ></div>
+				<span id='qm4' class='eeeIQAMAar cNowDIGITS' >-</span>
+			</div>
+			<!-- LEVEL_C_5 --->
+			<div class='cccROUND' id='tube4' >
+				<div align='right' id='t4' class='eeeNAMEar' >-</div>
+				<div align='right' id='s4' class='eeeHOURar cNowDIGITS' ></div>
+				<span id='qm5' class='eeeIQAMAar cNowDIGITS' >-</span>
+			</div>
+			<!-- LEVEL_C_6 --->
+			<div class='cccROUND' id='tube5' >
+				<div align='right' id='t5' class='eeeNAMEar' onclick='testACTIVE();' >-</div>
+				<div align='right' id='s5' class='eeeHOURar cNowDIGITS' ></div>
+				<span id='qm6' class='eeeIQAMAar cNowDIGITS' >-</span>
+			</div>
+			
+
+
+			<div id='VR_LOGO' align='center' class='imgLOGO' >
+				<img width='100%' border='0' alt='' src='./logo.png' style='position:absolute; left:0%; bottom:0%;' />
+			</div>	
+
+			<!-- _bottom_HOLDER --->
+			<div align='center' class='CSS_BottomMSG CSS_HAFS' ><span id='_VRMsqNAME' style='padding:0.3% 3%;' >---</span></div>
+
+			<div id='eVERSIO' class='CSS_HAFS cssLocationVERSION' align='center' >---</div>
+			<div id='_eMarqueeTEXT' align='center' class='CSS_Marquee CSS_HAFS' style='z-index:109; visibility:hidden;' >----</div>
+
+
+<!-- EndOfVerticalMiddle  -->
+</div>
+
+
+<!-- DIM SCREEN -->
+<div id='eRIDO' class='CSS_BlackSCREEN' onclick='RemoveBlackScreen();'>
+<img id='eMobile' border='0' class='cssNoMOBILE' src='./no-mobile.png' />
+</div>
+
+<!-- END OF mainVERTICAL   -->
+</div>
+
+
+
+
+<!--  +++++++++++++++++++++++++++++++++++++   -->
+<!--  +++++++++++++++++++++++++++++++++++++   -->
+<!--  +++++++++++++++++++++++++++++++++++++   -->
+
+
+
+
+<!--  =======eMainHORIZONTAL====================================  -->
+<div id='eMainHORIZONTAL' class='cHORIZONTAL CSS_HAFS' style='width:100%; height:100%; background:url(); background-repeat:no-repeat; background-size:100% 100%;' >
+
+
+			<!-- e111 --->
+			<div style='position:relative; height:2%; width:100%;'>
+				<div id='HReHamburgerMENU'  class='cssMenuICO' onclick='ShowGlobalHELP();' > &#9776; &nbsp;</div>
+			</div>
+
+
+			<!-- e333 --->
+			<div id='_HR_TopDATES' lang='ar' style='position:relative; left:0; top:0; height:27%; width:100%;' >
+				<table align='center' cellpadding='0' cellspacing='0' border='0' width='98%' >
+				<tr>
+					<td align='center' height='45' width='50%' valign='top' class='cssGeneralMsqNAME'>
+					<span id='_HRMsqNAME'></span>
+					</td>
+
+					<td align='right' height='45' width='50%' valign='top' class='cssGeneralDate'>
+					<span id='_HR_YOUM' ></span>&nbsp;<span id='_HR_MILADI'></span> &nbsp;.&nbsp; 
+					<span id='_HReHIJRI' onclick='HijriClick();' ></span>
+					</td>
+				</tr>
+				</table>
+			</div>
+
+		
+
+			<!-- _e444_HReMIDDLE --->
+			<div id='_HR_eMIDDLE' style='position:relative; height:61%; width:100%;'>
+			
+						<table align='center' cellpadding='0' cellspacing='0' border='0' width='100%' >
+						<tr>
+						<td class='CSS_LATINO' height='90' width='20%' align='center' valign='top' style='position:relative;'>
+						&nbsp;
+						</td>
+						<td id='_HReDynMAIN' height='90' width='60%' align='center'>
+								<div style='height:100%;' >
+										<div align='center' class='CSS_SHADOW  cNowDIGITS' style='position:relative; height:39%; z-index:997;' >
+											
+											<div id='CLOKO_MINI_HR' class='CSS_MINI_CLK' >
+												<div class='CSS_FON_HOUR' id='_HR_eFullHOUR' >--:--</div>
+												<span class='CSS_FON_SECS' id='_HR_eSECS' >--</span>
+												<span class='CSS_FON_AMPM' id='_HR_eAMPM' >--</span>
+											</div>
+											
+											<div id='CLOKO_FULL_HR' style='visibility:hidden; position:absolute; left:0%; top:0%; width:100%; height:100%;' >
+												<div id='eHRCLOKO' class='CSS_CLOKO' >
+												<span id='_HR_eFullCLOKO' >--:--</span><span id='_HR_sssCLOKO' >:--</span>
+												</div>
+											</div>
+											
+										</div>
+										<!--  HR ayats  -->
+										<div style='position:relative; height:23%;' >
+											<div id='_HReDynTEXT' class='CSS_SHADOW CSS_AYATS_ALONGO CSS_CORAN' dir='rtl' onclick='_GoMessages();' >---</div>
+										</div>
+								</div>
+						</td>
+						
+						<td class='CSS_LATINO' height='90' width='20%' align='center' valign='top' style='position:relative;'>
+						&nbsp;
+						</td>
+						
+						</tr>
+						</table>
+						
+
+
+
+		
+			<div id='HR_LOGO' align='center' class='HRimgLOGO_ALONGO' >
+				<img width='100%' border='0' alt='' src='./logo.png' style='position:absolute; left:0%; bottom:0%;' />
+			</div>	
+
+
+
+
+			<!--  HRtheSVG  -->
+			<svg id='HRtheSVG' viewBox='0 0 36 36' style='position:absolute; z-index:333; left:76.7%; bottom:41%; width:24%; height:61%; visibility:hidden;'>
+				<path id='HRbaseCIRCLE' style="opacity:1; stroke:transparent; fill:var(--Color_BGTUBE); stroke-width:3;" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+			 	<path id='HRdynoCIRCLE' style="visibility:hidden; stroke:var(--Color_SEKSALATS); fill:none;  stroke-width:3;" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+			</svg>	
+			<!--  HR NEXT_IQAMA -->					
+			<div id='_HReTheDecompteBOX' align='center' class='cssHR_DECOMTO_ALONGO centro1' >
+				<div class='centro2' >
+				<div id='_HReDECOMPTO' class='CSS_SHADOW  cNowDIGITS' dir='rtl' style='font-size:5.8vw; color:var(--Color_SEKSALATS);' >--:--</div>
+				</div>
+			</div>					
+
+			<!--  HR NEXT_PRAY -->
+			<svg id='HRTheNextPRAY' viewBox='0 0 36 36' style='position:absolute; z-index:333; left:79.7%; bottom:47%; width:18%; height:52%; visibility:visible;'>
+			  <path id='_HReNextoCIRCLE' style="opacity:0.15; stroke:silver; fill:none; stroke-width:1;" stroke-dasharray="100, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+			</svg>
+			<div id='HRTheNextBOX' align='center' class='cssHR_NEXTPRAY_DATA_ALONGO centro1' >
+				<div class='centro2' >
+				<div id='_HReNextoTIME' class='CSS_SHADOW cNowDIGITS' dir='rtl' style='font-size:4.8vw;' >---</div>
+				</div>
+			</div>	
+
+			<!-- HRAzanCOMES -->
+			<div id='HRAzanCOMES' align='center' class='cssAZANO_ALONGO'>
+				<div style='margin-top:17%;' >
+				<div id='eeeHRTextAZAN' ></div>
+				<div id='HHHNowNAMEazan' style='font-size:160%;' >-</div>
+				</div>
+			</div>
+
+
+
+			<!-- HORIZONTAL_ALONGO --->
+			<div id='HahowaALONGO' class='wwwALONGO CSS_LATINO' >
+					
+						<table id='alongotablo' align='center' dir='rtl' cellpadding='0' cellspacing='0' border='0' width='100%' >
+						<tr>
+							<td id='W333HRtube0' align='right' width='16%' class='opac1'>
+								<div id='W333Ht0' class='wwwNAMEar CSS_SHADOW' onclick='demoThemesNEXT();' >--- </div>
+								<div id='W333H_s0' class='wwwHOUR CSS_SHADOW cNowDIGITS' onclick='demoThemesBACK();' ></div>
+								<div id='W333HRqm1' class='wwwIQAMA cNowDIGITS cWCSVIQAMA' >-</div>
+								<div id='W333_HRdemain' class='wwwDemain cNowDIGITS ' ></div>
+							</td>
+							<td id='W333HRtube1' align='right' width='16%' class='opac1'>
+								<div id='W333Ht1' class='wwwNAMEar CSS_SHADOW' onclick='TestCounter();'>--- </div>
+								<div id='W333H_s1' class='wwwHOUR CSS_SHADOW cNowDIGITS'></div>
+								<div id='W333HRqm2' class='wwwIQAMA cNowDIGITS cWCSVIQAMA' >-</div>
+							</td>
+							<td id='W333HRtube2' align='right' width='16%' class='opac1'>
+								<div id='W333Ht2' class='wwwNAMEar CSS_SHADOW'>--- </div>
+								<div id='W333H_s2' class='wwwHOUR CSS_SHADOW cNowDIGITS' ></div>
+								<div id='W333HRqm3' class='wwwIQAMA cNowDIGITS cWCSVIQAMA' >-</div>
+							</td>
+							<td id='W333HRtube3' align='right' width='16%' class='opac1'>
+								<div id='W333Ht3' class='wwwNAMEar CSS_SHADOW' onclick='LogsOnOff();'>--- </div>
+								<div id='W333H_s3' class='wwwHOUR CSS_SHADOW cNowDIGITS'></div>
+								<div id='W333HRqm4' class='wwwIQAMA cNowDIGITS cWCSVIQAMA' >-</div>
+							</td>
+							<td id='W333HRtube4' align='right' width='16%' class='opac1'>
+								<div id='W333Ht4' class='wwwNAMEar CSS_SHADOW'>--- </div>
+								<div id='W333H_s4' class='wwwHOUR CSS_SHADOW cNowDIGITS' ></div>
+								<div id='W333HRqm5' class='wwwIQAMA cNowDIGITS cWCSVIQAMA' >-</div>
+							</td>
+							<td id='W333HRtube5' align='right' width='16%' class='opac1'>
+								<div id='W333Ht5' class='wwwNAMEar CSS_SHADOW' onclick='testACTIVE();'>--- </div>
+								<div id='W333H_s5' class='wwwHOUR CSS_SHADOW cNowDIGITS'></div>
+								<div id='W333HRqm6' class='wwwIQAMA cNowDIGITS cWCSVIQAMA' >-</div>
+							</td>
+						</tr>
+						</table>
+				
+			</div>
+
+
+
+
+
+			</div>  <!-- end of middle div --->
+
+
+			<!-- _HReMarqueeTEXT --->
+			<div id='_HReMarqueeTEXT' align='center' class='CSS_Marquee CSS_SHADOW CSS_HAFS' >----</div>
+
+			<div align='right' id='_HR_BtmLOCATION' class='CSS_LATINO cssBtmLOCATION' >------</div>
+			<div align='left'  id='_HR_BtmVERSION'  class='CSS_LATINO cssBtmVERSION' >------</div>
+
+
+<!-- HReRIDO-->
+<div id='HReRIDO' class='CSS_BlackSCREEN' onclick='RemoveBlackScreen();'>
+<img id='HReMobile' border='0' class='cssNoMOBILE' src='./no-mobile.png' />
+</div>
+
+<!-- HRCONTO FULLSCREEN COUNTER-->
+<div id='HRCONTO' class='CSS_FullCONTO' onclick='CloseFullCONTO();'>
+<div id='ELBLACK'>&nbsp;</div>
+<div id='ELHOLDO'>
+	<div id='ELAYATS'></div>
+	<div id='ELCONTO'></div>
+	<div id='ELKLOKO'></div>
+</div>
+</div>
+
+<!-- END OF mainHORIZONTAL   -->
+</div>
+
+
+<button id='BtnAudio' onclick='forceAudio();' style='position:absolute; bottom:15px; z-index:3000; visibility:hidden;'> Azan Voice is Activated in Settings <br> Click Here To Enable Sounds in Browser</button>
+
+<!--  ======================================================   -->
+
+
+<!-- HELP SCREEN -->
+<div id='eHELPSCREEN' class='cssHelpSCREEN cssColorLITE' >
+		
+
+			<div align='center' class='cssSET'>
+				<div style='position:absolute; right:5%; top:35%;' ><span onclick="SetScroll('eMenuGRP', 0);">&#9650;</span> &nbsp;  <span onclick="SetScroll('eMenuGRP', 1);">&#9660;</span></div>
+			</div>
+
+			<div id='eMenuGRP' align='right' dir='rtl' class='cssMenuGRP CSS_HAFS'>
+				
+				<div class='cssMenuBTN btmline' dir='ltr' style='text-align:left; line-height:1.3em;'>
+					<span title='EN' class='CSS_EN33'  onclick='getLANGUAGE(this);'>EN</span> . 
+					<span title='FR' class='CSS_EN33'  onclick='getLANGUAGE(this);'>FR</span> . 
+					<span title='DE' class='CSS_EN33'  onclick='getLANGUAGE(this);'>DE</span> . 
+					<span title='ES' class='CSS_EN33'  onclick='getLANGUAGE(this);'>ES</span> . 
+					<span title='AR' class='CSS_AR33'  onclick='getLANGUAGE(this);'>العربية</span> 
+					<br>
+					<span title='ID' class='CSS_EN33'  onclick='getLANGUAGE(this);'>ID</span> . 
+					<span title='TR' class='CSS_EN33'  onclick='getLANGUAGE(this);'>TR</span> . 
+					<span title='BN' class='CSS_AR44'  onclick='getLANGUAGE(this);'>বাংলা</span> . 
+					<span title='UR' class='CSS_AR33'  onclick='getLANGUAGE(this);'>اردو</span> .
+					<span title='IN' class='CSS_EN33'  onclick='getLANGUAGE(this);'>हिन्दी</span> 
+				</div>
+				
+				<div class='cssMenuBTN' id='AAA_FullSCREEN'		onclick="CloseHELP(); goFullSCREEN();">-</div>
+				<div class='cssMenuBTN' id='AAA_MosqueNAME'		onclick="CloseHELP(); editMOSQUENAME();">-</div>
+				<div class='cssMenuBTN' id='AAA_LOCALISATION' 	onclick="CloseHELP(); ShowZunder('e_LOCALISATION');">-</div>
+				<div class='cssMenuBTN' id='AAA_set_THEMES' 	onclick="CloseHELP(); ShowZunder('e_THEMES');">-</div>
+				<div class='cssMenuBTN' id='AAA_e_OPTIONS' 		onclick="CloseHELP(); ShowZunder('e_OPTIONS');">-</div>
+				<div class='cssMenuBTN' id='AAA_ADJUSTMENTS' 	onclick="CloseHELP(); ShowZunder('e_ADJUSTMENTS');">-</div>
+				<div class='cssMenuBTN' id='AAA_BLACKSCREEN' 	onclick="CloseHELP(); ShowZunder('e_BLACKSCREEN');">-</div>
+				<div class='cssMenuBTN ' id='AAA_HijriClick' 	onclick="CloseHELP(); HijriHELP();">-</div>
+				<div class='cssMenuBTN' dir='ltr' style='text-align:center;'>
+					<br><br><span class='CSS_HAFS sm85' >البرنامج  مجاني ولا يجوز بيعه</span><br><br>
+						<div style=' letter-spacing:0.05em;' >
+						<span class='CSS_EN33' onclick='ClearSETTINGS();'>RESET</span>&nbsp;. 
+						<span class='CSS_EN33' onclick='location.reload();'>RELOAD</span>&nbsp;. 
+						<span class='CSS_EN33' onclick="window.open('https://www.tawkit.net/contact/', '_blank');">CONTACT</span><br><br>
+						<span class='CSS_EN33' onclick="window.open('https://www.tawkit.net/', '_blank');">&copy; TAWKIT.NET</span><br>
+						</div>
+					<br>
+				</div>
+				
+			</div>
+		
+</div>
+
+
+<!--  ======================================================   -->
+<!--  ======================================================   -->
+<!--  ======================================================   -->
+
+
+			<!-- ■■■■■■■■■■■■ THEMES ■■■■■■■■■■■■■■■■■■■ -->
+			<div id='e_THEMES' class='cssModelSettingsWINDOW cssColorLITE' >
+
+				<div class='cssTitlesHOLDER'>
+					<div class='cssWindowTITLE' ></div>
+					<div class='cssWindowCLOSE' ><span onclick="SetScroll('scroTHEMES', 0);">&#9650;</span> &nbsp;  <span onclick="SetScroll('scroTHEMES', 1);">&#9660;</span> &nbsp;&nbsp;&nbsp; <span onclick='closeThis(this.parentNode);'>&#10006;</span></div>
+				</div>
+	
+				<div id='scroTHEMES' class='cssSettingsDATA'>
+				
+
+							<!--  VR THEMES  -->
+							<div id='sssVR' style='display:none;'>
+							<table align='center' cellpadding='0' cellspacing='3' border='0' width='100%'>
+							<tr>
+								<td height='40' width='16%'><div id='tmV_0' class='CSS_VR_THEMER' onclick='changeBG(0); CloseTHEMES();'  >0</div></td>
+								<td height='40' width='16%'><div id='tmV_1' class='CSS_VR_THEMER' onclick='changeBG(1); CloseTHEMES();'  >1</div></td>
+								<td height='40' width='16%'><div id='tmV_2' class='CSS_VR_THEMER' onclick='changeBG(2); CloseTHEMES();'  >2</div></td>
+								<td height='40' width='16%'><div id='tmV_3' class='CSS_VR_THEMER' onclick='changeBG(3); CloseTHEMES();'  >3</div></td>
+								<td height='40' width='16%'><div id='tmV_4' class='CSS_VR_THEMER' onclick='changeBG(4); CloseTHEMES();'  >4</div></td>
+								<td height='40' width='16%'><div id='tmV_5' class='CSS_VR_THEMER' onclick='changeBG(5); CloseTHEMES();'  >5</div></td>
+							</tr>
+							<tr>
+								<td height='40' width='16%'><div id='tmV_6' class='CSS_VR_THEMER' onclick='changeBG(6); CloseTHEMES();'  >6</div></td>
+								<td height='40' width='16%'><div id='tmV_7' class='CSS_VR_THEMER' onclick='changeBG(7); CloseTHEMES();'  >7</div></td>
+								<td height='40' width='16%'><div id='tmV_8' class='CSS_VR_THEMER' onclick='changeBG(8); CloseTHEMES();'  >8</div></td>
+								<td height='40' width='16%'><div id='tmV_9' class='CSS_VR_THEMER' onclick='changeBG(9); CloseTHEMES();'  >9</div></td>
+								<td height='40' width='16%'><div id='tmV_10' class='CSS_VR_THEMER' onclick='changeBG(10); CloseTHEMES();'  >10</div></td>
+								<td height='40' width='16%'><div id='tmV_11' class='CSS_VR_THEMER' onclick='changeBG(11); CloseTHEMES();'  >11</div></td>
+							</tr>
+							<tr>
+								<td height='40' width='16%'><div id='tmV_12' class='CSS_VR_THEMER' onclick='changeBG(12); CloseTHEMES();'  >12</div></td>
+								<td height='40' width='16%'><div id='tmV_13' class='CSS_VR_THEMER' onclick='changeBG(13); CloseTHEMES();'  >13</div></td>
+								<td height='40' width='16%'><div id='tmV_14' class='CSS_VR_THEMER' onclick='changeBG(14); CloseTHEMES();'  >14</div></td>
+								<td height='40' width='16%'><div id='tmV_15' class='CSS_VR_THEMER' onclick='changeBG(15); CloseTHEMES();'  >15</div></td>
+								<td height='40' width='16%'><div id='tmV_16' class='CSS_VR_THEMER' onclick='changeBG(16); CloseTHEMES();'  >16</div></td>
+								<td height='40' width='16%'><div id='tmV_17' class='CSS_VR_THEMER' onclick='changeBG(17); CloseTHEMES();'  >17</div></td>
+							</tr>
+							</table>
+							</div>
+
+							
+							<!--  HR THEMES  -->
+							<div id='sssHR' style='display:block;'>
+							<table align='center' cellpadding='0' cellspacing='3' border='0' width='100%' >
+							<tr>
+								<td height='40' width='16%'><div id='tmH_0' class='CSS_HR_THEMER' onclick='changeBG(0); CloseTHEMES();'  >0</div></td>
+								<td height='40' width='16%'><div id='tmH_1' class='CSS_HR_THEMER' onclick='changeBG(1); CloseTHEMES();'  >1</div></td>
+								<td height='40' width='16%'><div id='tmH_2' class='CSS_HR_THEMER' onclick='changeBG(2); CloseTHEMES();'  >2</div></td>
+								<td height='40' width='16%'><div id='tmH_3' class='CSS_HR_THEMER' onclick='changeBG(3); CloseTHEMES();'  >3</div></td>
+								<td height='40' width='16%'><div id='tmH_4' class='CSS_HR_THEMER' onclick='changeBG(4); CloseTHEMES();'  >4</div></td>
+								<td height='40' width='16%'><div id='tmH_5' class='CSS_HR_THEMER' onclick='changeBG(5); CloseTHEMES();'  >5</div></td>
+							</tr>
+							<tr>
+								<td height='40' width='16%'><div id='tmH_6' class='CSS_HR_THEMER' onclick='changeBG(6); CloseTHEMES();'  >6</div></td>
+								<td height='40' width='16%'><div id='tmH_7' class='CSS_HR_THEMER' onclick='changeBG(7); CloseTHEMES();'  >7</div></td>
+								<td height='40' width='16%'><div id='tmH_8' class='CSS_HR_THEMER' onclick='changeBG(8); CloseTHEMES();'  >8</div></td>
+								<td height='40' width='16%'><div id='tmH_9' class='CSS_HR_THEMER' onclick='changeBG(9); CloseTHEMES();'  >9</div></td>
+								<td height='40' width='16%'><div id='tmH_10' class='CSS_HR_THEMER' onclick='changeBG(10); CloseTHEMES();'  >10</div></td>
+								<td height='40' width='16%'><div id='tmH_11' class='CSS_HR_THEMER' onclick='changeBG(11); CloseTHEMES();'  >11</div></td>
+							</tr>
+							<tr>
+								<td height='40' width='16%'><div id='tmH_12' class='CSS_HR_THEMER' onclick='changeBG(12); CloseTHEMES();'  >12</div></td>
+								<td height='40' width='16%'><div id='tmH_13' class='CSS_HR_THEMER' onclick='changeBG(13); CloseTHEMES();'  >13</div></td>
+								<td height='40' width='16%'><div id='tmH_14' class='CSS_HR_THEMER' onclick='changeBG(14); CloseTHEMES();'  >14</div></td>
+								<td height='40' width='16%'><div id='tmH_15' class='CSS_HR_THEMER' onclick='changeBG(15); CloseTHEMES();'  >15</div></td>
+								<td height='40' width='16%'><div id='tmH_16' class='CSS_HR_THEMER' onclick='changeBG(16); CloseTHEMES();'  >16</div></td>
+								<td height='40' width='16%'><div id='tmH_17' class='CSS_HR_THEMER' onclick='changeBG(17); CloseTHEMES();'  >17</div></td>
+							</tr>
+							</table>
+							</div>
+
+							
+							<!--  +++++++++++++++++++++++++++++++++++++   -->
+							<div class='CSS_X_LANG_DIRECTION' >
+								<table align='center' cellpadding='3' cellspacing='0' border='0' width='100%' class='cccTBL1' >
+								<tr>
+									<td height='20' width='100%' align='center' style='font-size:70%;' id='XX_MISC_1'></td>
+								</tr>
+								</table>
+							</div>
+
+
+							
+				</div>
+				
+			</div>
+
+
+			<!-- ■■■■■■■■■■■■ OPTIONS  ■■■■■■■■■■■■■■■■■■■ -->
+			<div id='e_OPTIONS' class='cssModelSettingsWINDOW cssColorLITE' >
+
+				<div class='cssTitlesHOLDER'>
+					<div class='cssWindowTITLE' ></div>
+					<div class='cssWindowCLOSE' ><span class='hnd' onclick="SetScroll('scroOPTIONS', 0);">&#9650;</span> &nbsp;  <span class='hnd' onclick="SetScroll('scroOPTIONS', 1);">&#9660;</span> &nbsp;&nbsp;&nbsp; <span onclick='closeThis(this.parentNode);'>&#10006;</span></div>
+				</div>
+	
+				<div id='scroOPTIONS' class='cssSettingsDATA CSS_X_LANG_DIRECTION' >
+				
+					
+					<!--  ++++++++++++++++ 24H ON-OFF +++++++++++++++++++++   -->
+					<table align='center' cellpadding='2' cellspacing='0' border='0' width='100%' class='' >
+					<tr>
+						<td height='20' width='100%' align='' valign='center'>
+							<input type='checkbox' id='e24CHECK' class='cssCheckBOX' onchange='Set24OnOff()'> &nbsp; <label for='e24CHECK' id='XX_OPTION_0'> </label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++ FULL CLOCK +++++++++++++++++++++   -->
+					<tr>
+						<td height='20' width='100%' align='' valign='center'>
+							<input type='checkbox' id='eFullClockCHECK' class='cssCheckBOX' onchange='SetFullClockOnOff()'> &nbsp; <label for='eFullClockCHECK'><span id='XX_OPTION_1'>---</span>  "00:00:00" </label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++ DIM PAST TIMES +++++++++++++++++++++   -->
+					<tr>
+						<td height='20' width='100%' align='' valign='center'>
+							<input type='checkbox' id='ePastDimerCHECK' class='cssCheckBOX' onchange='SetPastDimerOnOff()'> &nbsp; <label for='ePastDimerCHECK' id='XX_OPTION_2'>---</label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++ IQAMA FULLE TIME +++++++++++++++++++++   -->
+					<tr>
+						<td height='20' width='100%' align='' valign='center'>
+							<input type='checkbox' id='eIQAMAasHOUR' class='cssCheckBOX' onchange='SetIqamaFullTimes()'> &nbsp; <label for='eIQAMAasHOUR' id='XX_IQAMAASHOUR'>---</label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++ IQAMA UNDER NAMES +++++++++++++++++++++   -->
+					<tr>
+						<td height='20' width='100%' align='' valign='center'>
+							<input type='checkbox' id='eIQAMAUNDERNAMES' class='cssCheckBOX' onchange='SetIqamaUnderNames()'> &nbsp; <label for='eIQAMAUNDERNAMES' id='W9_eIQAMAUNDERNAMES'>---</label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++ SET COUNTER BIG +++++++++++++++++++++   -->
+					<tr>
+						<td height='20' width='100%' align='' valign='center'>
+							<input type='checkbox' id='eCountdownCHECK' class='cssCheckBOX' onchange='SetCounterBIG()'> &nbsp; <label for='eCountdownCHECK' id='XX_ADJUST_1'> --- </label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++++++MP3++++++++++++++++   -->
+					<tr><td><hr></td></tr>
+					<tr>
+						<td height='20' width='100%'  valign='center'>
+							<input type='checkbox' id='eVoiceCHECK' class='cssCheckBOX' onchange='SetAudioVoiceOnOff()'> &nbsp; <label for='eVoiceCHECK' id='XX_ADJUST_2'> --- </label>
+						</td>
+					</tr>
+					<tr>
+						<td height='20' width='100%'  valign='center'>
+							<input type='checkbox' id='eShortAZAN' class='cssCheckBOX' onchange='SetShortAZANOnOff()'> &nbsp; <label for='eShortAZAN' id='XX_eShortAZAN'> --- </label>
+						</td>
+					</tr>
+					<tr>
+						<td height='20' width='100%'  valign='center'>
+							<input type='checkbox' id='eShortIQAMA' class='cssCheckBOX' onchange='SetShortIQAMAOnOff()'> &nbsp; <label for='eShortIQAMA' id='XX_eShortIQAMA'> --- </label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++++++++++++++++++++++   -->
+					<tr><td><hr></td></tr>
+					<tr>
+						<td height='20' width='100%'  valign='center'>
+							<input type='checkbox' id='eRamadan30CHECK' class='cssCheckBOX' onchange='SetRamadan30MinOnOff()'> &nbsp; <label for='eRamadan30CHECK' id='XX_ADJUST_3'> --- </label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++++++++++++++++++++++   -->
+					<tr>
+						<td height='20' width='100%'  valign='center'>
+							<input type='checkbox' id='eSummerCHECK' class='cssCheckBOX' onchange='SetSummerOnOff()'> &nbsp; <label for='eSummerCHECK' id='XX_SUMMERTIME'> --- </label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++++++++++++++++++++++   -->
+					<tr>
+						<td height='20' width='100%'  valign='center'>
+							<input type='checkbox' id='eMoreHourCHECK' class='cssCheckBOX' onchange='Set1MoreHOUR()'> &nbsp; <label for='eMoreHourCHECK' id='XX_1MOREHOUR'> --- </label>
+						</td>
+					</tr>
+					<!--  ++++++++++++++++++++++++++++++++++++   -->
+					<tr>
+						<td height='20' width='100%'  valign='center'>
+							<input type='checkbox' id='eLessHourCHECK' class='cssCheckBOX' onchange='Set1LessHOUR()'> &nbsp; <label for='eLessHourCHECK' id='XX_1LESSHOUR'> --- </label>
+						</td>
+					</tr>				
+					</table>
+					
+					<br><br><br><br>
+
+				</div>
+			
+			</div>
+
+
+			<!-- ■■■■■■■■■■■■ PRAYINGS ADJUSTMENTS ■■■■■■■■■■■■■■■■■■■ -->
+			<div id='e_ADJUSTMENTS' class='cssModelSettingsWINDOW cssColorLITE' >
+
+				<div class='cssTitlesHOLDER'>
+					<div class='cssWindowTITLE' ></div>
+					<div class='cssWindowCLOSE' ><span onclick="SetScroll('scroADJUSTMENTS', 0);">&#9650;</span> &nbsp;  <span onclick="SetScroll('scroADJUSTMENTS', 1);">&#9660;</span> &nbsp;&nbsp;&nbsp; <span onclick='closeThis(this.parentNode);'>&#10006;</span></div>
+				</div>
+	
+				<div id='scroADJUSTMENTS' class='cssSettingsDATA CSS_X_LANG_DIRECTION'>
+
+							<br>
+
+							<!--  ++++++++++++++++ FAJR SETTINGS+++++++++++++++++++++   -->
+							<table align='center' cellpadding='1' cellspacing='0' border='0' width='100%' class='cccTBL1' >
+							<tr>
+								<td height='20' width='15%' align='left' id='xxFAJR'>  </td>
+								<td height='20' width='7%' align='left' id='AZAN_FAJR'>0</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANminus('FAJR')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANcplus('FAJR')">+</button></td>
+								<td height='20' width='20%' align='center' id='xxIQAMA0'>---</td>
+								<td height='20' width='7%' align='left' id='IQAMA_FAJR'>-</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAminus('FAJR')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAcplus('FAJR')">+</button></td>
+								<td height='20' align='left'>---</td>
+							</tr>
+							<!--  ++++++++++++++++ SHOROQ SETTINGS+++++++++++++++++++++   -->
+							<tr>
+								<td height='20' width='15%' align='left' id='xxSHOROQ'>  </td>
+								<td height='20' width='7%' align='left' id='AZAN_SHOROQ'>0</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANminus('SHOROQ')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANcplus('SHOROQ')">+</button></td>
+								<td height='20' width='20%' align='center' id='xxIQAMA1'>---</td>
+								<td height='20' width='7%' align='left' id='IQAMA_SHOROQ'>-</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAminus('SHOROQ')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAcplus('SHOROQ')">+</button></td>
+								<td height='20' align='left'>---</td>
+							</tr>
+							<!--  ++++++++++++++++ DOHR SETTINGS+++++++++++++++++++++   -->
+							<tr>
+								<td height='20' width='15%' align='left' id='xxDOHR'>  </td>
+								<td height='20' width='7%' align='left' id='AZAN_DOHR'>0</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANminus('DOHR')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANcplus('DOHR')">+</button></td>
+								<td height='20' width='20%' align='center' id='xxIQAMA2'>---</td>
+								<td height='20' width='7%' align='left' id='IQAMA_DOHR'>-</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAminus('DOHR')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAcplus('DOHR')">+</button></td>
+								<td height='20' align='left'>
+									<select id='pDOHR' onchange='persoDOHR(this);' style='width:75%;' >
+										<option value=''></option>
+										<option value='12:00'>Fixed 12:00</option>
+										<option value='12:15'>Fixed 12:15</option>
+										<option value='12:30'>Fixed 12:30</option>
+										<option value='12:40'>Fixed 12:40</option>
+										<option value='12:45'>Fixed 12:45</option>
+										<option value='12:50'>Fixed 12:50</option>
+										<option value='13:00'>Fixed 13:00</option>
+										<option value='13:15'>Fixed 13:15</option>
+										<option value='13:30'>Fixed 13:30</option>
+										<option value='13:40'>Fixed 13:40</option>
+										<option value='13:45'>Fixed 13:45</option>
+										<option value='13:50'>Fixed 13:50</option>
+										<option value='14:00'>Fixed 14:00</option>
+										<option value='14:15'>Fixed 14:15</option>
+										<option value='14:30'>Fixed 14:30</option>
+								    </select>
+								</td>
+							</tr>
+							<!--  ++++++++++++++++ ASR SETTINGS+++++++++++++++++++++   -->
+							<tr>
+								<td height='20' width='15%' align='left' id='xxASR'>  </td>
+								<td height='20' width='7%' align='left' id='AZAN_ASR'>0</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANminus('ASR')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANcplus('ASR')">+</button></td>
+								<td height='20' width='20%' align='center' id='xxIQAMA3'>---</td>
+								<td height='20' width='7%' align='left' id='IQAMA_ASR'>-</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAminus('ASR')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAcplus('ASR')">+</button></td>
+								<td height='20' align='left'>---</td>
+							</tr>
+							<!--  ++++++++++++++++ MAGHRIB SETTINGS+++++++++++++++++++++   -->
+							<tr>
+								<td height='20' width='15%' align='left' id='xxMAGHRIB'>  </td>
+								<td height='20' width='7%' align='left' id='AZAN_MAGHRIB'>0</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANminus('MAGHRIB')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANcplus('MAGHRIB')">+</button></td>
+								<td height='20' width='20%' align='center' id='xxIQAMA4'>---</td>
+								<td height='20' width='7%' align='left' id='IQAMA_MAGHRIB'>-</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAminus('MAGHRIB')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAcplus('MAGHRIB')">+</button></td>
+								<td height='20' align='left'>---</td>
+							</tr>
+							<!--  ++++++++++++++++ ISHA SETTINGS+++++++++++++++++++++   -->
+							<tr>
+								<td height='20' width='15%' align='left' id='xxISHA'>  </td>
+								<td height='20' width='7%' align='left' id='AZAN_ISHA'>0</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANminus('ISHA')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goAZANcplus('ISHA')">+</button></td>
+								<td height='20' width='20%' align='center' id='xxIQAMA5'>---</td>
+								<td height='20' width='7%' align='left' id='IQAMA_ISHA'>-</td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAminus('ISHA')">-</button></td>
+								<td height='20' width='8%' align='left'><button class='cccADJUSTER' onclick="goIQAMAcplus('ISHA')">+</button></td>
+								<td height='20' align='left'>---</td>
+							</tr>
+							</table>
+							<br>
+							<table align='center' cellpadding='1' cellspacing='0' border='0' width='100%' class='cccTBL1' >
+							<tr>
+								<td height='20' width='15%' align='left' id='XX_JOMOA'>---</td>
+								<td height='20' width='23%' align='left'>
+									<select id='pJOMOA' onchange='persoJOMOA(this);' style='width:80%;' >
+									<option value=''></option>
+									<option value='12:00'>12:00</option>
+									<option value='12:15'>12:15</option>
+									<option value='12:30'>12:30</option>
+									<option value='12:45'>12:45</option>
+									<option value='13:00'>13:00</option>
+									<option value='13:15'>13:15</option>
+									<option value='13:30'>13:30</option>
+									<option value='13:45'>13:45</option>
+									<option value='14:00'>14:00</option>
+									<option value='14:30'>14:30</option>
+							   		</select>
+								</td>
+								<td height='20' align='center'>No Iqama Time in Jummoa</td>
+							</tr>
+							</table>
+				</div>
+				
+			</div>
+
+
+
+
+			<!-- ■■■■■■■■■■■■ BLACK SCREEN PRAYING DURATION ■■■■■■■■■■■■■■■■■■■ -->
+			<div id='e_BLACKSCREEN' class='cssModelSettingsWINDOW cssColorLITE' >
+
+				<div class='cssTitlesHOLDER'>
+					<div class='cssWindowTITLE' ></div>
+					<div class='cssWindowCLOSE' ><span onclick="SetScroll('scroBLACKS', 0);">&#9650;</span> &nbsp;  <span onclick="SetScroll('scroBLACKS', 1);">&#9660;</span> &nbsp;&nbsp;&nbsp; <span onclick='closeThis(this.parentNode);'>&#10006;</span></div>
+				</div>
+	
+				<div id='scroBLACKS' class='cssSettingsDATA CSS_X_LANG_DIRECTION'>
+				
+							<!--  ++++++++++++++++ DIMM SCREEN ON-OFF +++++++++++++++++++++   -->
+							<table align='center' cellpadding='5' cellspacing='0' border='0' width='100%' >
+							<tr>
+								<td height='20' width='100%' valign='center'>
+									<input type='checkbox' id='eDimmCHECK' class='cssCheckBOX' onchange='SetDimmOnOff()'> &nbsp; <label for='eDimmCHECK' id='XX_DIMMER_0'></label>
+								</td>
+							</tr>
+							</table>
+
+
+							<!--  ++++++++++++++++ JOMOA_DIM_SETTINGS+++++++++++++++++++++   -->
+							<table align='center' cellpadding='5' cellspacing='0' border='0' width='100%' class='cccTBL1' >
+							<tr>
+								<td height='20' width='17%' id='xxJOMOA'> JOMOA  </td>
+								<td height='20' width='63%' align='right' id='XX_DIMMER_3'></td>
+								<td height='20' width='12%' align='center' id='jjjJOMOA_BEFORE_DOHR'>0</td>
+								<td height='20' width='4%' align='left'><button class='cccADJUSTER' onclick="JomoaBEFOREminus()">-</button></td>
+								<td height='20' width='4' align='left'><button class='cccADJUSTER' onclick="JomoaBEFOREplus()">+</button></td>
+							</tr>
+							<tr>
+								<td height='20' width='17%' align='left'></td>
+								<td height='20' width='63%' align='right' id='XX_DIMMER_4'></td>
+								<td height='20' width='12%' align='center' id='jjjJOMOA_AFTER_DOHR'>0</td>
+								<td height='20' width='4%' align='left'><button class='cccADJUSTER' onclick="JomoaAFTERminus()">-</button></td>
+								<td height='20' width='4%' align='left'><button class='cccADJUSTER' onclick="JomoaAFTERplus()">+</button></td>
+							</tr>
+							</table>		 
+						
+							<br>
+							
+						
+						<!--  ++++++++++++++++ DURATION OF PRAYING +++++++++++++++++++++   -->
+						<!--  ======================================================   -->
+						<!--  ======================================================   -->
+						<!--  ======================================================   -->
+						<div align='center' id='XX_DIMMER_5' style='color:white;' ></div>
+							
+							
+							<!--  ++++++++++++++++ FAJR DURATION +++++++++++++++++++++   -->
+							<table align='center' cellpadding='5' cellspacing='0' border='0' width='80%' class='cccTBL1' >
+							<tr>
+								<td height='20' width='50%' align='' id='yyFAJR'>  </td>
+								<td height='20' width='20%' align='left' id='DURATION_FAJR'>0</td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONminus('FAJR')">-</button></td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONcplus('FAJR')">+</button></td>
+							</tr>
+							</table>
+						
+				
+							<!--  ++++++++++++++++ DOHR DURATION+++++++++++++++++++++   -->
+							<table align='center' cellpadding='5' cellspacing='0' border='0' width='80%' class='cccTBL1' >
+							<tr>
+								<td height='20' width='50%' align='' id='yyDOHR'>  </td>
+								<td height='20' width='20%' align='left' id='DURATION_DOHR'>0</td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONminus('DOHR')">-</button></td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONcplus('DOHR')">+</button></td>
+							</tr>
+							</table>
+				
+				
+							<!--  ++++++++++++++++ ASR DURATION+++++++++++++++++++++   -->
+							<table align='center' cellpadding='5' cellspacing='0' border='0' width='80%' class='cccTBL1' >
+							<tr>
+								<td height='20' width='50%' align='' id='yyASR'>  </td>
+								<td height='20' width='20%' align='left' id='DURATION_ASR'>0</td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONminus('ASR')">-</button></td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONcplus('ASR')">+</button></td>
+							</tr>
+							</table>
+				
+				
+							<!--  ++++++++++++++++ MAGHRIB DURATION+++++++++++++++++++++   -->
+							<table align='center' cellpadding='5' cellspacing='0' border='0' width='80%' class='cccTBL1' >
+							<tr>
+								<td height='20' width='50%' align='' id='yyMAGHRIB'>  </td>
+								<td height='20' width='20%' align='left' id='DURATION_MAGHRIB'>0</td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONminus('MAGHRIB')">-</button></td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONcplus('MAGHRIB')">+</button></td>
+							</tr>
+							</table>
+				
+				
+							<!--  ++++++++++++++++ ISHA DURATION+++++++++++++++++++++   -->
+							<table align='center' cellpadding='5' cellspacing='0' border='0' width='80%' class='cccTBL1' >
+							<tr>
+								<td height='20' width='50%' align='' id='yyISHA'>  </td>
+								<td height='20' width='20%' align='left' id='DURATION_ISHA'>0</td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONminus('ISHA')">-</button></td>
+								<td height='20' width='15%' align='left'><button class='cccADJUSTER' onclick="goDURATIONcplus('ISHA')">+</button></td>
+							</tr>
+							</table>
+							
+				</div>
+				
+			</div>
+
+
+
+
+
+
+
+
+			<!-- ■■■■■■■■■■■■ LOCALISATION ■■■■■■■■■■■■■■■■■■■ -->
+			<div id='e_LOCALISATION' class='cssModelSettingsWINDOW cssColorLITE' >
+
+				<div class='cssTitlesHOLDER'>
+					<div class='cssWindowTITLE' ></div>
+					<div class='cssWindowCLOSE' ><span onclick="SetScroll('scroLOCATION', 0);">&#9650;</span> &nbsp;  <span onclick="SetScroll('scroLOCATION', 1);">&#9660;</span> &nbsp;&nbsp;&nbsp; <span onclick="closeThis(this.parentNode);">&#10006;</span></div>
+				</div>
+	
+				<div id='scroLOCATION' class='cssSettingsDATA CSS_X_LANG_DIRECTION'>
+				
+
+						<div style='position:relative; background-color:inherit;' >
+				
+								<table id='eTB_FILES' align='center' cellpadding='2' cellspacing='1' border='0' width='100%' style='background-color:#151515;' >
+										<tr>
+											<td height='25' width='100%' >
+											<input type='checkbox' id='eWCSV' class='cssCheckBOX' onchange='SetPersoWCSV()'> &nbsp; 
+											<label for='eWCSV' id='XX_WCSV_MESSAGE'>----</label>
+											</td>
+										</tr>
+										
+										<tr>
+											<td height='25' width='100%' class='otoHIDN' >
+											<div id='eLocationByFILE' class='cssLocationDATA' >-------</div>
+											<div align='' id='XX_TIMES_2' >-------</div>
+											</td>
+										</tr>
+										
+										<tr>
+										<td height='40' width='100%' align='center' valign='top' id='XX_CALC_JX' class='otoHIDN'>
+											<select id='jxCOUNTRY' onchange='jxCountryCHANGE(this);' class='w45' >
+											</select>
+											&nbsp;&nbsp;&nbsp;
+											<select id='citiesLIST' onchange='getCITY(this);' class='w45' >
+											</select>
+										</td>
+										</tr>
+							
+										<tr>
+										<td height='20' width='100%' align='' valign='top' class='otoHIDN'>
+											<div style='padding:3%; color:white;' >
+												<span id='XX_TIMES_3'></span>, <span id='XX_TIMES_4'></span>
+												<div id='XX_YearlyWTIMES'></div>
+												<a href='https://www.tawkit.net/wtimes/' target='_blank'>https://www.tawkit.net/wtimes</a>
+											</div>									
+										</td>
+										</tr>
+								</table>
+
+			
+								<br>
+								<div align='center' style='margin-top:2%; padding:3%; color:#E0CFB1;' >
+									<div id='XX_MISC_0' >----</div><br>
+									<button onclick='location.reload();' id='XX_TIMES_5' >----</button>
+								</div>
+								<br>
+
+							</div>
+								
+	
+				</div>
+				
+			</div>
+
+<!--  ======================================================   -->
+<!--  ======================================================   -->
+<!--  ======================================================   -->
+
+
+</body>
+</html>
+
+
+
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+<!-- ******************************************************************************** -->
+
+
+
+
+<script type='text/javascript' language='javascript'>
+//<![CDATA[
+
+
+var JS_eMainVERTICAL  		= document.getElementById('eMainVERTICAL');
+var JS_eVertical_CENTRAL  	= document.getElementById('_eVertical_CENTRAL');
+var JS_eMainHORIZONTAL 		= document.getElementById('eMainHORIZONTAL');
+
+var JS_DYNTEXT  			= document.getElementById('_eDynTEXT');
+var JS_HReDynMAIN  			= document.getElementById('_HReDynMAIN');
+var JS_HReDynTEXT  			= document.getElementById('_HReDynTEXT');
+
+var JS_VRMsqNAME 			= document.getElementById('_VRMsqNAME');
+var JS_HRMsqNAME 			= document.getElementById('_HRMsqNAME');
+var JS_MIDDLE_B 			= document.getElementById('_eMIDDLE');
+var JS_HR_MIDDLE_B 			= document.getElementById('_HR_eMIDDLE');
+
+
+var JS_eDecompteTEXT 	= document.getElementById('_eDecompteTEXT');
+var JS_eDECOMPTO 		= document.getElementById('_eDECOMPTO');
+var JS_HReDECOMPTO 		= document.getElementById('_HReDECOMPTO');
+
+var JS_eRIDO    		= document.getElementById('eRIDO');
+var JS_HReRIDO    		= document.getElementById('HReRIDO');
+var JS_HRCONTO    		= document.getElementById('HRCONTO');
+var JS_ELHOLDO    		= document.getElementById('ELHOLDO');
+var JS_ELAYATS    		= document.getElementById('ELAYATS');
+var JS_ELKLOKO    		= document.getElementById('ELKLOKO');
+var JS_ELCONTO    		= document.getElementById('ELCONTO');
+
+var JS_tube0    		= document.getElementById('tube0');
+var JS_tube1    		= document.getElementById('tube1');
+var JS_tube2    		= document.getElementById('tube2');
+var JS_tube3    		= document.getElementById('tube3');
+var JS_tube4    		= document.getElementById('tube4');
+var JS_tube5    		= document.getElementById('tube5');
+
+
+var JS_W333HRtube0    		= document.getElementById('W333HRtube0');
+var JS_W333HRtube1    		= document.getElementById('W333HRtube1');
+var JS_W333HRtube2    		= document.getElementById('W333HRtube2');
+var JS_W333HRtube3    		= document.getElementById('W333HRtube3');
+var JS_W333HRtube4    		= document.getElementById('W333HRtube4');
+var JS_W333HRtube5    		= document.getElementById('W333HRtube5');
+
+
+var JS_VRAzanCOMES 		= document.getElementById('VRAzanCOMES');
+var JS_HRAzanCOMES 		= document.getElementById('HRAzanCOMES');
+
+
+var JS_eMobile  		= document.getElementById('eMobile');
+var JS_HReMobile  		= document.getElementById('HReMobile');
+
+var JS_ALONGO = document.getElementById('HahowaALONGO');
+
+
+var JS_eVoiceCHECK		= document.getElementById('eVoiceCHECK');
+var JS_eShortAZAN		= document.getElementById('eShortAZAN');
+var JS_eShortIQAMA		= document.getElementById('eShortIQAMA');
+var JS_eCountdownCHECK	= document.getElementById('eCountdownCHECK');
+var JS_eRamadan30CHECK	= document.getElementById('eRamadan30CHECK');
+var JS_summerCHECK		= document.getElementById('eSummerCHECK');
+var JS_eMoreHourCHECK	= document.getElementById('eMoreHourCHECK');
+var JS_eLessHourCHECK	= document.getElementById('eLessHourCHECK');
+var JS_e24CHECK			= document.getElementById('e24CHECK');
+var JS_eFullClockCHECK	= document.getElementById('eFullClockCHECK');
+var JS_ePastDimerCHECK	= document.getElementById('ePastDimerCHECK');
+var JS_eWCSVCHECK		= document.getElementById('eWCSV');
+var JS_eIQAMAasHOURCHECK	= document.getElementById('eIQAMAasHOUR');
+var JS_eIQAMAUNDERNAMES		= document.getElementById('eIQAMAUNDERNAMES');
+var JS_eDimmCHECK			= document.getElementById('eDimmCHECK');
+
+var JS_theSVG			= document.getElementById('theSVG');
+var JS_baseCIRCLE		= document.getElementById('baseCIRCLE');
+var JS_dynoCIRCLE		= document.getElementById('dynoCIRCLE');
+
+var JS_HRtheSVG			= document.getElementById('HRtheSVG');
+var JS_HRbaseCIRCLE		= document.getElementById('HRbaseCIRCLE');
+var JS_HRdynoCIRCLE		= document.getElementById('HRdynoCIRCLE');
+
+var JS_eMarqueeTEXT		= document.getElementById('_eMarqueeTEXT');
+var JS_HReMarqueeTEXT	= document.getElementById('_HReMarqueeTEXT');
+
+
+var JS_T_0 = document.getElementById('t0');
+var JS_T_1 = document.getElementById('t1');
+var JS_T_2 = document.getElementById('t2');
+var JS_T_3 = document.getElementById('t3');
+var JS_T_4 = document.getElementById('t4');
+var JS_T_5 = document.getElementById('t5');
+
+
+var JS_S_0 = document.getElementById('s0');
+var JS_S_1 = document.getElementById('s1');
+var JS_S_2 = document.getElementById('s2');
+var JS_S_3 = document.getElementById('s3');
+var JS_S_4 = document.getElementById('s4');
+var JS_S_5 = document.getElementById('s5');
+
+var JS_HHHS_0 = document.getElementById('W333H_s0');
+var JS_HHHS_1 = document.getElementById('W333H_s1');
+var JS_HHHS_2 = document.getElementById('W333H_s2');
+var JS_HHHS_3 = document.getElementById('W333H_s3');
+var JS_HHHS_4 = document.getElementById('W333H_s4');
+var JS_HHHS_5 = document.getElementById('W333H_s5');
+
+var JS_W333HT_0 = document.getElementById('W333Ht0');
+var JS_W333HT_1 = document.getElementById('W333Ht1');
+var JS_W333HT_2 = document.getElementById('W333Ht2');
+var JS_W333HT_3 = document.getElementById('W333Ht3');
+var JS_W333HT_4 = document.getElementById('W333Ht4');
+var JS_W333HT_5 = document.getElementById('W333Ht5');
+
+
+var _fjr		= 0;
+var _shrq		= 0;
+var _thuhr		= 0;
+var _asr		= 0;
+var _maghreb	= 0;
+var _isha		= 0;
+
+var JS_nowMNTS 	= 0;
+
+var JS_HIJRI_DECALAGE = 0;
+var tempDECALA = localStorage.getItem('STORAGE_DECALAGE');
+if (['-2', '-1', '0', '1', '2'].indexOf(tempDECALA) >= 0) {JS_HIJRI_DECALAGE = parseInt(tempDECALA);}
+
+
+var JS_PRAYNAMES_NOW	= [];
+var JS_WEEK_DAYS_NOW 	= [];
+var JS_MONTHS_NOW 		= [];
+var JS_HIJRI_NOW 		= [];
+
+var JS_NOW_ACTIVE_SALAT = 0;
+var JS_NOW_SALAT_NAME	= '';
+
+var JS_COLORO_CLOCK		= 'white';
+var JS_COLORO_SEKSALATS	= 'white';
+var JS_COLORO_LOWFOCUS	= 'white';
+var JS_COLORO_BGTUBE	= 'white';
+
+
+var JS_uuuCOUNTRY = document.getElementById('uuuCOUNTRY');
+var JS_jxCOUNTRY  = document.getElementById('jxCOUNTRY');
+
+//-----------------------------------------------------------------------------------
+
+var JS_ACTIVE_BG = 6;
+
+var tempBG = localStorage.getItem('STORAGE_THEME_BG');
+if(tempBG){JS_ACTIVE_BG = parseInt(tempBG);}
+
+//-----------------------------------------------------------------------------------
+function goSetBG()
+{
+
+var JS_NowTHEME	= '';
+var tempSTR 	= '';
+
+		if(JS_DISPLAY_IS_HORIZONTAL) // HORIZONTAL HERE ------------------------------------
+		{
+		JS_NowTHEME = './themes/HR-' + JS_ACTIVE_BG ;
+		document.getElementById('sssVR').style.display 			= 'none';
+		document.getElementById('sssHR').style.display 			= 'block';
+		tempSTR = JS_THEMES_HORIZONTALS_MAIN_COLORIO[JS_ACTIVE_BG];
+		}
+		else // VERTICAL HERE ----------------------------------------------------------
+			{
+			JS_NowTHEME = './themes/VR-' + JS_ACTIVE_BG;
+			document.getElementById('sssVR').style.display 			= 'block';
+			document.getElementById('sssHR').style.display 			= 'none';
+			tempSTR = JS_THEMES_VERTICALS_MAIN_COLORIO[JS_ACTIVE_BG];		
+			}
+		
+
+
+JS_eMainVERTICAL.style.background 			= 'url(' + JS_NowTHEME+ '.jpg)';
+JS_eMainVERTICAL.style.backgroundRepeat 	= 'no-repeat'; 
+JS_eMainVERTICAL.style.backgroundSize 		= '100% 100%';
+
+JS_eMainHORIZONTAL.style.background 		= 'url(' + JS_NowTHEME + '.jpg)';
+JS_eMainHORIZONTAL.style.backgroundRepeat 	= 'no-repeat'; 
+JS_eMainHORIZONTAL.style.backgroundSize 	= '100% 100%';
+
+JS_HRCONTO.style.background 		= 'url(' + JS_NowTHEME + '.jpg)';
+JS_HRCONTO.style.backgroundRepeat 	= 'no-repeat'; 
+JS_HRCONTO.style.backgroundSize 	= '100% auto';
+
+JS_ACTIVE_COLORYO = tempSTR.split('|');
+
+
+JS_COLORO_CLOCK		= JS_ACTIVE_COLORYO[0];
+JS_COLORO_SEKSALATS	= JS_ACTIVE_COLORYO[1];
+JS_COLORO_LOWFOCUS	= JS_ACTIVE_COLORYO[2];
+JS_COLORO_BGTUBE	= JS_ACTIVE_COLORYO[3];
+
+document.body.style.color = JS_COLORO_LOWFOCUS;
+
+JS_ROOT.style.setProperty('--Color_CLOCK',     JS_COLORO_CLOCK);
+JS_ROOT.style.setProperty('--Color_SEKSALATS', JS_COLORO_SEKSALATS);
+JS_ROOT.style.setProperty('--Color_LOWFOCUS',  JS_COLORO_LOWFOCUS);
+JS_ROOT.style.setProperty('--Color_BGTUBE',	   JS_COLORO_BGTUBE);
+
+	if(JS_WCSV_ACTIVE) 
+	{
+	JS_ROOT.style.setProperty('--XWCSVfontSIZE', '2.6vw');
+	JS_ROOT.style.setProperty('--ColorXWCSV',  JS_COLORO_CLOCK);
+	}
+	else 
+	{
+	JS_ROOT.style.setProperty('--XWCSVfontSIZE', '2.3vw');
+	JS_ROOT.style.setProperty('--ColorXWCSV',  JS_COLORO_LOWFOCUS);
+	}
+
+
+
+	if(JS_IQAMA_UNDER_NAMES) 
+	{
+	JS_ROOT.style.setProperty('--topAR', '2%');
+	JS_ROOT.style.setProperty('--topEN', '2%');
+	JS_ROOT.style.setProperty('--topQM', '36%');
+	HideZunder('W333_HRdemain');
+	}
+	else 
+	{
+	JS_ROOT.style.setProperty('--topAR', '28%');
+	JS_ROOT.style.setProperty('--topEN', '33%');
+	JS_ROOT.style.setProperty('--topQM', '4%');
+	ShowZunder('W333_HRdemain');
+	}
+
+
+
+goSetNextSalatRemainingTIME(JS_nowMNTS);
+}
+
+
+//---------------------------changeBG---------------
+function changeBG(nbr)
+{
+JS_ACTIVE_BG = nbr;
+localStorage.setItem('STORAGE_THEME_BG', JS_ACTIVE_BG);
+goSetBG();
+}
+
+//-------------log---------------
+function log(s)
+{
+if(JS_LOGS_ENABLED) console.log(s);
+}
+
+
+//-------------demoThemesNEXT---------------
+function demoThemesNEXT()
+{
+JS_ACTIVE_BG++;
+if(JS_ACTIVE_BG > 17) JS_ACTIVE_BG = 0;
+changeBG(JS_ACTIVE_BG);
+}
+
+//-------------demoThemesBACK---------------
+function demoThemesBACK()
+{
+JS_ACTIVE_BG--;
+if(JS_ACTIVE_BG < 0) JS_ACTIVE_BG =18;
+changeBG(JS_ACTIVE_BG);
+}
+
+
+var JS_citiesListBOX = document.getElementById('citiesLIST');
+//-------------------------------------------------------------
+function goFillCities()
+{
+
+var strNow 				= '';
+
+
+
+// "SA.JAZAN.---",
+
+    for (var i=0; i < JS_CITIES_DATA.length; i++)
+    {
+	strNow = JS_CITIES_DATA[i];
+    var tmpARR = strNow.split(".");
+    var strCodeCLN  = tmpARR[0]+"."+tmpARR[1];
+    var CityCln = tmpARR[1];
+    if(tmpARR[2] !== '---') CityCln += '.'+tmpARR[2];
+    
+    var newOPTO    = new Option(CityCln, strCodeCLN);
+    JS_citiesListBOX.append(newOPTO);
+    if(strCodeCLN == JS_CITY_CODE) newOPTO.selected = true;
+    }
+
+}
+
+
+
+//---------goSelektJOMOAnDOHR--------------------------------------------------------------------------
+function goSelektJOMOAnDOHR()
+{
+
+var JS_pJOMOA 	= document.getElementById('pJOMOA');
+var JS_pDOHR 	= document.getElementById('pDOHR');
+
+		for(var i=0; i < JS_pJOMOA.options.length; i++)
+		{
+	    var optio = JS_pJOMOA.options[i];
+	    if(optio.value == JS_PERSO_FIXED_JOMOA) optio.selected = true;
+		}
+		
+		for(var i=0; i < JS_pDOHR.options.length; i++)
+		{
+	    var optio = JS_pDOHR.options[i];
+	    if(optio.value == JS_FIXED_IQAMATDOHR) optio.selected = true;
+		}
+
+}
+
+//---------goFillThemesBOTH-------------------------------------------------------------------------
+function goFillThemesBOTH()
+{
+
+var idNow = '';
+
+    for (var i=0; i < 18; i++)
+    {
+    document.getElementById('tmV_'+i).style.backgroundImage='url(./themes/mini/VR-'+i+'.jpg)';
+    document.getElementById('tmH_'+i).style.backgroundImage='url(./themes/mini/HR-'+i+'.jpg)';
+    }
+
+}
+
+
+//---------persoJOMOA--------------------------------------------------------------------------
+function persoJOMOA(obj)
+{
+JS_PERSO_FIXED_JOMOA = obj.options[obj.selectedIndex].value;
+localStorage.setItem('STORAGE_PERSO_FIXED_JOMOA', JS_PERSO_FIXED_JOMOA);
+GoGloballyFillDATA();
+putMinutesInSETTINGS(); // for direct show
+}
+
+//---------------------------------------------------------------------------------
+function persoDOHR(obj)
+{
+JS_FIXED_IQAMATDOHR = obj.options[obj.selectedIndex].value;
+if(JS_FIXED_IQAMATDOHR == "") JS_IQAMA_TIME_OF_DOHR = 10; //default 10
+GoGloballyFillDATA();
+putMinutesInSETTINGS(); // for direct show
+localStorage.setItem('STORAGE_FIXED_IQAMATDOHR', JS_FIXED_IQAMATDOHR);
+localStorage.setItem('STORAGE_IQAMA_DOHR', JS_IQAMA_TIME_OF_DOHR);
+}
+
+
+//---------getCITY--------------------------------------------------------------------------
+function getCITY(obj)
+{
+var eSEL 		= obj.options[obj.selectedIndex].value;
+JS_CITY_CODE 	= eSEL;
+localStorage.setItem('STORAGE_CITY_CODE', JS_CITY_CODE);
+updateLocationByFILE();
+// update will not work here, bcz city-data-file already loaded in starting , a restart is important
+// FR.bbbb
+JS_VERSIO = new Date().getTime();  // again update cache
+var tmp   = JS_CITY_CODE.split(".");
+var yFile = './data/'+tmp[0]+'/wtimes-'+JS_CITY_CODE+'.js?e='+ JS_VERSIO;
+
+var JS_yscript 		= document.createElement("script");
+JS_yscript.type 	= "text/javascript";
+JS_yscript.src 		= yFile;
+JS_yscript.onload	= function(){
+    							log("yScript_load_end."); 
+    							GoGloballyFillDATA(); // update
+								};
+document.body.appendChild(JS_yscript);
+}
+
+//---------updateLocationByFILE--------------------------------------------------------------------------
+function updateLocationByFILE()
+{
+var JS_eLocationByFILE = document.getElementById('eLocationByFILE');
+JS_eLocationByFILE.innerHTML = JS_CITY_CODE;
+}
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+function uLoadGpsCitiesAsJS(iniFile)
+{
+    var JS_script 		= document.createElement("script");
+    JS_script.type 		= "text/javascript";
+    JS_script.src 		= iniFile;
+    JS_script.onload	= function(){
+        							log("Script_load_end."); 
+        							uLoadGpsCitiesNOW();
+    								};
+    document.body.appendChild(JS_script);
+ }
+ 
+
+
+
+//-------jxCountryCHANGE----------------------------------------------------------------------------
+function jxCountryCHANGE(obj) 
+{
+var eee_CODE = obj.options[obj.selectedIndex].value;
+
+
+JS_citiesListBOX.innerHTML = ''; // clear box
+// add perso everytime
+var newOPTO = new Option("", "");
+JS_citiesListBOX.append(newOPTO);
+var newOPTO = new Option("00.000.PERSONAL", "00.000");
+JS_citiesListBOX.append(newOPTO);
+
+JS_VERSIO = new Date().getTime();  // again update cache
+var tempjxFile = "./data/" + eee_CODE + "/" + eee_CODE +".js?ev="+ JS_VERSIO;
+
+var JS_jxscript 	= document.createElement("script");
+JS_jxscript.type 	= "text/javascript";
+JS_jxscript.src 	= tempjxFile;
+JS_jxscript.onload	= function(){
+    							log("JS_jxscript_load_end."); 
+    							goFillCities();
+								};
+document.body.appendChild(JS_jxscript);
+
+
+}
+
+//-------uLoadTheCountries----------------------------------------------------------------------------
+function uLoadTheCountries()
+{
+
+
+var strNow 	= '';
+
+var jxxOPTO = new Option("", "");
+JS_jxCOUNTRY.append(jxxOPTO);
+
+var xR = JS_CITY_CODE.split(".");
+
+    for (var i=0; i < JS_WORLD_COUNTRIES.length; i++)
+    {
+    	strNow = JS_WORLD_COUNTRIES[i];
+    	
+	    var tmpARR   = strNow.split("|");
+	    var cntCODE  = tmpARR[0];
+	    var cntNAME  = tmpARR[1];
+	    jxxOPTO    = new Option(cntNAME, cntCODE);
+	    JS_jxCOUNTRY.append(jxxOPTO);
+	    
+	    //if(cntCODE == xR[0]) jxxOPTO.selected = true; 
+    }
+
+
+}
+
+
+//-------getLANGUAGE----------------------------------------------------------------------------
+function getLANGUAGE(obj) 
+{
+JS_LANG_NOW	= obj.title;
+localStorage.setItem('STORAGE_LANG_NOW', JS_LANG_NOW);
+setTimeout('location.reload()', 300);
+
+}
+
+
+
+
+//-----------------------------------------------------------------------------------
+var JS_ANIM_NOMOBILE = 15;
+//----------animateNoMOBILE---------------
+function animateNoMOBILE()
+{
+JS_ANIM_NOMOBILE--;
+
+// Charge Animation For Next-Use And Exit
+if(JS_ANIM_NOMOBILE < 1) 	{
+							JS_ANIM_NOMOBILE = 15;
+							setTimeout(HideZunder, 5000, 'eMobile');
+							setTimeout(HideZunder, 5000, 'HReMobile');
+							return;
+							} 
+
+
+
+			// if even hide, then if odd show
+			if (JS_ANIM_NOMOBILE % 2 == 0) 
+				{
+				JS_eMobile.style.visibility   = 'hidden';
+				JS_HReMobile.style.visibility = 'hidden';
+				} 
+			else 
+				{
+				JS_eMobile.style.visibility   = 'visible'; 
+				JS_HReMobile.style.visibility = 'visible';
+				}
+
+
+
+setTimeout('animateNoMOBILE()', 700 );
+}
+
+
+//------------------------------------------
+function ShowRIDEAU()
+{
+
+StartBlackScreenWhilePraying();
+
+
+setTimeout('RemoveBlackScreen()', (JS_NOW_DIMSCREEN_DURATION * 60000) );
+
+
+if(JS_NOW_ACTIVE_SALAT == 1) return; // DON'T SHOW MOBILE-ALERT IF ISHRAQ
+if(JS_DIMM_WHILE_PRAYIN_ACTIVE) setTimeout('animateNoMOBILE()', 3000 ); // MOBILE-ALERT 
+}
+
+
+//------------------------------------------
+function RemoveBlackScreen()
+{
+JS_eRIDO.style.width 	= '0%';
+JS_HReRIDO.style.width 	= '0%';
+}
+
+
+
+//-----CloseFullCONTO---------------
+function CloseFullCONTO()
+{
+JS_HRCONTO.style.height = '0%';
+HideZunder('ELHOLDO');
+JS_ALONGO.style.zIndex = 888;
+}
+
+
+//-----StartBlackScreenWhilePraying---------------
+function StartBlackScreenWhilePraying()
+{
+if(JS_DIMM_WHILE_PRAYIN_ACTIVE) ForceScreenSaverNOW();
+}
+
+
+
+//-----ForceScreenSaverNOW---------------
+function ForceScreenSaverNOW()
+{
+JS_eRIDO.style.width 	= '100%';
+JS_HReRIDO.style.width 	= '100%';
+}
+
+
+//------------------------------------------
+function ShowZunder(ss)
+{
+document.getElementById(ss).style.visibility = 'visible';
+}
+
+//------------------------------------------
+function HideZunder(ss)
+{
+document.getElementById(ss).style.visibility = 'hidden';
+}
+
+
+var JS_CIR_DATA = 0;
+
+//****************LiveTime******************************
+function LiveTime()
+{
+// LIVE SECONDS TIMES FROM SYSTEM 
+var JS_LIVE_TIME	= new Date();
+
+var s = JS_LIVE_TIME.getSeconds();
+    s = ('0' + s).slice(-2);
+
+
+var JS_SECSNOW = ARNumbers(s);
+
+document.getElementById('_eSECS').innerHTML = JS_SECSNOW;
+document.getElementById('_HR_eSECS').innerHTML = JS_SECSNOW;
+
+document.getElementById('_HR_sssCLOKO').innerHTML = ':'+JS_SECSNOW;
+document.getElementById('_VR_sssCLOKO').innerHTML = ':'+JS_SECSNOW;
+
+				
+				
+				if(JS_CountDownCIRCLE_ACTIVE)
+				{
+				JS_CountDownCIRCLE_DATA++;  
+				JS_CIR_DATA = Math.floor((JS_CountDownCIRCLE_DATA*100/120));
+				JS_CIR_DATA = 100 - JS_CIR_DATA; 
+				JS_dynoCIRCLE.style.strokeDasharray   = [JS_CIR_DATA,100];
+				JS_HRdynoCIRCLE.style.strokeDasharray = [JS_CIR_DATA,100];
+				}
+				
+				
+				
+				if(JS_DECOMPTE_STARTED)
+				{
+				
+				//--------------last 2 minutes to start circle count-down
+				if(JS_IQUAMA_SECONDS == 121) startCountDownCIRCLE();
+				
+				JS_IQUAMA_SECONDS--;
+				
+				    var minnn = Math.floor(JS_IQUAMA_SECONDS / 60);
+				    var seccc = Math.floor(JS_IQUAMA_SECONDS % 60);
+				    seccc = ('0' + seccc).slice(-2);
+				    
+				JS_eDECOMPTO.innerHTML 		= ARNumbers(minnn + ':' + seccc);
+				JS_HReDECOMPTO.innerHTML 	= JS_eDECOMPTO.innerHTML;
+				
+				// big counter only if visible/activated
+				if(JS_ELHOLDO.style.visibility=='visible') JS_ELCONTO.innerHTML = JS_eDECOMPTO.innerHTML;
+				
+				if(JS_IQUAMA_SECONDS == 0) {
+											SetAllTubesNORMAL();
+											setTimeout('closeDECOMPTE()', 500); 
+											setTimeout('ShowRIDEAU()', 2000); 
+											setTimeout('CloseFullCONTO()', 1000);
+											}
+				}
+
+
+
+
+
+
+if(s == '00') Go1MN();
+}
+
+//-----------------------------------------------------------------------------------
+
+
+var JS_AM_TEXT = "<span class='CSS_HAFS' style='font-size:75%;'>صَبَاحاً</span>";
+var JS_PM_TEXT = "<span class='CSS_HAFS' style='font-size:75%;'>مساءً</span>";
+
+
+
+var JS_TODAY_IS_JOMOA	= false;
+
+//*****Go1MN*********************************************************
+function Go1MN()
+{
+
+var JS_AAA	= new Date();
+
+var h  	= JS_AAA.getHours();
+var m	= JS_AAA.getMinutes();
+
+
+// here format of 12 support
+var hhhhh = h;
+var mmmmm = m;
+mmmmm = ('0' + mmmmm).slice(-2);
+
+
+
+h = ('0' + h).slice(-2);
+m = ('0' + m).slice(-2);
+
+var JS_ClnHM = h+':'+m;
+
+
+
+var FinalTM4	= JS_ClnHM;
+var STRampm		= '&nbsp;';
+
+
+			if(!JS_24H_ACTIVE)
+			{
+					if(hhhhh >= 12) 
+					{
+					STRampm = JS_PM_TEXT;
+					if(hhhhh > 12) hhhhh = hhhhh - 12;
+					FinalTM4 = hhhhh+':'+mmmmm;
+					}
+				else
+					{
+					if(hhhhh == 0) hhhhh = 12; // it is  AM
+					STRampm = JS_AM_TEXT;
+					FinalTM4 = hhhhh+':'+mmmmm;
+					}
+			}
+
+
+
+var JS_HOURSNOW = ARNumbers(FinalTM4);
+document.getElementById('_eFullHOUR').innerHTML = JS_HOURSNOW;
+document.getElementById('_eAMPM').innerHTML 	= STRampm;
+
+document.getElementById('_HR_eFullHOUR').innerHTML 	= JS_HOURSNOW;
+document.getElementById('_HR_eAMPM').innerHTML 		= STRampm;
+
+if(JS_ELHOLDO.style.visibility=='visible') 
+JS_ELKLOKO.innerHTML = JS_HOURSNOW;
+
+document.getElementById('_HR_eFullCLOKO').innerHTML = JS_HOURSNOW;
+document.getElementById('_VR_eFullCLOKO').innerHTML = JS_HOURSNOW;
+
+JS_nowMNTS 	= ( (parseInt(h)*60) + parseInt(m) );
+
+
+
+
+var nowXDAY	= JS_AAA.getDay();
+
+JS_TODAY_IS_JOMOA = (nowXDAY == 5);
+
+
+
+
+// ----------- Start Iqama Counter
+if( JS_nowMNTS == _fjr ) 		startDECOMPTE(JS_IQAMA_TIME_OF_FAJR, 	JS_PRAY_DURATION_OF_FAJR);
+if( JS_nowMNTS == _shrq )		startDECOMPTE(JS_IQAMA_TIME_OF_SHOROQ, 	JS_PRAY_DURATION_OF_SHOROQ);
+if( JS_nowMNTS == _asr ) 		startDECOMPTE(JS_IQAMA_TIME_OF_ASR, 	JS_PRAY_DURATION_OF_ASR);
+if( JS_nowMNTS == _maghreb ) 	startDECOMPTE(JS_IQAMA_TIME_OF_MAGHRIB, JS_PRAY_DURATION_OF_MAGHRIB);
+if( JS_nowMNTS == _isha ) 		startDECOMPTE(JS_IQAMA_TIME_OF_ISHA, 	JS_PRAY_DURATION_OF_ISHA);
+
+
+
+
+
+		//--------SPECIAL DOHR FOR JOMOA ---------------------------------------
+		
+		if(JS_TODAY_IS_JOMOA) // if JOMOA 
+		{
+			//------ JOMOA_THUHR___SPECIAL_DIMMING
+			if(  JS_nowMNTS == (_thuhr - JS_JOMOA_DIM_MINIUTES_BEFORE) ) 	{ StartBlackScreenWhilePraying();}
+			if(  JS_nowMNTS == (_thuhr + JS_JOMOA_DIM_MINIUTES_AFTER) ) 	{ RemoveBlackScreen(); SetAllTubesNORMAL();}
+		}
+	else
+		{
+			//------ NORMAL DOHR DAY
+			if( JS_nowMNTS == _thuhr ) 	startDECOMPTE(JS_IQAMA_TIME_OF_DOHR, 	JS_PRAY_DURATION_OF_DOHR);
+		}
+
+
+
+						//--------------- IQAMA_FAJR ---------------
+						if(  JS_nowMNTS == (JS_IQAMA_TIME_OF_FAJR + _fjr)  ) 			
+						{ Play_IqamaTit();}
+
+						//--------------- IQAMA_THUHR ---------------
+						if(  JS_nowMNTS == (JS_IQAMA_TIME_OF_DOHR + _thuhr)  ) 		
+						{
+							if(!JS_TODAY_IS_JOMOA) Play_IqamaTit();
+						}
+
+						//--------------- IQAMA_ASR ---------------
+						if(  JS_nowMNTS == (JS_IQAMA_TIME_OF_ASR + _asr)  ) 			
+						{ Play_IqamaTit();}
+
+						//--------------- IQAMA_MAGHREB ---------------
+						if(  JS_nowMNTS == (JS_IQAMA_TIME_OF_MAGHRIB + _maghreb)  ) 		
+						{ Play_IqamaTit();}
+
+						//--------------- IQAMA__ISHA ---------------
+						if(  JS_nowMNTS == (JS_IQAMA_TIME_OF_ISHA + _isha)  ) 			
+						{ Play_IqamaTit();}
+				
+
+			
+							
+
+						var JS_IT_IS_JOMOA_AND_DOHR = ( (JS_nowMNTS == _thuhr) && (JS_TODAY_IS_JOMOA) )
+						
+						
+						// **********ON_TIME_SALAWATS****************
+
+							if(   	(JS_nowMNTS==_fjr)||
+									(JS_nowMNTS==_shrq)||
+									(JS_nowMNTS==_thuhr)||
+									(JS_nowMNTS==_asr)||
+									(JS_nowMNTS==_maghreb)||
+									(JS_nowMNTS==_isha)
+								) 
+							{ 
+								
+								if(JS_nowMNTS != _shrq ) 
+								{
+									//if(!JS_IT_IS_JOMOA_AND_DOHR) 
+									// let it beep/azan even friday, app can be used in farms etc...  
+									Play_Beeep();
+								}
+								
+								GoActiveSALAT(JS_nowMNTS);
+							
+									
+									
+									// IF NOT RAMADAN NOR TASHREEK, THEN DO SYAM REMINDER
+									if( (!JS_THIS_IS_RAMADAN) && (!JS_DULHIJJA_DAYS_0913) && (!JS_SHAABAN_LAST_DAYS) )
+									{	
+										log(' GO_REMINER_SYAM');
+										// SEYAM-REMINDER ----- IF SUNDAY  
+										if(nowXDAY == 0)
+										{
+										if( (JS_nowMNTS==_maghreb) || (JS_nowMNTS==_isha) ) // wait 7 min then show reminder for 1hour
+										setTimeout(ShowThisMarqueeAndCloseAFTER, (7*60000), JS_DOA_SYAM_MONDAY, 60);
+										}
+								
+										// SEYAM-REMINDER ----- IF WEDNSDAY 
+										if(nowXDAY == 3)
+										{
+										if( (JS_nowMNTS==_maghreb) || (JS_nowMNTS==_isha) ) // wait 7 min then show reminder for 1hour
+										setTimeout(ShowThisMarqueeAndCloseAFTER, (7*60000), JS_DOA_SYAM_THURSDAY, 60);
+										}
+									}	
+
+							}
+
+
+			// -------------newday, go fill new data----------------
+			if( JS_ClnHM == "00:00"  )
+			{ 
+			GoGloballyFillDATA();
+			}
+
+
+
+
+goSetNextSalatRemainingTIME(JS_nowMNTS);
+goDimPassedPRAYINGS(JS_nowMNTS);
+_GoMessages();
+}
+
+
+
+//-----------------------------------------------------------------------------------
+//------gimeTime-----------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+function gimeTime(iniMNTS)
+{
+var _hours 		= Math.floor(iniMNTS / 60);          
+var _minutes 	= iniMNTS % 60;
+
+_minutes = ('0' + _minutes).slice(-2);
+
+var finalo = _hours + ':' + _minutes;
+
+if( (_hours == 0) && (_minutes == 0) ) finalo = '.';
+
+
+return finalo;
+}
+
+
+
+//--------SetNEXTERS---------------------------------------------------------------------------
+function SetNEXTERS(xMNTS)
+{
+JS_eNextoTIME.innerHTML 	= ARNumbers(gimeTime(xMNTS));
+JS_HReNextoTIME.innerHTML 	= JS_eNextoTIME.innerHTML;
+}
+
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//---------Next Salat--------------------------------------------------------------------------
+
+var JS_eNextoTIME    = document.getElementById('_eNextoTIME');
+var JS_HReNextoTIME  = document.getElementById('_HReNextoTIME');
+
+
+//-----------------------------------------------------------------------------------
+function goSetNextSalatRemainingTIME(mntsNOW)
+{
+
+
+	if(mntsNOW <= _fjr) 	{SetNEXTERS(_fjr - mntsNOW); return;}
+	
+	//if(mntsNOW <= _shrq) 	{SetNEXTERS(_shrq - mntsNOW); 	return;}
+							
+	if(mntsNOW <= _thuhr) 	{SetNEXTERS(_thuhr - mntsNOW); 	return;}
+							
+	if(mntsNOW <= _asr) 	{SetNEXTERS(_asr - mntsNOW); 	return;}
+							
+	if(mntsNOW <= _maghreb) {SetNEXTERS(_maghreb - mntsNOW); return;}
+							
+	if(mntsNOW <= _isha) 	{SetNEXTERS(_isha - mntsNOW); 	return;}
+							
+	if(mntsNOW > _isha) 	{SetNEXTERS( (1440 - mntsNOW) + _fjr); 	return;}
+
+}
+
+
+
+
+//---------------DimPassedPRAYINGS--------------------------------------------------------------------
+function goDimPassedPRAYINGS(mntsNOW)
+{
+
+
+JS_tube0.className = 'cccROUND_ACTIVE';
+JS_tube1.className = 'cccROUND_ACTIVE';
+JS_tube2.className = 'cccROUND_ACTIVE';
+JS_tube3.className = 'cccROUND_ACTIVE';
+JS_tube4.className = 'cccROUND_ACTIVE';
+JS_tube5.className = 'cccROUND_ACTIVE';
+
+
+JS_W333HRtube0.style.opacity = '1';
+JS_W333HRtube1.style.opacity = '1';
+JS_W333HRtube2.style.opacity = '1';
+JS_W333HRtube3.style.opacity = '1';
+JS_W333HRtube4.style.opacity = '1';
+JS_W333HRtube5.style.opacity = '1';
+
+
+
+// EXIT IF OPTION DISABLED
+if(!JS_PAST_DIMER_ACTIVE) return;
+
+
+	if(mntsNOW > (_fjr 		+ 60) )		{ JS_tube0.className = 'cccROUND';	JS_W333HRtube0.style.opacity = '0.5'; }
+	if(mntsNOW > (_shrq 	+ 20) )		{ JS_tube1.className = 'cccROUND';	JS_W333HRtube1.style.opacity = '0.5'; }
+	if(mntsNOW > (_thuhr 	+ 40) )		{ JS_tube2.className = 'cccROUND';	JS_W333HRtube2.style.opacity = '0.5'; }
+	if(mntsNOW > (_asr 		+ 30) )		{ JS_tube3.className = 'cccROUND';	JS_W333HRtube3.style.opacity = '0.5'; }
+	if(mntsNOW > (_maghreb 	+ 30) )		{ JS_tube4.className = 'cccROUND';	JS_W333HRtube4.style.opacity = '0.5'; }
+	if(mntsNOW > (_isha 	+ 30) )		{ JS_tube5.className = 'cccROUND';	JS_W333HRtube5.style.opacity = '0.5'; }
+
+
+}
+
+
+
+
+var JS_FLASHER_TUBE = 0;
+var strBG50 = 'rgba(255,255, 255, 0.15)';
+var strBGBLK = '';
+
+//-------flashTuben------------------------------------------------------------------------------------
+function flashTuben(tubVR,w333t)
+{
+if(JS_FLASHER_TUBE < 1) return;
+
+
+			if( (JS_FLASHER_TUBE % 2) == 0 )
+			{
+			tubVR.style.background 			= JS_bgSemiLITE;
+			w333t.style.background 			= '';
+			JS_VRAzanCOMES.style.borderColor = JS_bgSemiLITE;	
+			}
+			else
+				{
+				tubVR.style.background 			= strBGBLK;	
+				w333t.style.background 			= strBG50;
+				JS_VRAzanCOMES.style.borderColor = JS_BgSEKSALATS;	
+				}
+
+
+JS_FLASHER_TUBE--;
+setTimeout(flashTuben, 500, tubVR, w333t);	
+}
+
+//-------processActiveTUBE------------------------------------------------------------------------------------
+function processActiveTUBE(tuben,W333TUB)
+{
+
+
+if (JS_COLORO_BGTUBE =="#050505") strBGBLK = 'rgba(0,0, 0, 0.4)'; 
+else strBGBLK = JS_COLORO_BGTUBE;
+
+
+tuben.style.background 		= strBGBLK;	
+W333TUB.style.background 	= strBG50;
+
+
+// IF SHOROQ  EXIT
+if(tuben.id == 'tube1') return;
+
+
+ShowAdanAutoClose();
+JS_FLASHER_TUBE = 10;
+setTimeout(flashTuben, 500, tuben, W333TUB);
+}
+
+
+
+//-------GoActiveSALAT------------------------------------------------------------------------------------
+function GoActiveSALAT(nowLiveTIME)
+{
+
+if(nowLiveTIME == _fjr) 	{ JS_NOW_ACTIVE_SALAT = 0; JS_NOW_SALAT_NAME = JS_PRAYNAMES_NOW[0];		processActiveTUBE(JS_tube0,JS_W333HRtube0);	return; }
+if(nowLiveTIME == _shrq) 	{ JS_NOW_ACTIVE_SALAT = 1; JS_NOW_SALAT_NAME = JS_PRAYNAMES_NOW[1];		processActiveTUBE(JS_tube1,JS_W333HRtube1);	return; }
+if(nowLiveTIME == _thuhr) 	{ JS_NOW_ACTIVE_SALAT = 2; JS_NOW_SALAT_NAME = JS_PRAYNAMES_NOW[2];		processActiveTUBE(JS_tube2,JS_W333HRtube2);	return; }
+if(nowLiveTIME == _asr) 	{ JS_NOW_ACTIVE_SALAT = 3; JS_NOW_SALAT_NAME = JS_PRAYNAMES_NOW[3];		processActiveTUBE(JS_tube3,JS_W333HRtube3);	return; }
+if(nowLiveTIME == _maghreb)	{ JS_NOW_ACTIVE_SALAT = 4; JS_NOW_SALAT_NAME = JS_PRAYNAMES_NOW[4];		processActiveTUBE(JS_tube4,JS_W333HRtube4);	return; }
+if(nowLiveTIME == _isha) 	{ JS_NOW_ACTIVE_SALAT = 5; JS_NOW_SALAT_NAME = JS_PRAYNAMES_NOW[5];		processActiveTUBE(JS_tube5,JS_W333HRtube5);	return; }
+		
+}
+//-----------------------------------------------------------------------------------
+var JS_VR_AZAN = document.getElementById('eeeNowNAMEazan'); 
+var JS_HR_AZAN = document.getElementById('HHHNowNAMEazan'); 
+//-------ShowAdanAutoClose------------------------------------------------------------------------------------
+function ShowAdanAutoClose()
+{
+
+			if( (JS_TODAY_IS_JOMOA)&&(JS_nowMNTS == _thuhr) )
+			{
+			JS_VR_AZAN.innerHTML 	= JS_tempJMA; 
+			JS_HR_AZAN.innerHTML 	= JS_tempJMA; 
+			}
+			else
+			{
+			JS_VR_AZAN.innerHTML 	= JS_NOW_SALAT_NAME; 
+			JS_HR_AZAN.innerHTML 	= JS_NOW_SALAT_NAME; 
+			}
+
+ShowZunder('VRAzanCOMES');
+ShowZunder('HRAzanCOMES');
+
+setTimeout('closeADAN()', 60000); // Let Azan Box 1 Min
+setTimeout(ShowThisMarqueeAndCloseAFTER, 50000, JS_DOA_AFTER_AZAN, 3);
+}
+
+//-------closeADAN------------------------------------------------------------------------------------
+function closeADAN()
+{
+HideZunder('VRAzanCOMES');
+HideZunder('HRAzanCOMES');
+
+ShowFullCONTO();
+}
+
+//-------------------------------------------------------------------------------------------
+function ShowFullCONTO()
+{
+log('JS_ACTIVE_IQAMA_NOW : '+JS_ACTIVE_IQAMA_NOW);
+
+// show big counter if enabled
+	if( (JS_FULLSCREEN_COUNTER) && (JS_ACTIVE_IQAMA_NOW > 1) && (JS_IQAMA_COUNTDOWN_ACTIVE) )
+	{
+	JS_HRCONTO.style.height = '100%';
+	JS_ALONGO.style.zIndex = 1003;
+	setTimeout("delayElholdoShow()", 3000);
+	}
+}
+
+//-------------------------------------------------------------------------------------------
+function delayElholdoShow()
+{
+ShowZunder('ELHOLDO');
+Go1MN(); // to refresh clock up right
+}
+
+//------- CloseTHEMES------------------------------------------------------------------------------------
+function CloseTHEMES()
+{
+HideZunder('e_THEMES');
+}
+
+
+
+//-------SetAllTubesNORMAL------------------------------------------------------------------------------------
+function SetAllTubesNORMAL()
+{
+
+JS_tube0.style.background 	= JS_bgSemiLITE;
+JS_tube1.style.background 	= JS_bgSemiLITE;
+JS_tube2.style.background 	= JS_bgSemiLITE;
+JS_tube3.style.background 	= JS_bgSemiLITE;
+JS_tube4.style.background 	= JS_bgSemiLITE;
+JS_tube5.style.background 	= JS_bgSemiLITE;
+
+JS_W333HRtube0.style.background 	= '';
+JS_W333HRtube1.style.background 	= '';
+JS_W333HRtube2.style.background 	= '';
+JS_W333HRtube3.style.background 	= '';
+JS_W333HRtube4.style.background 	= '';
+JS_W333HRtube5.style.background 	= '';
+
+}
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+function Gime1HourMORE(_hour)
+{
+// 05:37
+var hrs = _hour.split(':');
+var IntHour = parseInt(hrs[0]);
+
+IntHour++;
+
+IntHour = '0'+IntHour;
+IntHour = IntHour.slice(-2);
+
+return IntHour+':'+hrs[1];
+}
+
+
+
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+function Gime1HourLESS(_hour)
+{
+// 05:37
+var hrs = _hour.split(':');
+var IntHour = parseInt(hrs[0]);
+
+IntHour--;
+
+IntHour = '0'+IntHour;
+IntHour = IntHour.slice(-2);
+
+return IntHour+':'+hrs[1];
+}
+
+//------------FindInArray-----------------------------------------------------------------------
+function FindInArray(str,Arro)
+{
+    for (var i=0; i < Arro.length; i++)
+    {
+    if (Arro[i].match(str)) return i;
+    }
+    return -1;
+}
+
+
+
+//------------KonvertTimeTo12-----------21:53 --- 09:53 ------------------------------------------------
+function KonvertTimeTo12(time24)
+{
+
+// ----------- If 24H Enabled, Give As it is And Exit)
+if(JS_24H_ACTIVE) { return time24;}
+
+
+
+var eee = time24.split(':'), hhhhh, mmmmm, FinalTM4, strAmPm;
+
+hhhhh = parseInt(eee[0]);
+mmmmm = eee[1]; 
+
+
+			if(hhhhh >= 12) 
+			{
+			if(hhhhh > 12) hhhhh = hhhhh - 12;
+			}
+		else
+			{
+			if(hhhhh == 0) hhhhh = 12; // it is  AM
+			}
+
+
+return hhhhh+':'+mmmmm;
+}
+
+
+//-----------------------------------------------------------------------------------
+
+var JS_SUMMER_LIVE_ACTIVE	= false;
+var JS_LOCATION_NOW			= '';
+var JS_FULL_HJRI_NOW		= '-----'
+var JS_DULHIJJA_DAYS_0913	= false;
+var JS_SHAABAN_LAST_DAYS	= false;
+var JS_DULHIJJA_WORK_DAYS	= false;
+var JS_TAKBIR_DAYS			= false;
+var JS_RAMADAN_10_NIGHTS	= false;
+var JS_FASTING_3_WHITE_DAYS	= false;
+
+//*****GoGloballyFillDATA*********************************************************
+function GoGloballyFillDATA()
+{
+
+var JS_CCC	= new Date();
+
+//   -------------TEST ONLY  JS_CCC.setDate(JS_CCC.getDate() + 5);  
+
+MiladiToHIJRI(JS_CCC,JS_HIJRI_DECALAGE);
+
+
+
+var WeekDayX=    JS_CCC.getDay();
+var arYOUM	=    JS_WEEK_DAYS_NOW[WeekDayX];
+
+var YearNow =    JS_CCC.getFullYear();
+
+var h3  	= JS_CCC.getHours();
+var m3		= JS_CCC.getMinutes();
+var JSNOW 	= ( (h3*60) + m3 );
+
+
+
+var mmm     = (JS_CCC.getMonth());
+var jx		= JS_CCC.getDate();
+var jj 		= '0'+jx;
+    jj 		= jj.slice(-2);
+
+
+
+var mm = '0'+(mmm+1);
+    mm = mm.slice(-2);
+
+
+
+var _n0 = '-';
+var _n1 = '-';
+var _n2 = '-';
+var _n3 = '-';
+var _n4 = '-';
+var _n5 = '-';
+
+
+
+
+if(JS_WCSV_ACTIVE)
+{
+// WSCV USER FILE ---------------------------------------
+// "Date,Day,FajrBegins,FajrJamaat,Sunrise,ZohrBegins,ZohrJamaat,AsrBegins,AsrJamaat,MagribBegins,MagribJamaat,IshaBegins,IshaJamaat,Jumah1,Jumah2,Days",
+// "12-25,NA,06:35,07:00,08:05,12:06,13:00,14:11,14:30,16:00,16:00,17:15,18:00,12:20,13:00,359",
+
+var fulldate = mm+'-'+jj;
+var idx = FindInArray(fulldate, JS_WCSV_DATA);
+if(idx== -1) { console.log('WCSV : Error in your file (wcsv.js), date not found : '+fulldate); return; }
+
+var VLine   = JS_WCSV_DATA[idx];
+var VDatenz = VLine.split(',');
+
+_n0 = VDatenz[2];  // FAJR
+_n1 = VDatenz[4];  // SUNRISE
+_n2 = VDatenz[5];  // DOHR
+_n3 = VDatenz[7];  // ASR
+_n4 = VDatenz[9];  // Magrib
+_n5 = VDatenz[11]; // Isha
+
+JS_IQAMA_TIME_OF_FAJR		= GimeTotalMinutes(VDatenz[3])  - GimeTotalMinutes(_n0);
+JS_IQAMA_TIME_OF_DOHR		= GimeTotalMinutes(VDatenz[6])  - GimeTotalMinutes(_n2);
+JS_IQAMA_TIME_OF_ASR		= GimeTotalMinutes(VDatenz[8])  - GimeTotalMinutes(_n3);
+JS_IQAMA_TIME_OF_MAGHRIB	= GimeTotalMinutes(VDatenz[10]) - GimeTotalMinutes(_n4);
+JS_IQAMA_TIME_OF_ISHA		= GimeTotalMinutes(VDatenz[12]) - GimeTotalMinutes(_n5);
+
+JS_LOCATION_NOW = "";
+}
+else
+{
+// TAWKIT WTIMES FILE ---------------------------------------
+//"01-01~~~~~05:37|06:58|12:24|15:29|17:50|19:20",
+
+var monthDay = mm+'-'+jj;
+var idx = FindInArray(monthDay, JS_TIMES);
+	if(idx== -1)	{
+						if(monthDay == "02-29") // skip errors of bad files forgeting 29th February
+						idx = FindInArray("03-01", JS_TIMES); // show next day instead
+						else
+						{
+						console.log('Error in file (wtimes), date not found: '+monthDay); 
+						return; 
+						}
+					}
+
+var JS_LineFULL = JS_TIMES[idx];
+var JS_DataLINE = JS_LineFULL.split('~~~~~');
+var JS_THE_TIMES_NOW = JS_DataLINE[1].split('|');
+
+_n0 = JS_THE_TIMES_NOW[0];
+_n1 = JS_THE_TIMES_NOW[1];
+_n2 = JS_THE_TIMES_NOW[2];
+_n3 = JS_THE_TIMES_NOW[3];
+_n4 = JS_THE_TIMES_NOW[4];
+_n5 = JS_THE_TIMES_NOW[5];
+
+JS_LOCATION_NOW = JS_CITY_CODE;
+
+
+}
+
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+
+
+if(!JS_WCSV_ACTIVE)  // ADJUST ONLY IF NORMAL FILES OR CALCUL
+{
+//--------Adjustment---------------------------------------------------------------------------
+_n0 = GoAdjustment(_n0, JS_ATHAN_MINUTES_OF_FAJR);
+_n1 = GoAdjustment(_n1, JS_ATHAN_MINUTES_OF_SHOROQ);
+_n2 = GoAdjustment(_n2, JS_ATHAN_MINUTES_OF_DOHR);
+_n3 = GoAdjustment(_n3, JS_ATHAN_MINUTES_OF_ASR);
+_n4 = GoAdjustment(_n4, JS_ATHAN_MINUTES_OF_MAGHRIB);
+_n5 = GoAdjustment(_n5, JS_ATHAN_MINUTES_OF_ISHA);
+}
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+									JS_SUMMER_LIVE_ACTIVE = false;
+									
+									if(JS_SUMMER_ADD1HOUR)
+									{
+									const summerMONTHS = [3,4,5,6,7,8,9];  // from april(3) include 9(october)
+									
+										if(summerMONTHS.indexOf(mmm) !== -1) 
+										{
+										_n0 = Gime1HourMORE(_n0);
+										_n1 = Gime1HourMORE(_n1);
+										_n2 = Gime1HourMORE(_n2);
+										_n3 = Gime1HourMORE(_n3);
+										_n4 = Gime1HourMORE(_n4);
+										_n5 = Gime1HourMORE(_n5);	
+										JS_SUMMER_LIVE_ACTIVE = true;
+										}
+
+													//--------MARS---------------------------------------------- 
+													//------------------------CATCH LAST-SUNDAY'DAY
+													//----------------------------------------------------------
+													if(mmm == 2)
+													{
+														var JSDXXX = 24;
+														var JSvDAT = null;
+														var xDDD   = -1;
+														
+														for (i=25; i <= 31; i++)
+														{
+														JSvDAT  = new Date(YearNow, 2, i);
+														xDDD	= JSvDAT.getDay();
+														if(xDDD == 0) { JSDXXX=i; break; }
+														}
+														
+														
+														if( jx >= JSDXXX )
+														{
+														_n0 = Gime1HourMORE(_n0);
+														_n1 = Gime1HourMORE(_n1);
+														_n2 = Gime1HourMORE(_n2);
+														_n3 = Gime1HourMORE(_n3);
+														_n4 = Gime1HourMORE(_n4);
+														_n5 = Gime1HourMORE(_n5);
+														JS_SUMMER_LIVE_ACTIVE = true;
+														}
+													}
+								
+													//-----------------------------------------------------------------------------------
+								
+								
+													//--------OCTOBRE---------------------------------------------- 
+													//------------------------CATCH LAST-SUNDAY'DAY
+													//----------------------------------------------------------
+													if(mmm == 9)
+													{
+														var JSDXXX = 24;
+														var JSvDAT = null;
+														var xDDD   = -1;
+														
+														for (i=25; i <= 31; i++)
+														{
+														JSvDAT  = new Date(YearNow, 9, i);
+														xDDD	= JSvDAT.getDay();
+														if(xDDD == 0) { JSDXXX=i; break; }
+														}
+														
+														
+														if( jx >= JSDXXX )
+														{
+														_n0 = Gime1HourLESS(_n0);
+														_n1 = Gime1HourLESS(_n1);
+														_n2 = Gime1HourLESS(_n2);
+														_n3 = Gime1HourLESS(_n3);
+														_n4 = Gime1HourLESS(_n4);
+														_n5 = Gime1HourLESS(_n5);
+														JS_SUMMER_LIVE_ACTIVE = false;
+														}
+													}
+									}
+
+
+//---------manually add 1 hour to all if set----------------------------------------------
+if(JS_1HOURMORE)
+{
+_n0 = Gime1HourMORE(_n0);
+_n1 = Gime1HourMORE(_n1);
+_n2 = Gime1HourMORE(_n2);
+_n3 = Gime1HourMORE(_n3);
+_n4 = Gime1HourMORE(_n4);
+_n5 = Gime1HourMORE(_n5);
+}
+
+//---------manually remove 1 hour from all if set----------------------------------------------
+if(JS_1LESSMORE)
+{
+_n0 = Gime1HourLESS(_n0);
+_n1 = Gime1HourLESS(_n1);
+_n2 = Gime1HourLESS(_n2);
+_n3 = Gime1HourLESS(_n3);
+_n4 = Gime1HourLESS(_n4);
+_n5 = Gime1HourLESS(_n5);
+}
+
+//-----------------------------------------------------------------------------------
+
+
+// AUTO ADD 30 MIN TO ISHA IF RAMADAN AND OPTION ACTIVE	
+if( (JS_THIS_IS_RAMADAN) && (JS_RAMADAN_30MIN_ACTIVE) ) _n5 = GoAdjustment(_n5, 30);
+
+
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+var eHjr	=  ARNumbers(JS_FULL_HJRI_NOW);
+
+document.getElementById('_eYOUM').innerHTML  	=  arYOUM;
+document.getElementById('_eHIJRI').innerHTML  	=  eHjr;
+
+document.getElementById('_HR_YOUM').innerHTML 	=  arYOUM;
+document.getElementById('_HReHIJRI').innerHTML  =  eHjr;
+
+
+//IF FRIDAY CHANGE DOHR NAME BY JOMOA TEXT AND PERSO TIME IF ANY
+//-----------------------------------------------------------------------------------
+
+	if(JS_TODAY_IS_JOMOA)
+	{
+	JS_T_2.innerHTML  = JS_tempJMA;
+	JS_W333HT_2.innerHTML = JS_T_2.innerHTML;
+		if(JS_PERSO_FIXED_JOMOA !== "") _n2 = JS_PERSO_FIXED_JOMOA; // override Jomoa time by perso
+	}
+	else
+	{
+	JS_T_2.innerHTML  = JS_PRAYNAMES_NOW[2];
+	JS_W333HT_2.innerHTML = JS_T_2.innerHTML;
+	}
+
+
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+// NOW SET FIXED DOHR after _n2 modified
+if( (JS_FIXED_IQAMATDOHR !== "")&&(!JS_WCSV_ACTIVE) )
+{
+JS_IQAMA_TIME_OF_DOHR = GimeTotalMinutes(JS_FIXED_IQAMATDOHR) - GimeTotalMinutes(_n2);
+
+if(JS_IQAMA_TIME_OF_DOHR < 1) JS_IQAMA_TIME_OF_DOHR = 10; //default 10
+
+}
+
+
+
+
+
+// fill times now, with converting them to 12 hour format
+var JJJ0 = ARNumbers(KonvertTimeTo12(_n0));
+var JJJ1 = ARNumbers(KonvertTimeTo12(_n1));
+var JJJ2 = ARNumbers(KonvertTimeTo12(_n2));
+var JJJ3 = ARNumbers(KonvertTimeTo12(_n3));
+var JJJ4 = ARNumbers(KonvertTimeTo12(_n4));
+var JJJ5 = ARNumbers(KonvertTimeTo12(_n5));
+
+JS_S_0.innerHTML = JJJ0;
+JS_S_1.innerHTML = JJJ1;
+JS_S_2.innerHTML = JJJ2;
+JS_S_3.innerHTML = JJJ3;
+JS_S_4.innerHTML = JJJ4;
+JS_S_5.innerHTML = JJJ5;
+
+
+
+JS_HHHS_0.innerHTML = JJJ0;
+JS_HHHS_1.innerHTML = JJJ1;
+JS_HHHS_2.innerHTML = JJJ2;
+JS_HHHS_3.innerHTML = JJJ3;
+JS_HHHS_4.innerHTML = JJJ4;
+JS_HHHS_5.innerHTML = JJJ5;
+
+
+
+
+
+_fjr		= GimeTotalMinutes(_n0);
+_shrq		= GimeTotalMinutes(_n1);
+_thuhr		= GimeTotalMinutes(_n2);
+_asr		= GimeTotalMinutes(_n3);
+_maghreb	= GimeTotalMinutes(_n4);
+_isha		= GimeTotalMinutes(_n5);
+
+
+var STRmonth	= JS_MONTHS_NOW[mmm];
+var STRyear		= JS_CCC.getFullYear();
+
+
+document.getElementById('_eMILADI').innerHTML 	= ARNumbers(jx)+' '+STRmonth+' '+ARNumbers(STRyear);
+document.getElementById('_HR_MILADI').innerHTML = ARNumbers(jx)+' '+STRmonth+' '+ARNumbers(STRyear);
+
+
+
+
+
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+
+ShowTomorrow();
+
+updateBottomInformations();
+
+
+goUpdateIQAMAS();
+}
+
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+function GoAdjustment(hhh, mints)
+{
+
+	var nowMNTS = GimeTotalMinutes(hhh);
+	nowMNTS += mints;
+	var cHHH = Math.floor(nowMNTS / 60);          
+	var cMMM = nowMNTS % 60;
+	
+	cHHH	='0'+cHHH;
+	cMMM	='0'+cMMM;
+	
+	cHHH = cHHH.slice(-2);
+	cMMM = cMMM.slice(-2);
+	
+return (cHHH + ':' + cMMM);
+}
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+var JS_DECOMPTE_STARTED			=  false;
+var JS_IQUAMA_SECONDS 			=  0;
+var JS_NOW_DIMSCREEN_DURATION 	=  0;
+var JS_ACTIVE_IQAMA_NOW			=  0;
+
+
+//-------------------startDECOMPTE--------------------------
+function startDECOMPTE(xminu, duree)
+{
+
+if(!JS_IQAMA_COUNTDOWN_ACTIVE) return;
+
+JS_eDECOMPTO.innerHTML 		= '-';
+JS_HReDECOMPTO.innerHTML 	= '-';
+JS_DECOMPTE_STARTED  		= true;
+JS_IQUAMA_SECONDS 			= (xminu * 60); 
+JS_NOW_DIMSCREEN_DURATION 	= duree;
+JS_ACTIVE_IQAMA_NOW			= xminu; 
+
+
+ShowZunder('theSVG');
+ShowZunder('HRtheSVG');
+ShowZunder('_eTheDecompteBOX');
+ShowZunder('_HReTheDecompteBOX');
+
+
+
+// HIDE NEXT PRAY
+HideZunder('TheNextPRAY');
+HideZunder('TheNextBOX');
+HideZunder('HRTheNextPRAY');
+HideZunder('HRTheNextBOX');
+
+}
+
+
+
+//-----------------------------------------------------------------------------------
+var JS_CountDownCIRCLE_ACTIVE = false;
+var JS_CountDownCIRCLE_DATA   = 0;
+
+//-------------------closeDECOMPTE--------------------------
+function closeDECOMPTE()
+{
+	
+JS_CountDownCIRCLE_ACTIVE = false;
+
+
+HideZunder('theSVG');
+HideZunder('HRtheSVG');
+HideZunder('dynoCIRCLE');
+HideZunder('HRdynoCIRCLE');
+
+
+
+JS_DECOMPTE_STARTED = false;
+JS_IQUAMA_SECONDS   = 0;
+JS_ACTIVE_IQAMA_NOW	= 0;
+HideZunder('_eTheDecompteBOX');
+HideZunder('_HReTheDecompteBOX');
+
+
+// SHOW NEXT_PRAY 
+ShowZunder('TheNextPRAY');	
+ShowZunder('TheNextBOX');	
+ShowZunder('HRTheNextPRAY');	
+ShowZunder('HRTheNextBOX');	
+
+
+}
+
+//-------------------startCountDownCIRCLE--------------------------
+function startCountDownCIRCLE()
+{
+
+JS_CountDownCIRCLE_DATA   = 0;
+JS_CountDownCIRCLE_ACTIVE = true;
+
+ShowZunder('dynoCIRCLE');
+ShowZunder('HRdynoCIRCLE');
+}
+
+
+
+//-----------------------------------HijriClick--------------------------
+function HijriClick()
+{
+JS_HIJRI_DECALAGE++;
+if(JS_HIJRI_DECALAGE > 2) JS_HIJRI_DECALAGE = -2;
+
+localStorage.setItem('STORAGE_DECALAGE', JS_HIJRI_DECALAGE);
+
+GoGloballyFillDATA();
+}
+
+//-----------------------------------HijriHELP--------------------------
+function HijriHELP()
+{
+alert(JS_eLang.XX_BOX_0);
+}
+
+
+var JS_STRICT_WTIMES_FILE = false;
+//**************************************************************
+function ShowTomorrow()
+{
+
+
+// TOMORROW TIMES ...
+var JS_TTT	= new Date;
+JS_TTT.setDate(JS_TTT.getDate() + 1); //  + 36  -------------TEST ONLY
+
+var dayNBR = JS_TTT.getDay();
+
+var YearNow = JS_TTT.getFullYear();
+
+var mm		='0'+(JS_TTT.getMonth()+1);
+var jj		='0'+JS_TTT.getDate();
+
+jj =jj.slice(-2);
+mm =mm.slice(-2);
+
+
+
+var eeeFajrTMRW	= '';
+
+
+
+		if(JS_WCSV_ACTIVE)
+		{
+		// WSCV USER FILE ---------------------------------------
+		// "Date,Day,FajrBegins,....
+		
+		var fulldate = mm+'-'+jj;
+		var idx = FindInArray(fulldate, JS_WCSV_DATA);
+		if(idx== -1) { return; }
+		var VLine   = JS_WCSV_DATA[idx];
+		var VDatenz = VLine.split(',');
+		eeeFajrTMRW	= VDatenz[2];  // FAJR TOMORROW
+		}
+		else
+		{
+		JS_STRICT_WTIMES_FILE = true;
+		var monthDay = mm+'-'+jj;
+		var idx = FindInArray(monthDay, JS_TIMES);
+		if(idx== -1) { return; }
+		//"01-01~~~~~05:37|06:58|12:24|15:29|17:50|19:20",
+		var eeeLineFULL 		= JS_TIMES[idx];
+		var eeeDataLINE 		= eeeLineFULL.split('~~~~~');
+		var eeeTHE_TIMES_NOW 	= eeeDataLINE[1].split('|');
+		eeeFajrTMRW				= eeeTHE_TIMES_NOW[0];
+		}
+
+
+//-----------------------------------------------------------------------------------
+
+var adjustedTMRW = GoAdjustment(eeeFajrTMRW, JS_ATHAN_MINUTES_OF_FAJR);
+
+
+
+if( (JS_SUMMER_LIVE_ACTIVE)&&(JS_STRICT_WTIMES_FILE) )
+{
+var dayNBR = JS_TTT.getDay();
+var xmont  = JS_TTT.getMonth();
+var xdato  = JS_TTT.getDate();
+var JS_IS_LASTOCTOBERSUNDAY =( (dayNBR==0)&&(xmont==9)&&(xdato > 24) );
+// tomorrow add 1 hour only if summer time is realy active AND tomorrow is not last sunday of october
+if(!JS_IS_LASTOCTOBERSUNDAY) adjustedTMRW = Gime1HourMORE(adjustedTMRW);
+}
+
+
+
+adjustedTMRW = KonvertTimeTo12(adjustedTMRW);
+document.getElementById('_demain').innerHTML 		= ARNumbers(adjustedTMRW);
+document.getElementById('W333_HRdemain').innerHTML 	= ARNumbers(adjustedTMRW);
+}
+
+
+
+
+//----goFullSCREEN-------------------------------------
+function goFullSCREEN() 
+{
+GoGloballyFillDATA();
+Go1MN();
+launchFullscreen(document.documentElement);
+JS_SND_BEEEP.play();
+}
+
+
+//-------------------------------------------------
+function forceAudio()
+{
+// just to trigger audio manually sounds to be accepted by browser
+JS_SND_BEEEP.play();
+HideZunder('BtnAudio');
+}
+
+
+//------------------------Play_Beeep-----------------
+function Play_Beeep() 
+{
+	if(JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE)	
+	{
+			if(JS_SHORT_AZAN_ACTIVE)
+			{
+			JS_SND_SHORTAZAN.play();
+			}
+		else
+			{
+			if(JS_nowMNTS==_fjr) JS_SND_FAJR.play(); 
+			else JS_SND_AZAN.play();
+			}
+	}
+	else 
+	JS_SND_BEEEP.play();
+}
+
+
+//-----------------------------------------
+function Play_IqamaTit() 
+{
+	if(JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE)
+	{
+			if(JS_SHORT_IQAMA_ACTIVE) JS_SND_SHORTIQAMA.play();
+			else JS_SND_TIT.play();
+	}
+	else 
+	JS_SND_TIT.play();
+}
+
+
+//-------------SetScroll-----------
+function SetScroll(StrId,nbr) 
+{
+var OBBB = document.getElementById(StrId);
+
+var nowSCRO = OBBB.scrollTop;
+if(nbr > 0) OBBB.scrollTop = nowSCRO + 90; else OBBB.scrollTop = nowSCRO - 90;
+}
+
+
+
+
+
+//---------------------------GimeTotalMinutes------
+function GimeTotalMinutes(s)
+{
+//14:25
+var hee = s.substr(0,2);
+var mee = s.substr(3,2);
+
+return ( ( parseInt(hee)*60 ) + parseInt(mee) );
+}
+
+
+//=======DisableSelectionByID======================
+function DisableSelectionByNAME(elem) 
+{
+
+elem.onselectstart = function() { return false; };
+elem.unselectable = "on";
+elem.style.MozUserSelect = "none";
+elem.style.cursor = "default";
+}
+
+
+
+
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+function launchFullscreen(element) 
+{
+	  if(element.requestFullscreen) {
+	    element.requestFullscreen();
+	  } 
+	  else if(element.mozRequestFullScreen) {
+	    element.mozRequestFullScreen();
+	  } 
+	  else if(element.webkitRequestFullscreen) {
+	    element.webkitRequestFullscreen();
+	  } 
+	  else if(element.msRequestFullscreen) {
+	    element.msRequestFullscreen();
+	  }
+}
+
+
+//-------_cadro------------------------------------------------------------------------------------
+
+
+function _cadro()
+{
+
+var bVVV = JS_MIDDLE_B.clientHeight;
+JS_DYNTEXT.height 		= bVVV;
+
+var bHHH = JS_HR_MIDDLE_B.clientHeight;
+JS_HReDynMAIN.height 	= bHHH;
+
+var bCCC = JS_ALONGO.clientHeight;
+JS_W333HRtube5.height 	= bCCC;
+
+JS_DISPLAY_IS_HORIZONTAL = (window.innerHeight < window.innerWidth);
+
+goSetBG();
+
+_GoMessages();
+
+}
+
+//---------GoActivateOrDisableDIV--------------------------------------------------------------------------
+function GoActivateOrDisableDIV(iniSTATE,idX)
+{
+if(iniSTATE) idX.classList.remove('cssDISABLED'); else idX.classList.add('cssDISABLED');
+}
+
+//---------GoBoxesONOFF--------------------------------------------------------------------------
+function GoBoxesONOFF(stat,ELEM)
+{
+ELEM.disabled=stat;
+}
+//-------SetAudioVoiceOnOff------------------------------------------------------------------------------------
+function SetAudioVoiceOnOff()
+{
+JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE = !JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE;
+
+var eeBOOL = 0;
+if(JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE) eeBOOL = 1;
+localStorage.setItem('STORAGE_AUDIO_BY_VOICE', eeBOOL);
+
+if(eeBOOL) JS_eVoiceCHECK.checked = true; else JS_eVoiceCHECK.checked = false;
+
+
+VerifyMP3Options();
+
+// to trigger sounds in browser to be accepted 
+if(JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE) JS_SND_BEEEP.play();
+}
+
+//-------------------------------------------------------------------------------------------
+function VerifyMP3Options()
+{
+GoBoxesONOFF(!JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE,JS_eShortAZAN);
+GoBoxesONOFF(!JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE,JS_eShortIQAMA);
+}
+
+//-------SetShortAZANOnOff----------------------------------------------------
+function SetShortAZANOnOff()
+{
+JS_SHORT_AZAN_ACTIVE = !JS_SHORT_AZAN_ACTIVE;
+var eeBOOL = 0;
+if(JS_SHORT_AZAN_ACTIVE) eeBOOL = 1;
+localStorage.setItem('STORAGE_JS_SHORT_AZAN_ACTIVE', eeBOOL);
+if(eeBOOL) JS_eShortAZAN.checked = true; else JS_eShortAZAN.checked = false;
+}
+
+//-------SetShortIQAMAOnOff----------------------------------------------------
+function SetShortIQAMAOnOff()
+{
+JS_SHORT_IQAMA_ACTIVE = !JS_SHORT_IQAMA_ACTIVE;
+var eeBOOL = 0;
+if(JS_SHORT_IQAMA_ACTIVE) eeBOOL = 1;
+localStorage.setItem('STORAGE_JS_SHORT_IQAMA_ACTIVE', eeBOOL);
+if(eeBOOL) JS_eShortIQAMA.checked = true; else JS_eShortIQAMA.checked = false;
+}
+
+
+
+
+//-------SetCounterBIG------------------------------------------------------------------------------------
+function SetCounterBIG()
+{
+JS_FULLSCREEN_COUNTER= !JS_FULLSCREEN_COUNTER;
+
+var eeBOOL = 0;
+if(JS_FULLSCREEN_COUNTER) eeBOOL = 1;
+localStorage.setItem('STORAGE_FULLSCREEN_COUNTER', eeBOOL);
+
+if(eeBOOL) JS_eCountdownCHECK.checked = true; else JS_eCountdownCHECK.checked = false;
+
+}
+
+
+//-------SetRamadan30MinOnOff------------------------------------------------------------------------------------
+function SetRamadan30MinOnOff()
+{
+JS_RAMADAN_30MIN_ACTIVE = !JS_RAMADAN_30MIN_ACTIVE;
+
+var eeBOOL = 0;
+if(JS_RAMADAN_30MIN_ACTIVE) eeBOOL = 1;
+localStorage.setItem('STORAGE_RAMADAN_30MIN_ACTIVE', eeBOOL);
+
+if(eeBOOL) JS_eRamadan30CHECK.checked = true; else JS_eRamadan30CHECK.checked = false;
+
+GoGloballyFillDATA();
+}
+
+
+//-------SetSummerOnOff------------------------------------------------------------------------------------
+function SetSummerOnOff()
+{
+JS_SUMMER_ADD1HOUR = !JS_SUMMER_ADD1HOUR;
+
+var eeBOOL = 0;
+if(JS_SUMMER_ADD1HOUR) eeBOOL = 1;
+localStorage.setItem('STORAGE_SUMMER_ADD1HOUR', eeBOOL);
+if(eeBOOL) JS_summerCHECK.checked = true; else JS_summerCHECK.checked = false;
+GoGloballyFillDATA();
+}
+
+//-------Set1MoreHOUR------------------------------------------------------------------------------------
+function Set1MoreHOUR()
+{
+JS_1HOURMORE = !JS_1HOURMORE;
+var eeBOOL = 0;
+if(JS_1HOURMORE) eeBOOL = 1;
+localStorage.setItem('STORAGE_JS_1HOURMORE', eeBOOL);
+if(eeBOOL) JS_eMoreHourCHECK.checked = true; else JS_eMoreHourCHECK.checked = false;
+GoGloballyFillDATA();
+}
+
+//-------Set1LessHOUR------------------------------------------------------------------------------------
+function Set1LessHOUR()
+{
+JS_1LESSMORE = !JS_1LESSMORE;
+var eeBOOL = 0;
+if(JS_1LESSMORE) eeBOOL = 1;
+localStorage.setItem('STORAGE_JS_1LESSMORE', eeBOOL);
+if(eeBOOL) JS_eLessHourCHECK.checked = true; else JS_eLessHourCHECK.checked = false;
+GoGloballyFillDATA();
+}
+
+//-------Set24OnOff------------------------------------------------------------------------------------
+function Set24OnOff()
+{
+JS_24H_ACTIVE = !JS_24H_ACTIVE;
+var sssBOOL = 0;
+if(JS_24H_ACTIVE) sssBOOL = 1;
+localStorage.setItem('STORAGE_24H_ACTIVE', sssBOOL);
+if(sssBOOL) JS_e24CHECK.checked = true; else JS_e24CHECK.checked = false;
+
+GoGloballyFillDATA();
+Go1MN();
+}
+
+
+
+
+//-------SetFullClockOnOff------------------------------------------------------------------------------------
+function SetFullClockOnOff()
+{
+JS_FULL_CLOCK_ACTIVE = !JS_FULL_CLOCK_ACTIVE;
+UpdateFullClock(JS_FULL_CLOCK_ACTIVE);
+}
+
+
+
+//-------SetPersoWCSV------------------------------------------------------------------------------------
+function SetPersoWCSV()
+{
+JS_WCSV_ACTIVE = !JS_WCSV_ACTIVE;
+var sssBOOL = 0;
+if(JS_WCSV_ACTIVE) sssBOOL = 1;
+localStorage.setItem('STORAGE_WCSV_ACTIVE', sssBOOL);
+execWCSV(JS_WCSV_ACTIVE);
+}
+
+
+//-------execWCSV------------------------------------------------------------------------------------
+function execWCSV(sBOL)
+{
+	if(sBOL) 
+	{
+	JS_eWCSVCHECK.checked = true; 
+	JS_ROOT.style.setProperty('--OPAK', '0');
+	}
+	else 
+	{
+	JS_eWCSVCHECK.checked = false;
+	JS_ROOT.style.setProperty('--OPAK', '1');
+	}
+
+
+Go1MN();
+}
+
+
+
+
+
+//-------SetPastDimerOnOff------------------------------------------------------------------------------------
+function SetPastDimerOnOff()
+{
+
+JS_PAST_DIMER_ACTIVE = !JS_PAST_DIMER_ACTIVE;
+var sssBOOL = 0;
+if(JS_PAST_DIMER_ACTIVE) sssBOOL = 1;
+localStorage.setItem('STORAGE_PAST_DIMER_ACTIVE', sssBOOL);
+if(sssBOOL) JS_ePastDimerCHECK.checked = true; else JS_ePastDimerCHECK.checked = false;
+	
+// go update view
+goDimPassedPRAYINGS(JS_nowMNTS);
+}
+
+
+//-------SetIqamaFullTimes------------------------------------------------------------------------------------
+function SetIqamaFullTimes()
+{
+JS_IQAMA_FULL_TIMES = !JS_IQAMA_FULL_TIMES;
+var sssBOOL = 0;
+if(JS_IQAMA_FULL_TIMES) sssBOOL = 1;
+localStorage.setItem('STORAGE_IQAMA_FULL_TIMES', sssBOOL);
+if(sssBOOL) JS_eIQAMAasHOURCHECK.checked = true; else JS_eIQAMAasHOURCHECK.checked = false;
+	
+// go update IQAMAS
+goUpdateIQAMAS();
+}
+
+
+//-------SetIqamaUnderNames------------------------------------------------------------------------------------
+function SetIqamaUnderNames()
+{
+JS_IQAMA_UNDER_NAMES = !JS_IQAMA_UNDER_NAMES;
+var sssBOOL = 0;
+if(JS_IQAMA_UNDER_NAMES) sssBOOL = 1;
+localStorage.setItem('STORAGE_IQAMA_UNDER_NAMES', sssBOOL);
+if(sssBOOL) JS_eIQAMAUNDERNAMES.checked = true; else JS_eIQAMAUNDERNAMES.checked = false;
+goSetBG();
+}
+
+
+
+
+//-------UpdateFullClock------------------------------------------------------------------------------------
+function UpdateFullClock(YES_ACTIVATE_IT)
+{
+var sssBOOL = 0;
+if(YES_ACTIVATE_IT) sssBOOL = 1;
+localStorage.setItem('STORAGE_FULL_CLOCK_ACTIVE', sssBOOL);
+if(sssBOOL) JS_eFullClockCHECK.checked = true; else JS_eFullClockCHECK.checked = false;
+
+
+	if(YES_ACTIVATE_IT)
+	{
+	HideZunder('CLOKO_MINI_VR');
+	HideZunder('CLOKO_MINI_HR');
+	ShowZunder('CLOKO_FULL_VR');
+	ShowZunder('CLOKO_FULL_HR');
+	}
+else
+	{
+	ShowZunder('CLOKO_MINI_VR');
+	ShowZunder('CLOKO_MINI_HR');
+	HideZunder('CLOKO_FULL_VR');
+	HideZunder('CLOKO_FULL_HR');
+	}
+
+
+setTimeout(Go1MN, 3000);
+}
+
+
+//-------SetDimmOnOff------------------------------------------------------------------------------------
+function SetDimmOnOff()
+{
+JS_DIMM_WHILE_PRAYIN_ACTIVE = !JS_DIMM_WHILE_PRAYIN_ACTIVE;
+var sssBOOL = 0;
+if(JS_DIMM_WHILE_PRAYIN_ACTIVE) sssBOOL = 1;
+localStorage.setItem('STORAGE_DIMM_SCREEN', sssBOOL);
+if(sssBOOL) JS_eDimmCHECK.checked = true; else JS_eDimmCHECK.checked = false;
+}
+
+
+
+//-------------------------------------------------------------------------------------------
+
+var JS_COUNT_MSGS 	= JS_MESSAGES.length;
+
+
+var JS_LAST_X = 0;
+var JS_NB     = 0;
+//-------------------------_GoMessages------------------------------------------------------
+function _GoMessages()
+{
+
+
+JS_NB	= Math.floor((Math.random() * JS_COUNT_MSGS)); 
+
+
+// avoid same number
+if(JS_LAST_X == JS_NB ) { _GoMessages(); return; }
+
+
+
+
+var str = JS_MESSAGES[JS_NB];
+if(str == "") { _GoMessages(); return; }
+
+
+
+if((JS_DULHIJJA_WORK_DAYS) && 
+((str.indexOf('10NIGHTS') > -1) || (str.indexOf('3WHITEDAYS') > -1) || (str.indexOf('TAKBIR') > -1))) { _GoMessages(); return; }
+
+if((JS_RAMADAN_10_NIGHTS) && 
+((str.indexOf('10DAYS') > -1) || (str.indexOf('3WHITEDAYS') > -1) || (str.indexOf('TAKBIR') > -1))) { _GoMessages(); return; }
+
+if((JS_FASTING_3_WHITE_DAYS) && 
+((str.indexOf('10DAYS') > -1) || (str.indexOf('10NIGHTS') > -1) || (str.indexOf('TAKBIR') > -1))) { _GoMessages(); return; }
+
+if((JS_TAKBIR_DAYS) && 
+((str.indexOf('10DAYS') > -1) || (str.indexOf('10NIGHTS') > -1) || (str.indexOf('3WHITEDAYS') > -1))) { _GoMessages(); return; }
+
+var group4Specials   = (JS_DULHIJJA_WORK_DAYS || JS_RAMADAN_10_NIGHTS || JS_FASTING_3_WHITE_DAYS || JS_TAKBIR_DAYS);
+var spclSTRini       = (str.indexOf('10DAYS') > -1) || (str.indexOf('10NIGHTS') > -1) || (str.indexOf('3WHITEDAYS') > -1) || (str.indexOf('TAKBIR') > -1);
+
+if (spclSTRini && !group4Specials) { _GoMessages(); return; }
+
+
+// filter passed, clean now, 
+str = str.replace('TAKBIR', '');
+str = str.replace('10DAYS', '');
+str = str.replace('10NIGHTS', '');
+str = str.replace('3WHITEDAYS', '');
+
+
+if(spclSTRini) str = "<span style='color:var(--Color_CLOCK);'>"+str+"<span>";
+
+str = str.replace(/\{/g, "﴿");
+str = str.replace(/\}/g, "﴾");
+	
+
+	if(JS_DISPLAY_IS_HORIZONTAL)
+	{
+	str = str.replace(/\|/g, " ");
+	}
+	else
+	str = str.replace(/\|/g, "<br>");
+
+
+if(JS_LOGS_ENABLED) str = "---------";
+
+
+JS_DYNTEXT.innerHTML    = str;
+JS_HReDynTEXT.innerHTML = str;
+if(JS_ELHOLDO.style.visibility=='visible') JS_ELAYATS.innerHTML = str;
+
+
+JS_LAST_X = JS_NB;
+}
+
+
+
+
+
+//--------editMOSQUENAME-----------------------------------------------------------------------------------
+function editMOSQUENAME()
+{	
+				
+	var str = prompt("Enter your Mosque name", JS_MOSQUE_NAME);
+	if (str != null) 
+	{
+	JS_MOSQUE_NAME = str;
+	
+	JS_VRMsqNAME.innerHTML = JS_MOSQUE_NAME;
+	JS_HRMsqNAME.innerHTML = JS_MOSQUE_NAME;
+	localStorage.setItem('STORAGE_MOSQUE_NAME', JS_MOSQUE_NAME);
+	}
+
+}
+
+
+
+
+
+//-------------------------------------------------------------------------------------------
+var JS_KNTO	= 0;
+//-----------------TestCounter---------------
+function TestCounter()
+{
+JS_KNTO++;
+if(JS_KNTO >= 3)	{
+					JS_KNTO = 0; 
+					startDECOMPTE(3, 1);
+					ShowFullCONTO();
+					}
+}
+
+//-------------------------------------------------------------------------------------------
+var JS_RRR	= 0;
+//-----------------LogsOnOff---------------
+function LogsOnOff()
+{
+JS_RRR++;
+if(JS_RRR >= 3)	{JS_RRR = 0; JS_LOGS_ENABLED = !JS_LOGS_ENABLED; _GoMessages();}
+}
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+var JS_HELP_MENU_IS_OPEN = true;
+
+//-----------------ShowGlobalHELP---------------
+function ShowGlobalHELP()
+{
+
+JS_HELP_MENU_IS_OPEN = !JS_HELP_MENU_IS_OPEN;
+
+
+		if(JS_HELP_MENU_IS_OPEN)
+		{
+		HideZunder('eHELPSCREEN');
+		}
+	else
+		{
+		ShowZunder('eHELPSCREEN');
+		}	
+}
+
+
+
+//--------CloseHELP---------------
+function CloseHELP()
+{
+JS_HELP_MENU_IS_OPEN = !JS_HELP_MENU_IS_OPEN;
+HideZunder('eHELPSCREEN');
+}
+
+
+
+
+//-----------------openSSS---------------
+function openSSS(xx)
+{
+HideZunder('sss1');
+HideZunder('sss2');
+HideZunder('sss3');
+HideZunder('sss4');
+
+ShowZunder('sss'+xx);
+}
+
+
+
+
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//--------------------------closeThis-----------------------------------------------------
+function closeThis(obj)
+{
+obj.parentNode.parentNode.style.visibility = 'hidden';
+}
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+// HIJRI DATE FROM MILADI, CODE FROM :
+// http://www.vivvo.net/forums/showthread.php?p=40981
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+function MiladiToHIJRI(myDate,_dek) 
+{
+
+//var myDate = new Date();
+
+d = parseInt(myDate.getDate());
+m = parseInt(myDate.getMonth() + 1);
+y = parseInt(myDate.getFullYear());
+
+    if ((y>1582)||((y==1582)&&(m>10))||((y==1582)&&(m==10)&&(d>14))) 
+        {
+        jd= intPart((1461*(y+4800+intPart((m-14)/12)))/4)+ 
+        	intPart((367*(m-2-12*(intPart((m-14)/12))))/12)-
+        	intPart( (3* (intPart(  (y+4900+    intPart( (m-14)/12)     )/100)    )   ) /4)+d-32075
+         }
+    else
+    {
+    jd = 367*y-intPart((7*(y+5001+intPart((m-9)/7)))/4)+intPart((275*m)/9)+d+1729777;
+    }
+
+
+JD=jd;
+
+//wd=weekDay(jd%7);
+
+l=jd-1948440+10632;
+n=intPart((l-1)/10631);
+l=l-10631*n+354;
+j=(intPart((10985-l)/5316))*(intPart((50*l)/17719))+(intPart(l/5670))*(intPart((43*l)/15238));
+l=l-(intPart((30-j)/15))*(intPart((17719*j)/50))-(intPart(j/16))*(intPart((15238*j)/43))+29;
+
+
+
+
+m=intPart((24*l)/709);
+
+d=l-intPart((709*m)/24);
+
+y=30*n+j-30;
+
+
+// DECALAGE_CALC
+d = d + _dek;
+if(d < 1 ) { d = 30; m--;	}
+if(d > 30) { d = 1;  m++;	}
+
+if(m < 1  ) m = 12;
+if(m > 12 ) m = 1;
+
+
+JS_THIS_IS_RAMADAN		= (m == 9 );
+JS_FULL_HJRI_NOW		=  d + " " + JS_HIJRI_NOW[m-1] + " " +y;
+JS_DULHIJJA_DAYS_0913 	= ( (m == 12) && (  (d==9)||(d==10)||(d==11)||(d==12)||(d==13)  )   );
+JS_SHAABAN_LAST_DAYS 	= ( (m == 8) && (  (d==29)||(d==30)  )   );
+JS_DULHIJJA_WORK_DAYS 	= ( (m == 12) && ( d >=1  && d <= 9 ));
+JS_RAMADAN_10_NIGHTS 	= ( (m == 9)  && ( d >=20 && d < 29));
+JS_TAKBIR_DAYS 			= (  m == 10 &&  d == 1) || ( (m == 12) && ( d >=10  && d <= 13 )) ;
+
+JS_FASTING_3_WHITE_DAYS	= (  d >=12 && d <= 14) && (  (!JS_THIS_IS_RAMADAN)&&(!JS_DULHIJJA_DAYS_0913)&&(!JS_SHAABAN_LAST_DAYS) );
+
+}
+
+
+
+//------------------------------intPart-------------------------------------------------------------
+function intPart(floatNum)
+{
+	if (floatNum < -0.0000001) { return Math.ceil(floatNum-0.0000001) }
+	return Math.floor(floatNum+0.0000001)    
+}
+
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+
+
+
+var JS_OBJ_AZAN_FAJR 		= document.getElementById('AZAN_FAJR');
+var JS_OBJ_AZAN_SHOROQ 		= document.getElementById('AZAN_SHOROQ');
+var JS_OBJ_AZAN_DOHR 		= document.getElementById('AZAN_DOHR');
+var JS_OBJ_AZAN_ASR 		= document.getElementById('AZAN_ASR');
+var JS_OBJ_AZAN_MAGHRIB 	= document.getElementById('AZAN_MAGHRIB');
+var JS_OBJ_AZAN_ISHA 		= document.getElementById('AZAN_ISHA');
+
+
+
+//--------------goAZANminus-----------------------------------------------------------------------------
+function goAZANminus(prayNAME)
+{
+
+
+	switch(prayNAME)
+	{
+	  
+	  case 'FAJR'	:	JS_ATHAN_MINUTES_OF_FAJR--;	
+	  					if(JS_ATHAN_MINUTES_OF_FAJR < -60) {JS_ATHAN_MINUTES_OF_FAJR = -60; return;}	
+	  					JS_OBJ_AZAN_FAJR.innerHTML = JS_ATHAN_MINUTES_OF_FAJR;
+	  					localStorage.setItem('STORAGE_AZAN_FAJR', JS_ATHAN_MINUTES_OF_FAJR);
+	  					break;
+
+	  case 'SHOROQ'	:	JS_ATHAN_MINUTES_OF_SHOROQ--;	
+	  					if(JS_ATHAN_MINUTES_OF_SHOROQ < -60) {JS_ATHAN_MINUTES_OF_SHOROQ = -60; return;}	
+	  					JS_OBJ_AZAN_SHOROQ.innerHTML = JS_ATHAN_MINUTES_OF_SHOROQ;
+	  					localStorage.setItem('STORAGE_AZAN_SHOROQ', JS_ATHAN_MINUTES_OF_SHOROQ);
+	  					break;
+
+
+	  case 'DOHR'	:	JS_ATHAN_MINUTES_OF_DOHR--;	
+	  					if(JS_ATHAN_MINUTES_OF_DOHR < -60) {JS_ATHAN_MINUTES_OF_DOHR = -60; return;}	
+	  					JS_OBJ_AZAN_DOHR.innerHTML = JS_ATHAN_MINUTES_OF_DOHR;
+	  					localStorage.setItem('STORAGE_AZAN_DOHR', JS_ATHAN_MINUTES_OF_DOHR);
+	  					break;
+
+	  case 'ASR'	:	JS_ATHAN_MINUTES_OF_ASR--;	
+	  					if(JS_ATHAN_MINUTES_OF_ASR < -60) {JS_ATHAN_MINUTES_OF_ASR = -60; return;}	
+	  					JS_OBJ_AZAN_ASR.innerHTML = JS_ATHAN_MINUTES_OF_ASR;
+	  					localStorage.setItem('STORAGE_AZAN_ASR', JS_ATHAN_MINUTES_OF_ASR);
+	  					break;
+
+	  case 'MAGHRIB'	:	JS_ATHAN_MINUTES_OF_MAGHRIB--;	
+	  					if(JS_ATHAN_MINUTES_OF_MAGHRIB < -60) {JS_ATHAN_MINUTES_OF_MAGHRIB = -60; return;}	
+	  					JS_OBJ_AZAN_MAGHRIB.innerHTML = JS_ATHAN_MINUTES_OF_MAGHRIB;
+	  					localStorage.setItem('STORAGE_AZAN_MAGHRIB', JS_ATHAN_MINUTES_OF_MAGHRIB);
+	  					break;
+
+	  case 'ISHA'	:	JS_ATHAN_MINUTES_OF_ISHA--;	
+	  					if(JS_ATHAN_MINUTES_OF_ISHA < -60) {JS_ATHAN_MINUTES_OF_ISHA = -60; return;}	
+	  					JS_OBJ_AZAN_ISHA.innerHTML = JS_ATHAN_MINUTES_OF_ISHA;
+	  					localStorage.setItem('STORAGE_AZAN_ISHA', JS_ATHAN_MINUTES_OF_ISHA);
+	  					break;
+	  					
+
+
+	  default	: alert('err888');		break;
+	}
+
+GoGloballyFillDATA();
+}
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//--------------goZZZcplus----------------------------------------------------------
+function goAZANcplus(prayNAME)
+{
+
+	switch(prayNAME)
+	{
+	  
+
+
+	  case 'FAJR'	:	JS_ATHAN_MINUTES_OF_FAJR++;	
+	  					if(JS_ATHAN_MINUTES_OF_FAJR > 60) {JS_ATHAN_MINUTES_OF_FAJR = 60; return;}	
+	  					JS_OBJ_AZAN_FAJR.innerHTML = JS_ATHAN_MINUTES_OF_FAJR;
+	  					localStorage.setItem('STORAGE_AZAN_FAJR', JS_ATHAN_MINUTES_OF_FAJR);
+	  					break;
+
+	  case 'SHOROQ'	:	JS_ATHAN_MINUTES_OF_SHOROQ++;	
+	  					if(JS_ATHAN_MINUTES_OF_SHOROQ > 60) {JS_ATHAN_MINUTES_OF_SHOROQ = 60; return;}	
+	  					JS_OBJ_AZAN_SHOROQ.innerHTML = JS_ATHAN_MINUTES_OF_SHOROQ;
+	  					localStorage.setItem('STORAGE_AZAN_SHOROQ', JS_ATHAN_MINUTES_OF_SHOROQ);
+	  					break;
+
+	  case 'DOHR'	:	JS_ATHAN_MINUTES_OF_DOHR++;	
+	  					if(JS_ATHAN_MINUTES_OF_DOHR > 60) {JS_ATHAN_MINUTES_OF_DOHR = 60; return;}	
+	  					JS_OBJ_AZAN_DOHR.innerHTML = JS_ATHAN_MINUTES_OF_DOHR;
+	  					localStorage.setItem('STORAGE_AZAN_DOHR', JS_ATHAN_MINUTES_OF_DOHR);
+	  					break;
+
+	  case 'ASR'	:	JS_ATHAN_MINUTES_OF_ASR++;	
+	  					if(JS_ATHAN_MINUTES_OF_ASR > 60) {JS_ATHAN_MINUTES_OF_ASR = 60; return;}	
+	  					JS_OBJ_AZAN_ASR.innerHTML = JS_ATHAN_MINUTES_OF_ASR;
+	  					localStorage.setItem('STORAGE_AZAN_ASR', JS_ATHAN_MINUTES_OF_ASR);
+	  					break;
+
+	  case 'MAGHRIB'	:	JS_ATHAN_MINUTES_OF_MAGHRIB++;	
+	  					if(JS_ATHAN_MINUTES_OF_MAGHRIB > 60) {JS_ATHAN_MINUTES_OF_MAGHRIB = 60; return;}	
+	  					JS_OBJ_AZAN_MAGHRIB.innerHTML = JS_ATHAN_MINUTES_OF_MAGHRIB;
+	  					localStorage.setItem('STORAGE_AZAN_MAGHRIB', JS_ATHAN_MINUTES_OF_MAGHRIB);
+	  					break;
+
+	  case 'ISHA'	:	JS_ATHAN_MINUTES_OF_ISHA++;	
+	  					if(JS_ATHAN_MINUTES_OF_ISHA > 60) {JS_ATHAN_MINUTES_OF_ISHA = 60; return;}	
+	  					JS_OBJ_AZAN_ISHA.innerHTML = JS_ATHAN_MINUTES_OF_ISHA;
+	  					localStorage.setItem('STORAGE_AZAN_ISHA', JS_ATHAN_MINUTES_OF_ISHA);
+	  					break;
+
+
+	  
+	  default	: alert('err999');		break;
+	}
+
+
+GoGloballyFillDATA();
+}
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------
+
+
+var JS_OBJ_IQAMA_FAJR 		= document.getElementById('IQAMA_FAJR');
+var JS_OBJ_IQAMA_SHOROQ 	= document.getElementById('IQAMA_SHOROQ');
+var JS_OBJ_IQAMA_DOHR 		= document.getElementById('IQAMA_DOHR');
+var JS_OBJ_IQAMA_ASR 		= document.getElementById('IQAMA_ASR');
+var JS_OBJ_IQAMA_MAGHRIB 	= document.getElementById('IQAMA_MAGHRIB');
+var JS_OBJ_IQAMA_ISHA 		= document.getElementById('IQAMA_ISHA');
+
+//--------------goIQAMAminus-----------------------------------------------------------------------------
+function goIQAMAminus(prayNAME)
+{
+
+
+	switch(prayNAME)
+	{
+	  
+
+	  case 'FAJR'	:	JS_IQAMA_TIME_OF_FAJR--;	
+	  					if(JS_IQAMA_TIME_OF_FAJR < 1) {JS_IQAMA_TIME_OF_FAJR = 1; return;}	
+	  					JS_OBJ_IQAMA_FAJR.innerHTML = JS_IQAMA_TIME_OF_FAJR;
+	  					localStorage.setItem('STORAGE_IQAMA_FAJR', JS_IQAMA_TIME_OF_FAJR);
+	  					JS_QM1.innerHTML = JS_IQAMA_TIME_OF_FAJR + '’';
+	  					JS_W333HRQM1.innerHTML = JS_QM1.innerHTML;
+	  					break;
+
+	  case 'SHOROQ'	:	JS_IQAMA_TIME_OF_SHOROQ--;	
+	  					if(JS_IQAMA_TIME_OF_SHOROQ < 1) {JS_IQAMA_TIME_OF_SHOROQ = 1; return;}	
+	  					JS_OBJ_IQAMA_SHOROQ.innerHTML = JS_IQAMA_TIME_OF_SHOROQ;
+	  					localStorage.setItem('STORAGE_IQAMA_SHOROQ', JS_IQAMA_TIME_OF_SHOROQ);
+	  					JS_QM2.innerHTML = JS_IQAMA_TIME_OF_SHOROQ + '’';
+	  					JS_W333HRQM2.innerHTML = JS_QM2.innerHTML;
+	  					break;
+
+
+	  case 'DOHR'	:	JS_IQAMA_TIME_OF_DOHR--;	
+	  					if(JS_IQAMA_TIME_OF_DOHR < 1) {JS_IQAMA_TIME_OF__DOHR = 1; return;}	
+	  					JS_OBJ_IQAMA_DOHR.innerHTML = JS_IQAMA_TIME_OF_DOHR;
+	  					localStorage.setItem('STORAGE_IQAMA_DOHR', JS_IQAMA_TIME_OF_DOHR);
+	  					JS_QM3.innerHTML = JS_IQAMA_TIME_OF_DOHR + '’';
+	  					JS_W333HRQM3.innerHTML = JS_QM3.innerHTML;
+	  					break;
+
+	  case 'ASR'	:	JS_IQAMA_TIME_OF_ASR--;	
+	  					if(JS_IQAMA_TIME_OF_ASR < 1) {JS_IQAMA_TIME_OF_ASR = 1; return;}	
+	  					JS_OBJ_IQAMA_ASR.innerHTML = JS_IQAMA_TIME_OF_ASR;
+	  					localStorage.setItem('STORAGE_IQAMA_ASR', JS_IQAMA_TIME_OF_ASR);
+	  					JS_QM4.innerHTML = JS_IQAMA_TIME_OF_ASR + '’';
+	  					JS_W333HRQM4.innerHTML = JS_QM4.innerHTML;
+	  					break;
+
+	  case 'MAGHRIB'	:	JS_IQAMA_TIME_OF_MAGHRIB--;	
+	  					if(JS_IQAMA_TIME_OF_MAGHRIB < 1) {JS_IQAMA_TIME_OF_MAGHRIB = 1; return;}	
+	  					JS_OBJ_IQAMA_MAGHRIB.innerHTML = JS_IQAMA_TIME_OF_MAGHRIB;
+	  					localStorage.setItem('STORAGE_IQAMA_MAGHRIB', JS_IQAMA_TIME_OF_MAGHRIB);
+	  					JS_QM5.innerHTML = JS_IQAMA_TIME_OF_MAGHRIB + '’';
+	  					JS_W333HRQM5.innerHTML = JS_QM5.innerHTML;
+	  					break;
+
+	  case 'ISHA'	:	JS_IQAMA_TIME_OF_ISHA--;	
+	  					if(JS_IQAMA_TIME_OF_ISHA < 1) {JS_IQAMA_TIME_OF_ISHA = 1; return;}	
+	  					JS_OBJ_IQAMA_ISHA.innerHTML = JS_IQAMA_TIME_OF_ISHA;
+	  					localStorage.setItem('STORAGE_IQAMA_ISHA', JS_IQAMA_TIME_OF_ISHA);
+	  					JS_QM6.innerHTML = JS_IQAMA_TIME_OF_ISHA + '’';
+	  					JS_W333HRQM6.innerHTML = JS_QM6.innerHTML;
+	  					break;
+
+	  
+	  default	: alert('err_888');		break;
+	}
+
+goUpdateIQAMAS();
+}
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//--------------goIQAMAcplus----------------------------------------------------------
+function goIQAMAcplus(prayNAME)
+{
+
+	switch(prayNAME)
+	{
+	  
+
+	  case 'FAJR'	:	JS_IQAMA_TIME_OF_FAJR++;	
+	  					if(JS_IQAMA_TIME_OF_FAJR > 70) {JS_IQAMA_TIME_OF_FAJR = 70; return;}	
+	  					JS_OBJ_IQAMA_FAJR.innerHTML = JS_IQAMA_TIME_OF_FAJR;
+	  					localStorage.setItem('STORAGE_IQAMA_FAJR', JS_IQAMA_TIME_OF_FAJR);
+	  					JS_QM1.innerHTML = JS_IQAMA_TIME_OF_FAJR + '’';
+	  					JS_W333HRQM1.innerHTML = JS_QM1.innerHTML;
+	  					break;
+
+	  case 'SHOROQ'	:	JS_IQAMA_TIME_OF_SHOROQ++;	
+	  					if(JS_IQAMA_TIME_OF_SHOROQ > 70) {JS_IQAMA_TIME_OF_SHOROQ = 70; return;}	
+	  					JS_OBJ_IQAMA_SHOROQ.innerHTML = JS_IQAMA_TIME_OF_SHOROQ;
+	  					localStorage.setItem('STORAGE_IQAMA_SHOROQ', JS_IQAMA_TIME_OF_SHOROQ);
+	  					JS_QM2.innerHTML = JS_IQAMA_TIME_OF_SHOROQ + '’';
+	  					JS_W333HRQM2.innerHTML = JS_QM2.innerHTML;
+	  					break;
+
+	  case 'DOHR'	:	JS_IQAMA_TIME_OF_DOHR++;	
+	  					if(JS_IQAMA_TIME_OF_DOHR > 70) {JS_IQAMA_TIME_OF__DOHR = 70; return;}	
+	  					JS_OBJ_IQAMA_DOHR.innerHTML = JS_IQAMA_TIME_OF_DOHR;
+	  					localStorage.setItem('STORAGE_IQAMA_DOHR', JS_IQAMA_TIME_OF_DOHR);
+	  					JS_QM3.innerHTML = JS_IQAMA_TIME_OF_DOHR + '’';
+	  					JS_W333HRQM3.innerHTML = JS_QM3.innerHTML;
+	  					break;
+
+	  case 'ASR'	:	JS_IQAMA_TIME_OF_ASR++;	
+	  					if(JS_IQAMA_TIME_OF_ASR > 70) {JS_IQAMA_TIME_OF_ASR = 70; return;}	
+	  					JS_OBJ_IQAMA_ASR.innerHTML = JS_IQAMA_TIME_OF_ASR;
+	  					localStorage.setItem('STORAGE_IQAMA_ASR', JS_IQAMA_TIME_OF_ASR);
+	  					JS_QM4.innerHTML = JS_IQAMA_TIME_OF_ASR + '’';
+	  					JS_W333HRQM4.innerHTML = JS_QM4.innerHTML;
+	  					break;
+
+	  case 'MAGHRIB'	:	JS_IQAMA_TIME_OF_MAGHRIB++;	
+	  					if(JS_IQAMA_TIME_OF_MAGHRIB > 70) {JS_IQAMA_TIME_OF_MAGHRIB = 70; return;}	
+	  					JS_OBJ_IQAMA_MAGHRIB.innerHTML = JS_IQAMA_TIME_OF_MAGHRIB;
+	  					localStorage.setItem('STORAGE_IQAMA_MAGHRIB', JS_IQAMA_TIME_OF_MAGHRIB);
+	  					JS_QM5.innerHTML = JS_IQAMA_TIME_OF_MAGHRIB + '’';
+	  					JS_W333HRQM5.innerHTML = JS_QM5.innerHTML;
+	  					break;
+
+	  case 'ISHA'	:	JS_IQAMA_TIME_OF_ISHA++;	
+	  					if(JS_IQAMA_TIME_OF_ISHA > 70) {JS_IQAMA_TIME_OF_ISHA = 70; return;}	
+	  					JS_OBJ_IQAMA_ISHA.innerHTML = JS_IQAMA_TIME_OF_ISHA;
+	  					localStorage.setItem('STORAGE_IQAMA_ISHA', JS_IQAMA_TIME_OF_ISHA);
+	  					JS_QM6.innerHTML = JS_IQAMA_TIME_OF_ISHA + '’';
+	  					JS_W333HRQM6.innerHTML = JS_QM6.innerHTML;
+	  					break;
+	  
+	  default	: alert('err_999');		break;
+	}
+
+
+goUpdateIQAMAS();
+}
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+
+
+//-------------------------------------------------------------------------------------
+var JS_jjj_BEFORE_DOHR	= document.getElementById('jjjJOMOA_BEFORE_DOHR');
+var JS_jjj_AFTER_DOHR	= document.getElementById('jjjJOMOA_AFTER_DOHR');
+
+
+//--------------JomoaBEFOREminus-----------------------------------------------------------------------------
+function JomoaBEFOREminus()
+{
+	JS_JOMOA_DIM_MINIUTES_BEFORE--;	
+	if(JS_JOMOA_DIM_MINIUTES_BEFORE < 0) {JS_JOMOA_DIM_MINIUTES_BEFORE = 0; return;}	
+	JS_jjj_BEFORE_DOHR.innerHTML = JS_JOMOA_DIM_MINIUTES_BEFORE;
+	localStorage.setItem('STORAGE_JOMOA_DIM_BEFORE', JS_JOMOA_DIM_MINIUTES_BEFORE);
+}
+
+//--------------JomoaBEFOREplus-----------------------------------------------------------------------------
+function JomoaBEFOREplus()
+{
+	JS_JOMOA_DIM_MINIUTES_BEFORE++;	
+	if(JS_JOMOA_DIM_MINIUTES_BEFORE > 60) {JS_JOMOA_DIM_MINIUTES_BEFORE = 60; return;}	
+	JS_jjj_BEFORE_DOHR.innerHTML = JS_JOMOA_DIM_MINIUTES_BEFORE;
+	localStorage.setItem('STORAGE_JOMOA_DIM_BEFORE', JS_JOMOA_DIM_MINIUTES_BEFORE);
+}
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+
+//--------------JomoaAFTERminus-----------------------------------------------------------------------------
+function JomoaAFTERminus()
+{
+	JS_JOMOA_DIM_MINIUTES_AFTER--;	
+	if(JS_JOMOA_DIM_MINIUTES_AFTER < 0) {JS_JOMOA_DIM_MINIUTES_AFTER = 0; return;}	
+	JS_jjj_AFTER_DOHR.innerHTML = JS_JOMOA_DIM_MINIUTES_AFTER;
+	localStorage.setItem('STORAGE_JOMOA_DIM_AFTER', JS_JOMOA_DIM_MINIUTES_AFTER);
+}
+
+//--------------JomoaAFTERplus-----------------------------------------------------------------------------
+function JomoaAFTERplus()
+{
+	JS_JOMOA_DIM_MINIUTES_AFTER++;	
+	if(JS_JOMOA_DIM_MINIUTES_AFTER > 90) {JS_JOMOA_DIM_MINIUTES_AFTER = 90; return;}	
+	JS_jjj_AFTER_DOHR.innerHTML = JS_JOMOA_DIM_MINIUTES_AFTER;
+	localStorage.setItem('STORAGE_JOMOA_DIM_AFTER', JS_JOMOA_DIM_MINIUTES_AFTER);
+}
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+function ShowThisMarqueeAndCloseAFTER(_TXT, _MNT)
+{
+JS_eMarqueeTEXT.innerHTML = _TXT;
+JS_HReMarqueeTEXT.innerHTML = _TXT;
+ShowZunder('_eMarqueeTEXT');
+ShowZunder('_HReMarqueeTEXT');
+HideZunder('_VRMsqNAME');
+HideZunder('eVERSIO');
+setTimeout("HideZunder('_eMarqueeTEXT')", (_MNT * 60000) );	
+setTimeout("HideZunder('_HReMarqueeTEXT')", (_MNT * 60000) );	
+setTimeout("ShowZunder('_VRMsqNAME')", (_MNT * 60000) );	
+setTimeout("ShowZunder('eVERSIO')", (_MNT * 60000) );	
+}
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+var JS_QM1 = document.getElementById('qm1');
+var JS_QM2 = document.getElementById('qm2');
+var JS_QM3 = document.getElementById('qm3');
+var JS_QM4 = document.getElementById('qm4');
+var JS_QM5 = document.getElementById('qm5');
+var JS_QM6 = document.getElementById('qm6');
+
+
+var JS_W333HRQM1 = document.getElementById('W333HRqm1');
+var JS_W333HRQM2 = document.getElementById('W333HRqm2');
+var JS_W333HRQM3 = document.getElementById('W333HRqm3');
+var JS_W333HRQM4 = document.getElementById('W333HRqm4');
+var JS_W333HRQM5 = document.getElementById('W333HRqm5');
+var JS_W333HRQM6 = document.getElementById('W333HRqm6');
+
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+function putMinutesInSETTINGS()
+{
+// fill data in settings
+
+JS_OBJ_AZAN_FAJR.innerHTML 		= JS_ATHAN_MINUTES_OF_FAJR;
+JS_OBJ_AZAN_SHOROQ.innerHTML 	= JS_ATHAN_MINUTES_OF_SHOROQ;
+JS_OBJ_AZAN_DOHR.innerHTML 		= JS_ATHAN_MINUTES_OF_DOHR;
+JS_OBJ_AZAN_ASR.innerHTML 		= JS_ATHAN_MINUTES_OF_ASR;
+JS_OBJ_AZAN_MAGHRIB.innerHTML 	= JS_ATHAN_MINUTES_OF_MAGHRIB;
+JS_OBJ_AZAN_ISHA.innerHTML 		= JS_ATHAN_MINUTES_OF_ISHA;
+
+
+JS_OBJ_IQAMA_FAJR.innerHTML 	= JS_IQAMA_TIME_OF_FAJR;
+JS_OBJ_IQAMA_SHOROQ.innerHTML 	= JS_IQAMA_TIME_OF_SHOROQ;
+JS_OBJ_IQAMA_DOHR.innerHTML 	= JS_IQAMA_TIME_OF_DOHR;
+JS_OBJ_IQAMA_ASR.innerHTML 		= JS_IQAMA_TIME_OF_ASR;
+JS_OBJ_IQAMA_MAGHRIB.innerHTML 	= JS_IQAMA_TIME_OF_MAGHRIB;
+JS_OBJ_IQAMA_ISHA.innerHTML 	= JS_IQAMA_TIME_OF_ISHA;
+
+
+JS_OBJ_DURATION_FAJR.innerHTML 		= JS_PRAY_DURATION_OF_FAJR;
+JS_OBJ_DURATION_DOHR.innerHTML 		= JS_PRAY_DURATION_OF_DOHR;
+JS_OBJ_DURATION_ASR.innerHTML 		= JS_PRAY_DURATION_OF_ASR;
+JS_OBJ_DURATION_MAGHRIB.innerHTML 	= JS_PRAY_DURATION_OF_MAGHRIB;
+JS_OBJ_DURATION_ISHA.innerHTML 		= JS_PRAY_DURATION_OF_ISHA;
+
+}
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//---goUpdateIQAMAS-------------------------------------------------------------------
+function goUpdateIQAMAS()
+{
+
+			if(JS_IQAMA_FULL_TIMES)
+			{
+			// VR ----------------------
+			JS_QM1.innerHTML = ARNumbers(KonvertTimeTo12(gimeTime(_fjr 	 + parseInt(JS_IQAMA_TIME_OF_FAJR))));
+			JS_QM2.innerHTML = ARNumbers(KonvertTimeTo12(gimeTime(_shrq 	 + parseInt(JS_IQAMA_TIME_OF_SHOROQ))));
+			JS_QM3.innerHTML = ARNumbers(KonvertTimeTo12(gimeTime(_thuhr  + parseInt(JS_IQAMA_TIME_OF_DOHR))));
+			JS_QM4.innerHTML = ARNumbers(KonvertTimeTo12(gimeTime(_asr 	 + parseInt(JS_IQAMA_TIME_OF_ASR))));
+			JS_QM5.innerHTML = ARNumbers(KonvertTimeTo12(gimeTime(_maghreb + parseInt(JS_IQAMA_TIME_OF_MAGHRIB))));
+			JS_QM6.innerHTML = ARNumbers(KonvertTimeTo12(gimeTime(_isha 	 + parseInt(JS_IQAMA_TIME_OF_ISHA))));
+			}
+		else
+			{
+			// VR ----------------------
+			JS_QM1.innerHTML = ARNumbers(JS_IQAMA_TIME_OF_FAJR) + '’';
+			JS_QM2.innerHTML = ARNumbers(JS_IQAMA_TIME_OF_SHOROQ) + '’';
+			JS_QM3.innerHTML = ARNumbers(JS_IQAMA_TIME_OF_DOHR) + '’';
+			JS_QM4.innerHTML = ARNumbers(JS_IQAMA_TIME_OF_ASR) + '’';
+			JS_QM5.innerHTML = ARNumbers(JS_IQAMA_TIME_OF_MAGHRIB) + '’';
+			JS_QM6.innerHTML = ARNumbers(JS_IQAMA_TIME_OF_ISHA) + '’';
+			}
+
+
+// update HR ----------------------
+JS_W333HRQM1.innerHTML = JS_QM1.innerHTML;
+JS_W333HRQM2.innerHTML = JS_QM2.innerHTML;
+JS_W333HRQM3.innerHTML = JS_QM3.innerHTML;
+JS_W333HRQM4.innerHTML = JS_QM4.innerHTML;
+JS_W333HRQM5.innerHTML = JS_QM5.innerHTML;
+JS_W333HRQM6.innerHTML = JS_QM6.innerHTML;
+
+
+	// OVERRIDER OF DOHR IQAMA ... If not wscv active
+	if( (JS_FIXED_IQAMATDOHR !== "")&&(!JS_WCSV_ACTIVE) )
+	{
+	JS_QM3.innerHTML 		= JS_FIXED_IQAMATDOHR;
+	JS_W333HRQM3.innerHTML 	= JS_FIXED_IQAMATDOHR;
+	}
+
+	// NO IQAMA IN FRIDAY DOHR
+	if(JS_TODAY_IS_JOMOA)
+	{
+	JS_QM3.innerHTML 		= ".";
+	JS_W333HRQM3.innerHTML 	= ".";
+	}
+}
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+
+// FILL DATA OF JOMOA DIM MINUTES
+JS_jjj_BEFORE_DOHR.innerHTML 	= JS_JOMOA_DIM_MINIUTES_BEFORE;
+JS_jjj_AFTER_DOHR.innerHTML 	= JS_JOMOA_DIM_MINIUTES_AFTER;
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+
+
+var JS_OBJ_DURATION_FAJR 		= document.getElementById('DURATION_FAJR');
+var JS_OBJ_DURATION_DOHR 		= document.getElementById('DURATION_DOHR');
+var JS_OBJ_DURATION_ASR 		= document.getElementById('DURATION_ASR');
+var JS_OBJ_DURATION_MAGHRIB 	= document.getElementById('DURATION_MAGHRIB');
+var JS_OBJ_DURATION_ISHA 		= document.getElementById('DURATION_ISHA');
+
+//--------------goDURATIONminus-----------------------------------------------------------------------------
+function goDURATIONminus(prayNAME)
+{
+
+
+	switch(prayNAME)
+	{
+	  
+
+	  case 'FAJR'	:	JS_PRAY_DURATION_OF_FAJR--;	
+	  					if(JS_PRAY_DURATION_OF_FAJR < 5) {JS_PRAY_DURATION_OF_FAJR = 5; return;}	
+	  					JS_OBJ_DURATION_FAJR.innerHTML = JS_PRAY_DURATION_OF_FAJR;
+	  					localStorage.setItem('STORAGE_DURATION_FAJR', JS_PRAY_DURATION_OF_FAJR);
+	  					break;
+
+
+
+	  case 'DOHR'	:	JS_PRAY_DURATION_OF_DOHR--;	
+	  					if(JS_PRAY_DURATION_OF_DOHR < 5) {JS_PRAY_DURATION_OF__DOHR = 5; return;}	
+	  					JS_OBJ_DURATION_DOHR.innerHTML = JS_PRAY_DURATION_OF_DOHR;
+	  					localStorage.setItem('STORAGE_DURATION_DOHR', JS_PRAY_DURATION_OF_DOHR);
+	  					break;
+
+	  case 'ASR'	:	JS_PRAY_DURATION_OF_ASR--;	
+	  					if(JS_PRAY_DURATION_OF_ASR < 5) {JS_PRAY_DURATION_OF_ASR = 5; return;}	
+	  					JS_OBJ_DURATION_ASR.innerHTML = JS_PRAY_DURATION_OF_ASR;
+	  					localStorage.setItem('STORAGE_DURATION_ASR', JS_PRAY_DURATION_OF_ASR);
+	  					break;
+
+	  case 'MAGHRIB'	:	JS_PRAY_DURATION_OF_MAGHRIB--;	
+	  					if(JS_PRAY_DURATION_OF_MAGHRIB < 5) {JS_PRAY_DURATION_OF_MAGHRIB = 5; return;}	
+	  					JS_OBJ_DURATION_MAGHRIB.innerHTML = JS_PRAY_DURATION_OF_MAGHRIB;
+	  					localStorage.setItem('STORAGE_DURATION_MAGHRIB', JS_PRAY_DURATION_OF_MAGHRIB);
+	  					break;
+
+	  case 'ISHA'	:	JS_PRAY_DURATION_OF_ISHA--;	
+	  					if(JS_PRAY_DURATION_OF_ISHA < 5) {JS_PRAY_DURATION_OF_ISHA = 5; return;}	
+	  					JS_OBJ_DURATION_ISHA.innerHTML = JS_PRAY_DURATION_OF_ISHA;
+	  					localStorage.setItem('STORAGE_DURATION_ISHA', JS_PRAY_DURATION_OF_ISHA);
+	  					break;
+
+	  
+	  default	: alert('err_SSS');		break;
+	}
+
+}
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//--------------goDURATIONcplus----------------------------------------------------------
+function goDURATIONcplus(prayNAME)
+{
+
+	switch(prayNAME)
+	{
+	  
+
+	  case 'FAJR'	:	JS_PRAY_DURATION_OF_FAJR++;	
+	  					if(JS_PRAY_DURATION_OF_FAJR > 40) {JS_PRAY_DURATION_OF_FAJR = 40; return;}	
+	  					JS_OBJ_DURATION_FAJR.innerHTML = JS_PRAY_DURATION_OF_FAJR;
+	  					localStorage.setItem('STORAGE_DURATION_FAJR', JS_PRAY_DURATION_OF_FAJR);
+	  					break;
+
+
+	  case 'DOHR'	:	JS_PRAY_DURATION_OF_DOHR++;	
+	  					if(JS_PRAY_DURATION_OF_DOHR > 40) {JS_PRAY_DURATION_OF__DOHR = 40; return;}	
+	  					JS_OBJ_DURATION_DOHR.innerHTML = JS_PRAY_DURATION_OF_DOHR;
+	  					localStorage.setItem('STORAGE_DURATION_DOHR', JS_PRAY_DURATION_OF_DOHR);
+	  					break;
+
+	  case 'ASR'	:	JS_PRAY_DURATION_OF_ASR++;	
+	  					if(JS_PRAY_DURATION_OF_ASR > 40) {JS_PRAY_DURATION_OF_ASR = 40; return;}	
+	  					JS_OBJ_DURATION_ASR.innerHTML = JS_PRAY_DURATION_OF_ASR;
+	  					localStorage.setItem('STORAGE_DURATION_ASR', JS_PRAY_DURATION_OF_ASR);
+	  					break;
+
+	  case 'MAGHRIB'	:	JS_PRAY_DURATION_OF_MAGHRIB++;	
+	  					if(JS_PRAY_DURATION_OF_MAGHRIB > 40) {JS_PRAY_DURATION_OF_MAGHRIB = 40; return;}	
+	  					JS_OBJ_DURATION_MAGHRIB.innerHTML = JS_PRAY_DURATION_OF_MAGHRIB;
+	  					localStorage.setItem('STORAGE_DURATION_MAGHRIB', JS_PRAY_DURATION_OF_MAGHRIB);
+	  					break;
+
+	  case 'ISHA'	:	JS_PRAY_DURATION_OF_ISHA++;	
+	  					if(JS_PRAY_DURATION_OF_ISHA > 180) {JS_PRAY_DURATION_OF_ISHA = 180; return;}	
+	  					JS_OBJ_DURATION_ISHA.innerHTML = JS_PRAY_DURATION_OF_ISHA;
+	  					localStorage.setItem('STORAGE_DURATION_ISHA', JS_PRAY_DURATION_OF_ISHA);
+	  					break;
+	  
+	  default	: alert('err_eee');		break;
+	}
+}
+
+
+
+
+//-------------getTextBetween----------------------------------------------------------------------
+function getTextBetween(str,aaa,bbb)
+{
+var sResult = str.substring(str.indexOf(aaa) + 1, str.lastIndexOf(bbb));
+return sResult;
+}
+
+
+
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+
+
+//-----------------------------------------------------------------------------------
+function ClearSETTINGS()
+{
+	if(confirm("Are you sure to reset all settings and reload the page ?")) 
+	{
+	localStorage.clear();
+	location.reload();
+	}
+
+}
+
+
+
+//-------------------------------------------------------------------------------------------
+
+
+
+var JS_tempJMA = "---";
+
+
+
+//-------updateBottomInformations------------------------------------------------------------------------------------
+function updateBottomInformations()
+{
+var persoJMA = "";
+var separ = "&nbsp; | &nbsp;";
+if (JS_LOCATION_NOW == "") separ = "";
+
+if(JS_PERSO_FIXED_JOMOA !== "") persoJMA = " &nbsp;"+separ+"&nbsp; JUMUAH " + ARNumbers(KonvertTimeTo12(JS_PERSO_FIXED_JOMOA));
+document.getElementById('eVERSIO').innerHTML 	   		= JS_NET_ADRESS_VERSION+' &nbsp;'+separ+'&nbsp; '+JS_LOCATION_NOW+persoJMA;
+document.getElementById('_HR_BtmLOCATION').innerHTML 	= JS_LOCATION_NOW+persoJMA;
+}
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+
+
+//-------Future Request Arabic Numbers (CLEAN)------------------------------------------------------------------------------------
+function ARNumbers(strAR)
+{
+return strAR
+}
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+
+
+//-------ProcessLANGUAGE------*************------------------------------------------------------------------------------
+function ProcessLANGUAGE()
+{
+
+document.getElementById('eeeTextAZAN').innerHTML 	= JS_eLang.AzanCalling;
+document.getElementById('eeeHRTextAZAN').innerHTML 	= JS_eLang.AzanCalling;
+
+JS_PRAYNAMES_NOW	= JS_eLang.NamesOfPrayings.split(",");
+JS_WEEK_DAYS_NOW 	= JS_eLang.NamesWeekDays.split(",");
+JS_MONTHS_NOW	 	= JS_eLang.NamesMonthsMiladi.split(",");
+JS_HIJRI_NOW	 	= JS_eLang.MenuMonthsHijri.split(",");
+
+JS_T_0.innerHTML = JS_PRAYNAMES_NOW[0];
+JS_T_1.innerHTML = JS_PRAYNAMES_NOW[1];
+JS_T_2.innerHTML = JS_PRAYNAMES_NOW[2];
+JS_T_3.innerHTML = JS_PRAYNAMES_NOW[3];
+JS_T_4.innerHTML = JS_PRAYNAMES_NOW[4];
+JS_T_5.innerHTML = JS_PRAYNAMES_NOW[5];
+
+JS_W333HT_0.innerHTML = JS_T_0.innerHTML;
+JS_W333HT_1.innerHTML = JS_T_1.innerHTML;
+JS_W333HT_2.innerHTML = JS_T_2.innerHTML;
+JS_W333HT_3.innerHTML = JS_T_3.innerHTML;
+JS_W333HT_4.innerHTML = JS_T_4.innerHTML;
+JS_W333HT_5.innerHTML = JS_T_5.innerHTML;
+
+
+document.getElementById('AAA_FullSCREEN').innerHTML 	= "&#8596; &nbsp;"+JS_eLang.MenuFullScreen;
+document.getElementById('AAA_MosqueNAME').innerHTML 	= "&#8605; &nbsp;"+JS_eLang.MenuMosqueNAME;
+document.getElementById('AAA_HijriClick').innerHTML 	= "&#9673; &nbsp;"+JS_eLang.MenuHijriClick;
+document.getElementById('AAA_set_THEMES').innerHTML 	= "&#9673; &nbsp;"+JS_eLang.MenuThemes;
+document.getElementById('AAA_e_OPTIONS').innerHTML 		= "&#9673; &nbsp;"+JS_eLang.MenuOptions;
+document.getElementById('AAA_ADJUSTMENTS').innerHTML 	= "&#9673; &nbsp;"+JS_eLang.MenuAdjustments;
+document.getElementById('AAA_BLACKSCREEN').innerHTML 	= "&#9673; &nbsp;"+JS_eLang.MenuBlackscreen;
+document.getElementById('AAA_LOCALISATION').innerHTML 	= "&#9673; &nbsp;"+JS_eLang.MenuLocation;
+
+
+JS_DOA_AFTER_AZAN		= JS_eLang.XXDoaAzanIqama;
+JS_DOA_SYAM_MONDAY		= JS_eLang.XXFastingMonday;
+JS_DOA_SYAM_THURSDAY	= JS_eLang.XXFastingThursday;
+
+
+
+
+
+document.getElementById('XX_OPTION_0').innerHTML			= JS_eLang.XX_OPTION_0;
+document.getElementById('XX_OPTION_1').innerHTML			= JS_eLang.XX_OPTION_1;
+document.getElementById('XX_OPTION_2').innerHTML			= JS_eLang.XX_OPTION_2;
+
+document.getElementById('XX_WCSV_MESSAGE').innerHTML		= JS_eLang.XX_WCSV_MESSAGE;
+
+document.getElementById('XX_ADJUST_1').innerHTML			= JS_eLang.XX_ADJUST_1;
+document.getElementById('XX_ADJUST_2').innerHTML			= JS_eLang.XX_ADJUST_2;
+document.getElementById('XX_ADJUST_3').innerHTML			= JS_eLang.XX_ADJUST_3;
+document.getElementById('XX_SUMMERTIME').innerHTML			= JS_eLang.XX_SUMMERTIME;
+document.getElementById('XX_1MOREHOUR').innerHTML			= JS_eLang.XX_1MOREHOUR;
+document.getElementById('XX_1LESSHOUR').innerHTML			= JS_eLang.XX_1LESSHOUR;
+document.getElementById('XX_eShortAZAN').innerHTML			= JS_eLang.XX_eShortAZAN;
+document.getElementById('XX_eShortIQAMA').innerHTML			= JS_eLang.XX_eShortIQAMA;
+
+
+document.getElementById('xxFAJR').innerHTML			= JS_PRAYNAMES_NOW[0];
+document.getElementById('xxSHOROQ').innerHTML		= JS_PRAYNAMES_NOW[1];
+document.getElementById('xxDOHR').innerHTML			= JS_PRAYNAMES_NOW[2];
+document.getElementById('xxASR').innerHTML			= JS_PRAYNAMES_NOW[3];
+document.getElementById('xxMAGHRIB').innerHTML		= JS_PRAYNAMES_NOW[4];
+document.getElementById('xxISHA').innerHTML			= JS_PRAYNAMES_NOW[5];
+
+
+document.getElementById('xxIQAMA0').innerHTML		= JS_eLang.XX_IQAMA;
+document.getElementById('xxIQAMA1').innerHTML		= JS_eLang.XX_DOHA;
+document.getElementById('xxIQAMA2').innerHTML		= JS_eLang.XX_IQAMA;
+document.getElementById('xxIQAMA3').innerHTML		= JS_eLang.XX_IQAMA;
+document.getElementById('xxIQAMA4').innerHTML		= JS_eLang.XX_IQAMA;
+document.getElementById('xxIQAMA5').innerHTML		= JS_eLang.XX_IQAMA;
+
+
+document.getElementById('XX_DIMMER_0').innerHTML		= JS_eLang.XX_DIMMER_0;
+document.getElementById('xxJOMOA').innerHTML			= JS_WEEK_DAYS_NOW[5];
+document.getElementById('XX_DIMMER_3').innerHTML		= JS_eLang.XX_DIMMER_3;
+document.getElementById('XX_DIMMER_4').innerHTML		= JS_eLang.XX_DIMMER_4;
+document.getElementById('XX_DIMMER_5').innerHTML		= JS_eLang.XX_DIMMER_5;
+
+document.getElementById('yyFAJR').innerHTML			= JS_PRAYNAMES_NOW[0];
+document.getElementById('yyDOHR').innerHTML			= JS_PRAYNAMES_NOW[2];
+document.getElementById('yyASR').innerHTML			= JS_PRAYNAMES_NOW[3];
+document.getElementById('yyMAGHRIB').innerHTML		= JS_PRAYNAMES_NOW[4];
+document.getElementById('yyISHA').innerHTML			= JS_PRAYNAMES_NOW[5];
+
+
+document.getElementById('XX_TIMES_2').innerHTML		= JS_eLang.XX_TIMES_2;
+document.getElementById('XX_TIMES_3').innerHTML		= JS_eLang.XX_TIMES_3;
+document.getElementById('XX_TIMES_4').innerHTML		= JS_eLang.XX_TIMES_4;
+document.getElementById('XX_TIMES_5').innerHTML		= JS_eLang.XX_TIMES_5;
+
+document.getElementById('XX_YearlyWTIMES').innerHTML = JS_eLang.XX_YearlyWTIMES;
+
+document.getElementById('XX_MISC_0').innerHTML	= JS_eLang.XX_MISC_0;
+document.getElementById('XX_MISC_1').innerHTML	= JS_eLang.XX_MISC_1;
+
+JS_tempJMA = JS_eLang.XX_JOMOA;
+document.getElementById('XX_JOMOA').innerHTML			= JS_eLang.XX_JOMOA;
+document.getElementById('XX_IQAMAASHOUR').innerHTML		= JS_eLang.XX_IQAMAASHOUR;
+document.getElementById('W9_eIQAMAUNDERNAMES').innerHTML= JS_eLang.W9_eIQAMAUNDERNAMES;
+
+
+
+
+//log('JS_LANG_NOW : '+JS_LANG_NOW);
+
+if( (JS_LANG_NOW =="AR") || (JS_LANG_NOW =="UR") ) // ############## Arabi / Urdu ---------------------------- 
+						{
+						
+						document.getElementById('_VR_TopDATES').lang = 'ar';
+						document.getElementById('_VR_TopDATES').dir = 'rtl';
+						document.getElementById('_HR_TopDATES').lang = 'ar';
+						
+						document.getElementById('eMenuGRP').className 		= "cssMenuGRP CSS_HAFS";
+						document.getElementById('eMenuGRP').style.fontSize  = "150%";
+						
+						JS_ROOT.style.setProperty('--XX_LANG_DIR', 'rtl');
+			
+						// Special font for Urdu
+						if(JS_LANG_NOW == "UR") JS_ROOT.style.setProperty('--XX_NOW_ARABIC', 'UrduNasq');
+						}
+			else
+			{ // ############## IF OTHER LANUAGES  -------------------------------------------------
+
+						JS_AM_TEXT = 'AM'; 
+						JS_PM_TEXT = 'PM';
+						
+						JS_T_0.className ='eeeNAMEen';
+						JS_T_1.className ='eeeNAMEen';
+						JS_T_2.className ='eeeNAMEen';
+						JS_T_3.className ='eeeNAMEen';
+						JS_T_4.className ='eeeNAMEen';
+						JS_T_5.className ='eeeNAMEen';
+
+
+							JS_S_0.className ='eeeHOURen';
+							JS_S_1.className ='eeeHOURen';
+							JS_S_2.className ='eeeHOURen';
+							JS_S_3.className ='eeeHOURen';
+							JS_S_4.className ='eeeHOURen';
+							JS_S_5.className ='eeeHOURen';	
+				
+				
+							JS_QM1.className ='eeeIQAMAen';
+							JS_QM2.className ='eeeIQAMAen';
+							JS_QM3.className ='eeeIQAMAen';
+							JS_QM4.className ='eeeIQAMAen';
+							JS_QM5.className ='eeeIQAMAen';
+							JS_QM6.className ='eeeIQAMAen';
+						
+						JS_W333HT_0.className ='wwwNAMEen CSS_SHADOW';
+						JS_W333HT_1.className ='wwwNAMEen CSS_SHADOW';
+						JS_W333HT_2.className ='wwwNAMEen CSS_SHADOW';
+						JS_W333HT_3.className ='wwwNAMEen CSS_SHADOW';
+						JS_W333HT_4.className ='wwwNAMEen CSS_SHADOW';
+						JS_W333HT_5.className ='wwwNAMEen CSS_SHADOW';
+						
+						document.getElementById('_VR_TopDATES').lang = '';
+						document.getElementById('_HR_TopDATES').lang = '';
+						document.getElementById('eMenuGRP').style.fontSize  = "135%";
+						
+						JS_ROOT.style.setProperty('--XX_LANG_DIR', 'ltr');
+						
+						document.getElementById('alongotablo').dir = 'ltr';
+						
+						document.getElementById('W333_HRdemain').style.display='none';
+									
+			}
+
+
+}
+
+
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------
+
+// PREMIUM
+
+
+var JS_SND_AZAN  = document.getElementById('eVoiceAzan');
+var JS_SND_FAJR	 = document.getElementById('eVoiceFajr');
+var JS_SND_SHORTAZAN	 = document.getElementById('shortAzan');
+var JS_SND_SHORTIQAMA	 = document.getElementById('shortIqama');
+var JS_SND_BEEEP = document.getElementById('eBeeep');
+var JS_SND_TIT   = document.getElementById('eTit');
+
+
+
+var JS_1SEC_TIMER  = setInterval('LiveTime()', (1000) );
+
+
+
+
+   
+JS_VRMsqNAME.innerHTML 	= JS_MOSQUE_NAME;
+JS_HRMsqNAME.innerHTML 	= JS_MOSQUE_NAME;
+
+
+ProcessLANGUAGE();
+
+
+_GoMessages();
+
+
+
+
+DisableSelectionByNAME(document.body);
+
+
+
+
+if(JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE) JS_eVoiceCHECK.checked	= true;  else JS_eVoiceCHECK.checked 	 = false;
+if(JS_SHORT_AZAN_ACTIVE) 	JS_eShortAZAN.checked	= true;  else JS_eShortAZAN.checked = false;	
+if(JS_SHORT_IQAMA_ACTIVE) 	JS_eShortIQAMA.checked	= true;  else JS_eShortIQAMA.checked = false;
+if(JS_FULLSCREEN_COUNTER) 	JS_eCountdownCHECK.checked 		= true;  else JS_eCountdownCHECK.checked = false;
+if(JS_RAMADAN_30MIN_ACTIVE) JS_eRamadan30CHECK.checked 		= true;  else JS_eRamadan30CHECK.checked = false;
+if(JS_SUMMER_ADD1HOUR) 		JS_summerCHECK.checked 			= true;  else JS_summerCHECK.checked 	 = false;	
+if(JS_1HOURMORE) 			JS_eMoreHourCHECK.checked 		= true;  else JS_eMoreHourCHECK.checked  = false;
+if(JS_1LESSMORE) 			JS_eLessHourCHECK.checked 		= true;  else JS_eLessHourCHECK.checked  = false;	
+if(JS_24H_ACTIVE)   		JS_e24CHECK.checked  			= true;  else JS_e24CHECK.checked  		 = false;
+if(JS_FULL_CLOCK_ACTIVE)	JS_eFullClockCHECK.checked  	= true;  else JS_eFullClockCHECK.checked = false;
+if(JS_PAST_DIMER_ACTIVE)   	JS_ePastDimerCHECK.checked  	= true;  else JS_ePastDimerCHECK.checked = false;
+if(JS_WCSV_ACTIVE)   		JS_eWCSVCHECK.checked  			= true;  else JS_eWCSVCHECK.checked 	= false;	
+if(JS_IQAMA_FULL_TIMES)   	JS_eIQAMAasHOURCHECK.checked  	= true;  else JS_eIQAMAasHOURCHECK.checked = false;
+if(JS_IQAMA_UNDER_NAMES)   	JS_eIQAMAUNDERNAMES.checked  	= true;  else JS_eIQAMAUNDERNAMES.checked = false;
+if(JS_DIMM_WHILE_PRAYIN_ACTIVE)   JS_eDimmCHECK.checked  	= true;  else JS_eDimmCHECK.checked  	 = false;
+
+	
+
+
+execWCSV(JS_WCSV_ACTIVE);
+
+
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+
+UpdateFullClock(JS_FULL_CLOCK_ACTIVE);
+
+
+GoGloballyFillDATA();
+Go1MN();
+
+updateLocationByFILE();
+putMinutesInSETTINGS();
+goSelektJOMOAnDOHR();
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+
+document.title = JS_APP_NAME_VERSION;
+document.getElementById('_HR_BtmVERSION').innerHTML = JS_NET_ADRESS_VERSION;
+updateBottomInformations();
+
+VerifyMP3Options();
+//-----------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------
+//-----on-isha-click---(for_testing_only)--------------------------------------------
+//-----------------------------------------------------------------------------------
+//----testACTIVE-------------------------------------------------------------------------------
+function testACTIVE()
+{
+	if(JS_LOGS_ENABLED) 
+	{
+	//_maghreb = JS_nowMNTS + 1;
+	GoActiveSALAT(_maghreb);
+	setTimeout(ShowThisMarqueeAndCloseAFTER, (1000), JS_DOA_SYAM_THURSDAY, 5);
+	}
+	else 
+		ForceScreenSaverNOW();
+}
+
+
+//-----------------------------------------------------------------------------------
+setTimeout(goFillThemesBOTH, 4000); // 4 seconds go fill BGs of themes
+window.onfocus = function() { GoGloballyFillDATA(); Go1MN(); }
+setTimeout(uLoadTheCountries, 1500); // 1.5 second go load cities
+
+if(JS_AUDIO_AZAN_IQAMA_IS_BY_VOICE) ShowZunder('BtnAudio');
+
+
+//]]>
+</script>
+

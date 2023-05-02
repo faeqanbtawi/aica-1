@@ -1,0 +1,37 @@
+
+INSTALLATION FOR ANDROID
+------------------------------------------
+Apk files download location : 
+https://tawkit.net/files/
+
+
+
+1. Install "Opera-Browser/Firefox/Chrome" or "Fully-Kiosk-Browser"
+
+2. Install ES-Explorer.apk
+
+3. Open ES-Explorer and go to Downloads folder of your device 
+   and select the zip file you downloaded (tawkit.zip), 
+   and decompress/extract it in a folder.
+   
+4. Go the extracted folder of tawkit 
+   and start the file "index.html" in your Browser !
+
+5. To display Tawkit app vertically, you can use "Rotate Screen Orientation"
+
+6. To make your Browser starts automaticly with Android, you can use the apk "OnStart"
+
+
+
+Info: 
+This Tawkit application works offline, no need in Internet !
+
+
+
+-----------------------------------------------------------
+If you need help, goto : www.tawkit.net
+
+
+
+
+
