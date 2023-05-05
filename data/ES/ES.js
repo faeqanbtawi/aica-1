@@ -1,0 +1,9 @@
+var JS_CITIES_DATA =
+[
+"ES.BARCELONA. برشلونه ",
+"ES.CABANES.",
+"ES.DURANGO. ",
+"ES.EIBAR.",
+"ES.SANTHILARI.",
+"ES.SOCUELLAMOS.SOC",
+];

@@ -3,7 +3,7 @@ var JS_WORLD_COUNTRIES =
 [
 "AF|Afghanistan",
 "AX|Aland Islands",
-"AL|Albaniaaaaaaa",
+"AL|Albania",
 "DZ|Algeria",
 "AS|American Samoa",
 "AD|Andorra",
