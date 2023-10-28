@@ -1,0 +1,530 @@
+/* VIRTUAL FORCED VERTICAL  */
+/* VR STYLE TO MIGRATE IN HR HERE */
+/* vw TO CONVERT TO VH */
+/* ================================================================================== */
+
+
+@font-face {
+    font-family: 'Amiri';
+    src: url('font/Amiri-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Andalus';
+    src: url('font/Andalus.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Almarai';
+    src: url('font/Almarai-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'KSA';
+    src: url('font/KSARegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'FreeSans';
+    src: url('font/FreeSans.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FreeSans';
+    src: url('font/FreeSansBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+
+  --Color_GOLDEN: 		#ECD591;
+  --VRTOPCOLO: 			white;
+  --Color_CLOCK: 		gray;
+  --Color_SEKSALATS: 	gray;
+  --Color_LOWFOCUS: 	gray;
+  --Color_BGTUBE: 		gray;
+  --MED_VIS: 			visible;
+  --METEO: 				visible;
+  --IQAMAT: 			visible;
+  --MTOSLWTS: 			visible;
+  --PRGRSS: 			1;
+  --OffIqmatNamesPOZ: 	5%;
+  --OffIqmatHoursArPOZ: 30%;
+  --OffIqmatHoursEnPOZ: 10%;
+  --MTOXen : 27%;
+  --MTOXar : 57%;
+  --RoundsVrTOP : 54%;
+  
+  --XX_LANG_DIR: 'rtl';
+  
+  --HR_HHHTOP : 6.5%;
+  --HR_NAMTOP : 13%;
+  
+  --TXT_SHDW: 1px 1px 3px rgba(0,0,0, 0.3);
+  --CLK_SHDW: 2px 3px 5px rgba(0,0,0, 0.4);
+  
+  --XX_MAJORFONTO: 'Amiri';
+  --FOXEN: 1.10;
+  
+  --XX_DIGITS:   'FreeSans';
+
+  --bgSemiLITE: rgba(255,255, 255, 0.07);
+  --OPAK: 1;
+}
+
+html, body{ 
+height			: 100%;
+margin			: 0px; 
+overflow		: hidden;
+font-family		: 'FreeSans';
+font-size		: 9pt; 
+color			: #ACA091;
+background-color: #151515;
+-webkit-scrollbar:display: none;
+scrollbar-width: none;
+-ms-overflow-style: none;
+} 
+
+body {overflow-y : scroll; } 
+body::-webkit-scrollbar {display: none; }
+hr {border: 1px solid #333333;}
+
+
+/* ================================================================================== */
+/* ================================================================================== */
+/* ================================================================================== */
+/* CSS FORCED VERTICAL  */
+/* ALL vh TO VH */
+@media only screen and (orientation:landscape) 
+{
+		.vrRIGHT {
+		    transform:rotate(90deg);
+		    transform-origin:right top;
+			height:100vw; /* let only this vw   */
+			width:100vh;
+		    overflow-x: hidden;
+		    position: absolute;
+		    top: 100%;
+		    right: 0;
+		  }
+		
+		.vrLEFT {
+		    transform:rotate(-90deg);
+		    transform-origin:left top;
+			height:100vw; /* let only this vw   */
+			width:100vh;
+		    overflow-x: hidden;
+		    position: absolute;
+		    top: 100%;
+		    left: 0;
+		  }
+
+/* ================================================================================== */
+/* ================================================================================== */
+/* ================================================================================== */
+
+@media only screen and (orientation:landscape)
+{
+#eMainVERTICAL 	 {display: block; width:100%; height:100%; background-repeat:no-repeat; background-size:100% 100%; }
+#eMainHORIZONTAL {display: none;  width:100%; height:100%;}
+
+
+#eMenuVR	{position:absolute; z-index:9999333; left:0%; top:0.7%; font-size:5vh; padding:7px;}
+
+#VRMsqNAME { position:absolute; right:2%; top:0.5%; width:90%; height:13%;
+	font-family:'Amiri'; font-size:calc(var(--FOXEN) * 5.5vh); text-align:center; 
+	line-height:1.55em; color:var(--VRTOPCOLO); text-shadow:var(--TXT_SHDW); }
+
+
+#eVRDATES	{position:absolute; font-family:var(--XX_MAJORFONTO);
+	font-size:calc(var(--FOXEN) * 5.9vh);  line-height:1.60em; direction:ltr;
+	right:10%; top:14%; height:17%; width:80%; text-align:center;
+	color:var(--Color_SEKSALATS); text-shadow:var(--TXT_SHDW);}
+
+#eVRDATES:lang(AR){font-size:calc(var(--FOXEN) * 5.6vh); direction:rtl; top:13%; line-height:1.45em; }
+
+#eVRHIJRI {color:var(--Color_CLOCK);}
+
+
+#VReWebMSG	{position:absolute; right:4%; top:13%; width:10%; cursor:pointer; 
+	font-family:var(--XX_DIGITS); line-height:1em; text-shadow:var(--TXT_SHDW);
+	text-align:right; font-size:7vh; color:var(--Color_LOWFOCUS); opacity:.3;}
+
+
+#VrMeteoBOX	{position:absolute; left:3%; top:9%; width:15%; height:7%;
+	visibility:var(--METEO);text-shadow:var(--TXT_SHDW); text-align:left; color:var(--VRTOPCOLO);}
+
+#VRMTOikon	{position:absolute; right:0%; top:5%; width:6vh; height:6vh; text-align:left;}
+#VRCELSIUS	{font-size:5.3vh;}
+#VRmeteoHL	{font-size:3.1vh; font-family :var(--XX_DIGITS);color:var(--Color_LOWFOCUS); display:none;}
+
+
+
+#CLOKO_MINI_VR	{visibility:visible; position:absolute; 
+	left:0%; top:31%; width:100%; height:12%; 
+	text-shadow:var(--CLK_SHDW); 
+	font-family :var(--XX_DIGITS);
+	color:var(--Color_CLOCK); z-index:997;}
+
+#VR_eMiniHOUR	{position:absolute; line-height:1em; font-size:24.3vh; letter-spacing:0.045em; z-index:925; left:0%;  top:0%;  width:100%; text-align:center;}
+#VR_eSECS		{position:absolute; line-height:1em; font-size:8.7vh; text-align:right;  z-index:926; right:7%; top:6%;  width:12%; }
+#VR_eAMPM		{position:absolute; line-height:1em; font-size:6.5vh; text-align:right;  z-index:927; right:7%; top:57%; width:12%; text-shadow:var(--TXT_SHDW);}
+
+
+#CLOKO_FULL_VR	{position:absolute;	line-height:1em; font-size:22.7vh; 
+	left:0%; top:31%; z-index:929; text-align:center; 
+	width:100%; height:12%; text-shadow:var(--CLK_SHDW); 
+	font-family :var(--XX_DIGITS);  z-index:997;
+	color:var(--Color_CLOCK);}
+
+
+.VR_LOGO {position:absolute; left:3%; bottom:7%; width:27.3%;}
+
+
+
+#VrBoxROUND	{position:absolute; z-index:400; text-align:center;
+	left:4%; top:54%; line-height:2.3em; width:26%; height:10%; padding-top:7%; 
+	background:url(./images/img1.png) no-repeat center top;
+	background-size: 100% auto;
+	color:var(--Color_SEKSALATS);}
+
+#VReNextPRAYER {font-size:7.1vh; letter-spacing:0.065em; font-family:var(--XX_DIGITS); color:var(--Color_CLOCK);}
+
+#VReNextPrTEXT { font-size:calc(var(--FOXEN) * 4.2vh); 
+	font-family:var(--XX_MAJORFONTO); color:var(--Color_LOWFOCUS); text-shadow:var(--TXT_SHDW);}
+
+
+
+
+#VReMESSAGE0 {position:absolute; z-index:300; left:0%; bottom:0%; width:100%; height:5%; padding:.3% 0;
+	font-family:'Amiri'; line-height:1.4em; text-align:center; overflow:hidden;
+	font-size:5vh; color:var(--Color_CLOCK);}
+
+#VReMESSAGE1 {position:absolute; z-index:300; left:0%; bottom:0%; width:100%; height:5%;}
+
+.cMarq {position:absolute; left:0%; top:0%; width:100%; height:100%; font-family:'Amiri'; line-height:1.4em; padding:.3% 3%;
+	font-size:5.0vh; color:var(--Color_CLOCK); text-shadow:var(--TXT_SHDW);}
+	
+
+
+
+
+
+#VRDataBOX {position:absolute; z-index:3000; left:3%; bottom:4.5%;
+	width:94%; height:57%; background:var(--Color_BGTUBE); font-size:5vh;
+	box-shadow:3px 3px 33px rgba(0,0,0, 0.5); visibility:hidden;
+	color:var(--Color_SEKSALATS); opacity:.97;}
+
+#VRDataHOLDO {position:absolute; left:0%; top:0%; width:100%; margin-top:10%; height:85%; overflow-y:auto;}
+#VRDataCLOSE {position:absolute; right:3%; top:0%; color:var(--Color_SEKSALATS); cursor:pointer; }
+
+#VRDataMESSAGE {padding:5%; font-family:'Amiri'; line-height:1.5em; font-size:calc(var(--FOXEN) * 5.4vh);}
+
+
+
+.Vmtx{position:absolute; right:var(--MTOXen); top:21%; width:10%; height:65%; 
+	font-size:2.3vh; direction:ltr; visibility:var(--MTOSLWTS);}
+.Vmtx:lang(AR){right:var(--MTOXar);}
+
+#VReDecompteBOX {position:absolute;font-family:var(--XX_DIGITS); text-align:center; visibility:hidden;
+	text-shadow:var(--TXT_SHDW); font-size:calc(var(--FOXEN) * 2.9vh);
+	z-index:557; line-height:1em; left:3.5%; bottom:32%; padding-top:4vh; 
+	width:26vh; height:22vh; color:var(--Color_SEKSALATS);}
+
+#VReDecompteTEXT {position:absolute; right:0%; top:38%; width:100%; font-size:7.0vh; letter-spacing:0.065em; 
+	text-align:center; text-shadow:var(--TXT_SHDW); color:var(--Color_CLOCK);}
+
+#VRBAQI2IQAMA {position:absolute; right:0%; bottom:23%; width:100%; 
+			font-size:calc(var(--FOXEN) * 3.8vh); text-shadow:var(--TXT_SHDW);
+			text-align:center; font-family:var(--XX_MAJORFONTO); color:var(--Color_SEKSALATS);}
+#VRBAQI2IQAMA:lang(AR){font-size:calc(var(--FOXEN) * 2.8vh); bottom:23%;}
+
+
+#VRtheSVG {position:absolute; z-index:555; left:2.1%; bottom:31.3%;
+	 width:29vh; height:29vh; visibility:hidden; opacity:var(--PRGRSS);}
+#VRbasica {stroke:var(--Color_BGTUBE);    stroke-width:3.5; fill:var(--Color_BGTUBE);}
+#VRdynamo {stroke:var(--Color_SEKSALATS); stroke-width:3.5; fill:none;}
+
+
+
+#VReJOMOA {position:absolute; z-index:400; text-align:center;
+	left:5.4%; top:66.3%; width:22vh; height:17vh; padding-top:5vh;
+	font-family:var(--XX_MAJORFONTO); font-size:4.9vh; opacity:.8;
+	line-height:1.2em; color:var(--Color_LOWFOCUS);}
+#VReJOMOA:lang(AR){font-size:calc(var(--FOXEN) * 4.7vh);}
+
+
+
+#VReDOHA {position:absolute; right:4%; bottom:44.1%; line-height:1em; font-size:2.8vh; text-align:right; height:3%; width:15%; color:var(--Color_LOWFOCUS);}
+
+
+#VRAzanCOMES { position:absolute; z-index:400;
+	left:0%; top:0%; width:100%; height:100%;
+	line-height:1.7em; text-align:center; font-family:'Amiri';
+	z-index:99991; font-size:calc(var(--FOXEN) * 15vh); 
+	background:var(--Color_BGTUBE); text-shadow:var(--CLK_SHDW);
+	color:var(--Color_SEKSALATS);}
+
+#eeeTextAZAN {margin-top:40%;}
+#eeeNowNAMEazan {font-size:150%; color:var(--Color_CLOCK);}
+#eeeTopTIME {
+			position:absolute; right:4%; top:2%; 
+			font-family:var(--XX_DIGITS); letter-spacing:0.065em;
+			line-height:1em; font-size:7vh; color:var(--Color_CLOCK);}
+
+#VRIQAMATIME { position:absolute;
+	left:0%; top:0%; width:100%; height:100%;
+	line-height:1em; text-align:center; font-family:'Amiri';
+	z-index:99991; font-size:calc(var(--FOXEN) * 13vh); 
+	background:var(--Color_BGTUBE);
+	color:var(--Color_CLOCK);}
+
+#VRnowIQAMA {margin-top:71%;}
+
+
+
+
+#VReAyatsHDR {position:absolute; font-family:'Amiri'; 
+	text-align:center; left:.5%; top:43.8%; 
+	z-index:500; height:8%; width:99%; font-size:5.8vh; 
+	color:var(--Color_GOLDEN);
+	text-shadow:var(--TXT_SHDW);}
+
+
+#VR_TITLES 	{position:absolute; right:0%; top:52.3%; direction:ltr; height:4%; width:67%; font-family:var(--XX_MAJORFONTO); line-height:1em;}
+#VR_TITLES:lang(AR) 	{width:64%; direction:rtl;}
+
+#ewSALAT, #ewAZAN, #ewIQAMA {text-align:center; text-transform:uppercase; font-size:calc(var(--FOXEN) * 3.4vh);}
+#ewSALAT:lang(AR), #ewAZAN:lang(AR), #ewIQAMA:lang(AR) {font-size:calc(var(--FOXEN) * 3.5vh);}
+
+#VRePrayersHDR 		{font-family:var(--XX_DIGITS); position:absolute; right:1%; top:var(--RoundsVrTOP); height:43%; width:67%;}
+.cccROUND			{position:relative; border-radius:75px; left:0%; top:0px; height:13%; width:100%; margin-bottom:2.5%; background:var(--bgForVRS); opacity:0.5; }
+.cccROUND_ACTIVE	{position:relative; border-radius:75px; left:0%; top:0px; height:13%; width:100%; margin-bottom:2.5%; background:var(--bgForVRS); opacity:1; }
+
+
+#VReVERSIO	{position:absolute; font-size:3vh; text-align:center; z-index:99; left:0%; bottom:1%; width:100%; padding:0.7%; z-index:1300; color:var(--Color_LOWFOCUS);  opacity:0.65;}
+#VReALERT {position:absolute;font-family:'Amiri'; font-size:calc(var(--FOXEN) * 4.7vh); z-index:109; visibility:hidden; left:0%; bottom:1.5%; width:100%; line-height:1.2em; text-align:center; color:var(--Color_CLOCK);}
+
+
+
+.eeeNAME {font-family:var(--XX_MAJORFONTO); position:absolute; left:var(--OffIqmatNamesPOZ); font-size:5.9vh; bottom:17%; line-height:1em; color:var(--Color_SEKSALATS);}
+.eeeNAME:lang(AR) {right:var(--OffIqmatNamesPOZ); font-size:6.1vh; bottom:19.1%; text-align:right;}
+
+
+.eeeHOUR {position:absolute; text-align:right; right:var(--OffIqmatHoursEnPOZ); bottom:11%; font-size:6.7vh; line-height:1em; letter-spacing: 0.065em;  color:var(--Color_CLOCK);}
+.eeeHOUR:lang(AR) {right:var(--OffIqmatHoursArPOZ);}
+
+.eeeIQAMA			{position:absolute; right:4%; bottom:11%; text-align:right; width:27%; line-height:1em; font-size:6.7vh; visibility:var(--IQAMAT); color:var(--Color_SEKSALATS); }
+.eeeIQAMA:lang(AR)	{left:3%;}
+
+
+#VRdemain {position:absolute; line-height:1em; right:5%; top:-33%; font-size:2.8vh; color:var(--Color_LOWFOCUS);text-shadow:none;}
+
+
+select {width:100%; padding:0.5%; text-align:right; font-size:2.1vh;}
+select optgroup{padding:1.5%;  color:#913E23;}
+select option{padding:1.1%; direction:ltr; text-align:left; color:#252525;}
+
+
+button {margin-top:5%; width:60%; font-size:3.5vh; padding:2%;}
+
+
+#eHELPSCREEN 	{position:absolute; height:100%; width:100%; left:0px; top:0%; visibility:hidden; font-size:3.0vh; z-index:99998; background:#151515;}
+.cssSET 		{position:absolute; display:table; left:0%; top:0%; width:100%; height:5%; background-color:#282828;}
+.cssMenuGRP 	{position:absolute;font-family:var(--XX_MAJORFONTO); font-size:calc(var(--FOXEN) * 4.2vh); line-height:1em; left:0%; top:6%; width:100%; height:94%;  overflow-y:auto; }
+
+
+.cssModelSettingsWINDOW	{font-family:var(--XX_MAJORFONTO); font-size:calc(var(--FOXEN) * 3.6vh); position:absolute; width:100%; height:100%; left:0%; top:0%; visibility:hidden; z-index:99993; background:#151515;}
+.cssTitlesHOLDER		{position:absolute; display:table; left:0%; top:0%; width:100%; height:6%;}
+.cssSettingsDATA		{position:absolute; left:0%; top:6%; width:94%; height:88%; padding:3%; line-height:1.75em; overflow-y:auto;}
+
+
+.cssNoMOBILE {position:absolute; left:30%; top:40%; width:40%; height:auto; visibility:hidden;}
+.cssCheckBOX {height:4vh; width:5vh;}
+.cccADJUSTER	{font-size:3vh; height:5vh; width:6vh;}
+
+
+
+.CSS_AR33 {font-family:var(--XX_MAJORFONTO);    font-size:calc(var(--FOXEN) * 4.2vh); cursor:pointer;}
+.CSS_AR44 {font-family:var(--XX_MAJORFONTO);    font-size:calc(var(--FOXEN) * 3.4vh); cursor:pointer;}
+.CSS_EN33 {font-family:var(--XX_DIGITS); font-size:2.8vh; cursor:pointer;}
+
+input[type='radio'] { vertical-align:middle; width:3.5vh; height:3.5vh;}
+
+#AAA_ForcedVERTICAL{display:none;}
+}
+
+
+/* ================================================================================== */
+/* ================================================================================== */
+/* ================================================================================== */
+/* ================================================================================== */
+/* ================================================================================== */
+
+.otoHIDN {opacity:var(--OPAK);}
+
+.CSS_X_LANG_DIRECTION {direction:var(--XX_LANG_DIR);}
+
+.SSoff {visibility:hidden;  opacity:0; transition: visibility 0s linear 2.1s, opacity 2.1s linear;}
+.SSon  {visibility:visible; opacity:1; transition: opacity 1.7s linear;}
+
+.CSS_BlackSCREEN {position:absolute; z-index:996; left:0px; top:0px; height:100%; width:0%; transition: width 4s ease-out; background:black;}
+
+.CSS_FullCONTO   {position:absolute; z-index:999; left:0px; top:0px; height:0%; width:100%; transition: height 4s ease-out;}
+
+
+/* background-color:black; opacity:0.95; */							
+.CSS_FullCONTO  #ELKLOKO {position:absolute; right:2%; top:4px; font-family:var(--XX_DIGITS); width:20%; text-align:right; font-size:3.4vh;color:var(--Color_CLOCK);}
+
+.CSS_FullCONTO  #ELBLACK {position:absolute; left:0; top:0; 
+				height:100%; width:100%; }
+
+.CSS_FullCONTO  #ELHOLDO {visibility:hidden; position:absolute; left:0; top:0%; 
+				height:100%; width:100%;
+				display: table-cell;
+				text-align:center;
+				vertical-align: middle;}
+				
+.CSS_FullCONTO  #ELCONTO { 
+				font-size:29vh;
+				line-height:1em;
+				margin-top:5%; 
+				font-family :var(--XX_DIGITS);
+				color:var(--Color_CLOCK);
+				text-shadow:var(--TXT_SHDW);}
+				
+.CSS_FullCONTO  #ELMOBIL {position:absolute; left:3%; top:30%;
+				width:17%; height:auto;}
+
+
+.CSS_PANO3_VISIBLE	{opacity:0.95; transition: all 3s ease-out;}
+.CSS_PANO3_HIDDEN	{opacity:0;    transition: all 3s ease-out;}
+
+
+.Cxvisible {visibility:visible; opacity: 1; transition: opacity 3s linear;}
+.Cxhidden  {visibility:hidden;  opacity: 0; transition: visibility 0s 3s, opacity 3s linear;}
+
+
+.lw	{color:var(--Color_LOWFOCUS);opacity:0.7; font-size:80%;}
+
+.cSans	{font-family :var(--XX_DIGITS);}
+
+
+.cARPM	{font-family:var(--XX_MAJORFONTO); color:var(--Color_LOWFOCUS); font-size:calc(var(--FOXEN) * 85%);}
+.cEnPM	{color:var(--Color_LOWFOCUS);}
+
+
+.cssColorLITE 	{color:#ACA091;}
+.eLiter 		{color:#D2C7AA;}
+.sm90 {font-size:90%;}
+.sm85 {font-size:85%;}
+.sm80 {font-size:80%;}
+
+
+a {color:#D2C7AA; text-decoration:none;}
+.deko {color:var(--Color_CLOCK);}
+
+.cShdw {text-shadow:var(--TXT_SHDW); }
+
+
+.centro1 {display:table;}
+.centro2 {display:table-cell; vertical-align:middle; text-align:center;}
+.centro3 {display:table-cell; vertical-align:top;}
+
+.cssDISABLED {pointer-events: none; opacity: 0.4;}
+
+
+
+.CSS_VR_THEMER	{width:100%; height:30vh; font-size:3vh; text-align:right; background: url() no-repeat center top; background-size:cover;}
+.CSS_HR_THEMER	{width:100%; height:7vh;  font-size:2vh; text-align:right; background: url() no-repeat center top; background-size:cover;}
+
+
+.cccTBL1	{padding-bottom:2%; border-bottom:2px solid gray;}
+
+.btmline	{border-bottom:1px solid;}
+
+.codePERSO	{color:#D5CCB9; padding:2%; width:93%; overflow-wrap: break-word;}
+
+.w50 {width:50%}
+.w40 {width:40%}
+.w45 {width:45%}
+
+input[type='checkbox'] { vertical-align:middle;}
+label { vertical-align:middle;}
+
+#BtnAudio {position:absolute; bottom:15px; z-index:3000; visibility:hidden;}
+
+.otoDIS {opacity:var(--OPAK);}
+
+.cssWindowCLOSE	{text-align:right; font-size:115%; display:table-cell; vertical-align:middle; background-color:#282828; padding-right:3%;}
+
+.cssWindowTITLE	{width:60%; text-align:left; display:table-cell; vertical-align:middle; color:white; background-color:#282828;}
+
+.cssLocationDATA {width:85%; padding:2% 0 2% 0%; color:white;}
+
+
+
+
+.hnd{cursor:pointer;}
+.cCLK{color:var(--Color_CLOCK);}
+#XX_MISC_1 {font-size:115%;}
+
+#eMenuGRP {padding-top:3%;}
+#mntopo {position:absolute; right:5%; top:35%; font-size:115%;}
+
+#LangsDIV {position:absolute; left:2.3%; top:0.5%; padding:1.2%; width:auto; height:auto; direction:ltr; 
+			color:#989898; line-height:1em; text-align:left;}
+
+.cssMenuBTN {width:90%; padding:2.05%; cursor:pointer; padding-right:60px; margin-right:3%;}
+.grpfonts 	{font-family:'FreeSans'; font-size:75%; text-align:right; direction:ltr;}
+
+#pJOMOA {font-family:'Amiri'; width:100% }
+#pJOMOA option{font-family:'Amiri';line-height:1em;}
+
+
+.minigray, #XX_MISC_1 {font-size:70%; line-height:1.4em; color:gray; padding:5px 0;}
+
+button{font-family:'Amiri'; line-height:1em;}
+
+#uaTBL0 {width:100%; font-family:'FreeSans'; font-size:70%; }
+#uaTBL1 {width:100%;}
+#uaTBL1 tr td:nth-child(1) {width:7%;}
+#uaTBL1 tr td:nth-child(2) {width:7%; text-align:center;}
+#uaTBL1 tr td:nth-child(3) {width:15%;}
+#uaTBL1 tr td:nth-child(4) {width:64%;}
+#uaTBL1 tr td:nth-child(5) {width:7%; text-align:right;}
+#uaTBL1 td{vertical-align:top; font-family:'FreeSans'; font-size:60%; padding:2% 0.5%; line-height:1.3em; border-bottom:1px dashed silver;}
+#uaTBL1 tr td:nth-child(4) {font-family:'Amiri'; direction:rtl; text-align:right;}
+
+.eaBtn {margin:1.5% 0; width:auto; font-size:1.9vh; padding:1.5% 7%;}
+.cc15 {height:2.3vh; width:1.9vh;}
+
+
+#pFAJR,#pDOHR,#pASR,#pISHA {width:90%;}
+
+#tablePrayADJ td{ border-right:1px dashed #454545;}
+#tableIQAMATS td{ border-bottom:1px dashed #454545;}
+
+.wt{color:white;}
+
+
