@@ -6236,17 +6236,6 @@ var imc = '0.png';
 //dolog('iniNB,iniTM '+iniNB+','+iniTM+' --- '+imc);
 return imc;
 }
-const el = document.getElementById('nav-time');
-
-function updateClock() {
-   var now = new Date();
-   var time = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds(); 
-        
-   el.innerHTML = time;    
-}
-
-setInterval(updateClock, 1);
-
 
 var JS_nowUNIT   = "";
 var JS_nowCELS   = "";
