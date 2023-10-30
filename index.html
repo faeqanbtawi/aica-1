@@ -2088,6 +2088,7 @@ updateLocationByFILE();
 // update will not work here, bcz city-data-file already loaded in starting , a restart is important
 // FR.bbbb
 JS_VERSIO = new Date().getTime();  // again update cache
+alert("im a city alert");
 var tmp   = JS_CITY_CODE.split(".");
 var yFile = 'data/'+tmp[0]+'/wtimes-'+JS_CITY_CODE+'.js?e='+ JS_VERSIO;
 
@@ -2140,7 +2141,7 @@ var newOPTO = new Option("00.000.PERSONAL", "00.000");
 JS_citiesListBOX.append(newOPTO);
 
 JS_VERSIO = new Date().getTime();  // again update cache
-	alert("Hello! I am an alert box!!");
+	alert("im the country alert");
 var tempjxFile = "data/" + eee_CODE + "/" + eee_CODE +".js?ev="+ JS_VERSIO;
 
 var JS_jxscript 	= document.createElement("script");
